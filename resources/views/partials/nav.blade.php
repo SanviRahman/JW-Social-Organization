@@ -20,10 +20,10 @@
         <div class="nav-center">
             <ul class="nav-links">
                 <li><a href="#" class="{{ request()->routeIs('home') ? 'active' : '' }}">হোম</a></li>
-                <li><a href="#">আমাদের সম্পর্কে</a></li>
-                <li><a href="#">কার্যক্রম</a></li>
-                <li><a href="#">ইভেন্ট</a></li>
-                <li><a href="#">গ্যালারি</a></li>
+                <li><a href="#আমাদের সম্পর্কে">আমাদের সম্পর্কে</a></li>
+                <li><a href="#কার্যক্রম">কার্যক্রম</a></li>
+                <li><a href="#সাফল্যের-গল্প">ইভেন্ট</a></li>
+                <li><a href="#গ্যালারি">গ্যালারি</a></li>
                 <li><a href="#">ব্লগ</a></li>
                 <li><a href="#">যোগাযোগ</a></li>
             </ul>
@@ -118,6 +118,7 @@ body {
     color: #334155;
     line-height: 1.6;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 /* Navbar */
