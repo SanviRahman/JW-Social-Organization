@@ -6,15 +6,15 @@
 @section('content')
 <main>
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="হোম">
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <span class="established-badge">প্রতিষ্ঠিত ২০১৭</span>
             <h1 class="hero-title">ঝাউগড়া কল্যাণ সংগঠন</h1>
             <p class="hero-tagline">"ঐক্যই আমাদের শক্তি, উন্নয়নই আমাদের লক্ষ্য"</p>
             <div class="hero-btns">
-                <button class="btn btn-primary">আমাদের কাজ জানুন</button>
-                <button class="btn btn-secondary">সহায়তা করুন</button>
+                <button class="btn btn-primary" style="color: white;">আমাদের কাজ জানুন</button>
+                <button class="btn btn-secondary" style="color: white;">সহায়তা করুন</button>
             </div>
         </div>
     </section>
@@ -22,6 +22,12 @@
     <!-- Statistics Section -->
     <section class="stats">
         <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle-tag">আমাদের অর্জন</span>
+                <pre></pre>
+                <h2 class="section-main-title">পরিসংখ্যান</h2>
+                <p class="section-description">এক নজরে আমাদের কার্যক্রমের চিত্র</p>
+            </div>
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-icon"><i class="far fa-clock"></i></div>
@@ -50,46 +56,56 @@
 
     <!-- About Section (3rd Section) -->
     <section class="about-section" id="আমাদের সম্পর্কে">
-        <div class="container about-grid">
-            <div class="about-content reveal-left">
-                <span class="section-tag">আমাদের সম্পর্কে</span>
-                <h2 class="about-title">মানবতার সেবায় <br> <span>নিবেদিত প্রাণ</span></h2>
-                <p class="about-desc">
-                    ঝাউগড়া কল্যাণ সংগঠন একটি অলাভজনক সামাজিক সংগঠন যা ২০১৭ সাল থেকে সমাজের সুবিধাবঞ্চিত মানুষের জীবনমান
-                    উন্নয়নে কাজ করে যাচ্ছে। আমাদের মূল লক্ষ্য হলো একটি শিক্ষিত, স্বাস্থ্যসম্মত এবং স্বাবলম্বী সমাজ গড়ে
-                    তোলা।
-                </p>
-                <p class="about-desc">
-                    আমরা বিশ্বাস করি, সম্মিলিত প্রচেষ্টায় যেকোনো অসাধ্য সাধন করা সম্ভব। আমাদের স্বেচ্ছাসেবকদের অক্লান্ত
-                    পরিশ্রম এবং দাতাদের উদার সহযোগিতায় আমরা এগিয়ে চলেছি।
-                </p>
-
-                <div class="founder-card">
-                    <div class="founder-img">
-                        <img src="https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg"
-                            alt="Founder">
-                    </div>
-                    <div class="founder-info">
-                        <h4>মোঃ রফিকুল ইসলাম</h4>
-                        <p>প্রতিষ্ঠাতা ও সভাপতি</p>
-                    </div>
-                </div>
-
-                <a href="#" class="learn-more-btn">আরও জানুন <i class="fas fa-arrow-right"></i></a>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle-tag">আমাদের পরিচয়</span>
+                <pre></pre>
+                <h2 class="section-main-title">আমাদের সম্পর্কে</h2>
+                <p class="section-description">মানবতার সেবায় আমাদের অঙ্গীকার</p>
             </div>
+            <div class="about-grid">
+                <div class="about-content reveal-left">
+                    <h2 class="about-title">মানবতার সেবায় <br> <span>নিবেদিত প্রাণ</span></h2>
+                    <p class="about-desc">
+                        ঝাউগড়া কল্যাণ সংগঠন একটি অলাভজনক সামাজিক সংগঠন যা ২০১৭ সাল থেকে সমাজের সুবিধাবঞ্চিত মানুষের
+                        জীবনমান
+                        উন্নয়নে কাজ করে যাচ্ছে। আমাদের মূল লক্ষ্য হলো একটি শিক্ষিত, স্বাস্থ্যসম্মত এবং স্বাবলম্বী সমাজ
+                        গড়ে
+                        তোলা।
+                    </p>
+                    <p class="about-desc">
+                        আমরা বিশ্বাস করি, সম্মিলিত প্রচেষ্টায় যেকোনো অসাধ্য সাধন করা সম্ভব। আমাদের স্বেচ্ছাসেবকদের
+                        অক্লান্ত
+                        পরিশ্রম এবং দাতাদের উদার সহযোগিতায় আমরা এগিয়ে চলেছি।
+                    </p>
 
-            <div class="mission-vision reveal-right">
-                <div class="info-card mission-card">
-                    <div class="info-icon"><i class="fas fa-globe"></i></div>
-                    <h3>আমাদের মিশন</h3>
-                    <p>দরিদ্র ও অসহায় মানুষের মৌলিক চাহিদা পূরণ এবং তাদের স্বাবলম্বী করে গড়ে তোলার মাধ্যমে একটি
-                        বৈষম্যহীন সমাজ প্রতিষ্ঠা করা।</p>
+                    <div class="founder-card">
+                        <div class="founder-img">
+                            <img src="https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg"
+                                alt="Founder">
+                        </div>
+                        <div class="founder-info">
+                            <h4>মোঃ রফিকুল ইসলাম</h4>
+                            <p>প্রতিষ্ঠাতা ও সভাপতি</p>
+                        </div>
+                    </div>
+
+                    <a href="#" class="learn-more-btn">আরও জানুন <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="info-card vision-card">
-                    <div class="info-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3>আমাদের ভিশন</h3>
-                    <p>এমন একটি সমাজ যেখানে প্রতিটি মানুষ শিক্ষা, স্বাস্থ্য ও অর্থনৈতিক নিরাপত্তার নিশ্চয়তা পাবে এবং
-                        সম্মানের সাথে বাঁচবে।</p>
+
+                <div class="mission-vision reveal-right">
+                    <div class="info-card mission-card">
+                        <div class="info-icon"><i class="fas fa-globe"></i></div>
+                        <h3>আমাদের মিশন</h3>
+                        <p>দরিদ্র ও অসহায় মানুষের মৌলিক চাহিদা পূরণ এবং তাদের স্বাবলম্বী করে গড়ে তোলার মাধ্যমে একটি
+                            বৈষম্যহীন সমাজ প্রতিষ্ঠা করা।</p>
+                    </div>
+                    <div class="info-card vision-card">
+                        <div class="info-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>আমাদের ভিশন</h3>
+                        <p>এমন একটি সমাজ যেখানে প্রতিটি মানুষ শিক্ষা, স্বাস্থ্য ও অর্থনৈতিক নিরাপত্তার নিশ্চয়তা পাবে এবং
+                            সম্মানের সাথে বাঁচবে।</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -100,9 +116,10 @@
     <section class="activities-section" id="কার্যক্রম">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">আমাদের কার্যক্রম</h2>
-                <p class="section-subtitle">সমাজের উন্নয়নে আমাদের নিরলস প্রচেষ্টা</p>
-                <div class="title-underline"></div>
+                <span class="section-subtitle-tag">আমাদের কাজ</span>
+                <pre></pre>
+                <h2 class="section-main-title">আমাদের কার্যক্রম</h2>
+                <p class="section-description">সমাজের উন্নয়নে আমাদের নিরলস প্রচেষ্টা</p>
             </div>
 
             <div class="activities-slider-container">
@@ -163,63 +180,7 @@
                         </div>
                     </div>
 
-                    <!-- Card 4: Environment -->
-                    <div class="activity-card">
-                        <div class="card-img">
-                            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                                alt="Environment">
-                            <span class="card-tag tag-environment">Environment</span>
-                        </div>
-                        <div class="card-body">
-                            <h3>পরিবেশ সুরক্ষা</h3>
-                            <p>বৃক্ষরোপণ ও পরিবেশ সচেতনতা।</p>
-                            <a href="#" class="card-link">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Card 4: Environment -->
-                    <div class="activity-card">
-                        <div class="card-img">
-                            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                                alt="Environment">
-                            <span class="card-tag tag-environment">Environment</span>
-                        </div>
-                        <div class="card-body">
-                            <h3>পরিবেশ সুরক্ষা</h3>
-                            <p>বৃক্ষরোপণ ও পরিবেশ সচেতনতা।</p>
-                            <a href="#" class="card-link">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Card 3: Empowerment -->
-                    <div class="activity-card">
-                        <div class="card-img">
-                            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                                alt="Empowerment">
-                            <span class="card-tag tag-empowerment">Empowerment</span>
-                        </div>
-                        <div class="card-body">
-                            <h3>নারী স্বাবলম্বীকরণ</h3>
-                            <p>নারীদের দক্ষতা উন্নয়ন ও কর্মসংস্থান।</p>
-                            <a href="#" class="card-link">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Card 3: Empowerment -->
-                    <div class="activity-card">
-                        <div class="card-img">
-                            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                                alt="Empowerment">
-                            <span class="card-tag tag-empowerment">Empowerment</span>
-                        </div>
-                        <div class="card-body">
-                            <h3>নারী স্বাবলম্বীকরণ</h3>
-                            <p>নারীদের দক্ষতা উন্নয়ন ও কর্মসংস্থান।</p>
-                            <a href="#" class="card-link">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Add more cards for scrolling effect -->
+                    <!-- Card 5: Food Aid -->
                     <div class="activity-card">
                         <div class="card-img">
                             <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
@@ -245,12 +206,13 @@
 
 
     <!-- Success Stories Section (5th Section) -->
-    <section class="success-stories" id="সাফল্যের-গল্প">
+    <section class="success-stories" id="ইভেন্ট">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">সাফল্যের গল্প</h2>
-                <p class="section-subtitle">যাদের জীবন বদলে গেছে আমাদের প্রচেষ্টায়</p>
-                <div class="title-underline"></div>
+                <span class="section-subtitle-tag">সাফল্যের গল্প</span>
+                <pre></pre>
+                <h2 class="section-main-title">সাফল্যের গল্প</h2>
+                <p class="section-description">যাদের জীবন বদলে গেছে আমাদের প্রচেষ্টায়</p>
             </div>
 
             <div class="success-carousel-container">
@@ -322,13 +284,13 @@
                             </div>
                         </div>
                         <div class="story-content">
-                            <h3 class="story-name">রাহিমা বেগম</h3>
-                            <span class="story-date">১২/১১/২০২৪</span>
+                            <h3 class="story-name">আমিনা খাতুন</h3>
+                            <span class="story-date">২০/০৯/২০২৪</span>
                             <p class="story-text">
-                                "সেলাই মেশিন পেয়ে এখন তিনি নিজের পায়ে দাঁড়িয়েছেন। তার পরিবারের স্বচ্ছলতা ফিরে এসেছে।"
+                                "আমাদের প্রশিক্ষণ কেন্দ্র থেকে সেলাই শিখে এখন তিনি নিজের একটি দোকান দিয়েছেন।"
                             </p>
                             <div class="story-status">
-                                <i class="far fa-check-circle"></i> সফলভাবে পুনর্বাসিত
+                                <i class="far fa-check-circle"></i> স্বাবলম্বী উদ্যোক্তা
                             </div>
                         </div>
                     </div>
@@ -348,13 +310,13 @@
                             </div>
                         </div>
                         <div class="story-content">
-                            <h3 class="story-name">করিম মিয়া</h3>
-                            <span class="story-date">৫/১০/২০২৪</span>
+                            <h3 class="story-name">জামাল উদ্দিন</h3>
+                            <span class="story-date">১৫/০৮/২০২৪</span>
                             <p class="story-text">
-                                "আমাদের কৃষি প্রকল্পের মাধ্যমে তিনি একজন সফল খামারি হতে পেরেছেন।"
+                                "ক্ষুদ্র ব্যবসার জন্য পুঁজি পেয়ে এখন তিনি সফলভাবে তার ব্যবসা পরিচালনা করছেন।"
                             </p>
                             <div class="story-status">
-                                <i class="far fa-check-circle"></i> স্বাবলম্বী খামারি
+                                <i class="far fa-check-circle"></i> সফল ব্যবসায়ী
                             </div>
                         </div>
                     </div>
@@ -375,9 +337,11 @@
     <!-- Events/Gallery Section (6th Section) -->
     <section class="events-gallery" id="গ্যালারি">
         <div class="container">
-            <div class="section-header" style="text-align: left;">
-                <h2 class="section-title">আসন্ন ইভেন্ট</h2>
-                <p class="section-subtitle">আমাদের পরবর্তী কার্যক্রমে অংশগ্রহণ করুন</p>
+            <div class="section-header">
+                <span class="section-subtitle-tag">আসন্ন আয়োজন</span>
+                <pre></pre>
+                <h2 class="section-main-title">আসন্ন ইভেন্ট</h2>
+                <p class="section-description">আমাদের পরবর্তী কার্যক্রমে অংশগ্রহণ করুন</p>
             </div>
 
             <div class="gallery-grid">
@@ -434,6 +398,302 @@
             <div class="gallery-actions" style="text-align:center; margin-top: 2rem;">
                 <a href="#" class="learn-more-btn">সব ইভেন্ট দেখুন</a>
             </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!--Amader Poth Chola  -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle-tag">আমাদের গল্প</span>
+                <pre></pre>
+                <h2 class="section-main-title">আমাদের পথচলা</h2>
+                <p class="section-description">২০১৭ সালে যাত্রা শুরু করে আমরা আজ অবধি নিরলসভাবে কাজ করে যাচ্ছি। নিচে
+                    আমাদের যাত্রাপথের কিছু গুরুত্বপূর্ণ মাইলফলক তুলে ধরা হলো।</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item right">
+                    <div class="content">
+                        <h2>2017</h2>
+                        <h3>যাত্রা শুরু - প্রথম স্বাস্থ্য ক্যাম্প</h3>
+                        <p>সংগঠনের আনুষ্ঠানিক যাত্রা শুরু। ৫০০ জনের বেশি মানুষের বিনামূল্যে চিকিৎসা সেবা প্রদান।</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="content">
+                        <h2>2019</h2>
+                        <h3>শিক্ষা প্রকল্প</h3>
+                        <p>মেধাবী কিন্তু দরিদ্র শিক্ষার্থীদের জন্য বৃত্তি কর্মসূচি চালু।</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="content">
+                        <h2>2021</h2>
+                        <h3>কোভিড-১৯ সহায়তা</h3>
+                        <p>মহামারির সময় ২০০০ এরও বেশি অসহায় পরিবারের মাঝে খাদ্য সহায়তা পৌঁছে দেওয়া।</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="content">
+                        <h2>2023</h2>
+                        <h3>কারিগরি প্রশিক্ষণ</h3>
+                        <p>বেকার যুবক-যুবতীদের জন্য কম্পিউটার ও কারিগরি প্রশিক্ষণ কেন্দ্র স্থাপন।</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="content">
+                        <h2>2025</h2>
+                        <h3>ডিজিটাল রূপান্তর</h3>
+                        <p>সম্পূর্ণ ডিজিটাল কার্যক্রম ও স্মার্ট সেবা চালুর মাধ্যমে আধুনিক সমাজ গঠনে অবদান।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Nibondon Form Section-->
+    <section class="section-8">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle-tag">যোগ দিন আমাদের সাথে</span>
+                <pre></pre>
+                <h2 class="section-main-title">স্বেচ্ছাসেবক হন</h2>
+                <p class="section-description">আপনার সময় এবং মেধা দিয়ে সমাজের উন্নয়নে অবদান রাখুন</p>
+            </div>
+
+            <div class="section-8-container">
+                <!-- Left Side -->
+                <div class="section-8-left">
+                    <h1>স্বেচ্ছাসেবক হন</h1>
+                    <p>
+                        আপনার সময় এবং মেধা দিয়ে সমাজের উন্নয়নে অবদান রাখুন।
+                        আমাদের টিমে যোগ দিন এবং পরিবর্তনের অংশীদার হন।
+                    </p>
+
+                    <ul class="benefits">
+                        <li>সামাজিক নেটওয়ার্কিং</li>
+                        <li>নেতৃত্বের দক্ষতা উন্নয়ন</li>
+                        <li>সার্টিফিকেট ও স্বীকৃতি</li>
+                        <li>মানসিক প্রশান্তি</li>
+                    </ul>
+                </div>
+
+                <!-- Right Side -->
+                <div class="section-8-right">
+                    <div class="form-box">
+                        <h2>নিবন্ধন ফর্ম</h2>
+                        <small>আপনার তথ্য দিন, আমরা যোগাযোগ করব</small>
+
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>নাম</label>
+                                    <input type="text" placeholder="আপনার নাম">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>ফোন</label>
+                                    <input type="text" placeholder="01XXXXXXXXX">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>ইমেইল</label>
+                                <input type="email" placeholder="example@mail.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label>আগ্রহের ক্ষেত্র</label>
+                                <select>
+                                    <option>শিক্ষা</option>
+                                    <option>স্বাস্থ্য</option>
+                                    <option>পরিবেশ</option>
+                                    <option>প্রযুক্তি</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="submit-btn">
+                                স্বেচ্ছাসেবক হন
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog section -->
+    <section class="news-section" id="ব্লগ">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle-tag">সাম্প্রতিক আপডেট</span>
+                <pre></pre>
+                <h2 class="section-main-title">ব্লগ ও খবর</h2>
+                <p class="section-description">আমাদের সাম্প্রতিক কর্মকাণ্ড ও আপডেট</p>
+            </div>
+
+            <div class="card-wrapper">
+                <!-- Card 1 -->
+                <div class="news-card">
+                    <img src="https://scontent.fdac7-1.fna.fbcdn.net/v/t39.30808-6/558812590_3549518041851163_3899106297584745642_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=110&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeEVFOyBGx1kW4Vf97uaYgvtD1Jl9w15fKcPUmX3DXl8pyinJ8qQwS_eP-aI3wWqVjKhEAbwmcYKt6xn06mBS9Hk&_nc_ohc=amsv5JwgEEwQ7kNvwFGclcI&_nc_oc=AdnldJsDZyGRjD-0FgsGA2uP8gJ5iCpaFaeHJ4wLrPW8POpkxlDLgEVSSyVLOugoaZQ&_nc_zt=23&_nc_ht=scontent.fdac7-1.fna&_nc_gid=eVVF7FcHldiKtLyiPfS6Kw&oh=00_AfuRMHUShPSgpYBCLOObVLI843siRGNlTDx_mBSLQWWS2w&oe=69A7ABCD"
+                        alt="News Image">
+                    <div class="card-content">
+                        <span class="date">২০/১২/২০২৪</span>
+                        <h3>শীতবস্ত্র বিতরণ কর্মসূচি ২০২৪</h3>
+                        <p>এবারের শীতে আমরা ৫০০টি পরিবারের মাঝে কম্বল বিতরণ করেছি।</p>
+                        <a href="#">আরও পড়ুন</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="news-card">
+                    <img src="https://scontent.fdac7-1.fna.fbcdn.net/v/t39.30808-6/558812590_3549518041851163_3899106297584745642_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=110&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeEVFOyBGx1kW4Vf97uaYgvtD1Jl9w15fKcPUmX3DXl8pyinJ8qQwS_eP-aI3wWqVjKhEAbwmcYKt6xn06mBS9Hk&_nc_ohc=amsv5JwgEEwQ7kNvwFGclcI&_nc_oc=AdnldJsDZyGRjD-0FgsGA2uP8gJ5iCpaFaeHJ4wLrPW8POpkxlDLgEVSSyVLOugoaZQ&_nc_zt=23&_nc_ht=scontent.fdac7-1.fna&_nc_gid=eVVF7FcHldiKtLyiPfS6Kw&oh=00_AfuRMHUShPSgpYBCLOObVLI843siRGNlTDx_mBSLQWWS2w&oe=69A7ABCD"
+                        alt="News Image">
+                    <div class="card-content">
+                        <span class="date">১৫/১২/২০২৪</span>
+                        <h3>পরিবেশ রক্ষায় আমাদের করণীয়</h3>
+                        <p>গাছ লাগান, পরিবেশ বাঁচান। আমাদের নতুন ক্যাম্পেইন সম্পর্কে জানুন।</p>
+                        <a href="#">আরও পড়ুন</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="news-card">
+                    <img src="https://scontent.fdac7-1.fna.fbcdn.net/v/t39.30808-6/558812590_3549518041851163_3899106297584745642_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=110&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeEVFOyBGx1kW4Vf97uaYgvtD1Jl9w15fKcPUmX3DXl8pyinJ8qQwS_eP-aI3wWqVjKhEAbwmcYKt6xn06mBS9Hk&_nc_ohc=amsv5JwgEEwQ7kNvwFGclcI&_nc_oc=AdnldJsDZyGRjD-0FgsGA2uP8gJ5iCpaFaeHJ4wLrPW8POpkxlDLgEVSSyVLOugoaZQ&_nc_zt=23&_nc_ht=scontent.fdac7-1.fna&_nc_gid=eVVF7FcHldiKtLyiPfS6Kw&oh=00_AfuRMHUShPSgpYBCLOObVLI843siRGNlTDx_mBSLQWWS2w&oe=69A7ABCD"
+                        alt="News Image">
+                    <div class="card-content">
+                        <span class="date">১০/১২/২০২৪</span>
+                        <h3>শিক্ষা বৃত্তি প্রদান</h3>
+                        <p>৫০ জন মেধাবী ছাত্র-ছাত্রীদের মাঝে বৃত্তি প্রদান করা হয়েছে।</p>
+                        <a href="#">আরও পড়ুন</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="view-all">
+                <a href="#" class="btn btn-animate">সব খবর দেখুন</a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <span class="section-subtitle-tag">সাম্প্রতিক মতামত</span>
+            <pre></pre>
+            <h2 class="section-title">মতামত</h2>
+            <p class="section-subtitle">আমাদের সেবাগ্রহীতাদের কথা</p>
+
+            <div class="testimonial-wrapper">
+
+                <!-- Card 1 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">“</div>
+                    <div class="profile">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+                        <div>
+                            <h4>আব্দুল মালেক</h4>
+                            <span>বাউড়িয়া</span>
+                        </div>
+                    </div>
+
+                    <div class="rating">★★★★★</div>
+                    <p>
+                        তাদের সহযোগিতায় আমার মেয়ের বিয়ে দিতে পেরেছি। আল্লাহ তাদের ভালো করুন।
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">“</div>
+                    <div class="profile">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="">
+                        <div>
+                            <h4>সালমা খাতুন</h4>
+                            <span>নালডাঙা</span>
+                        </div>
+                    </div>
+
+                    <div class="rating">★★★★★</div>
+                    <p>
+                        সেলাই মেশিন পেয়ে আমি এখন নিজের উপার্জন করছি।
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">“</div>
+                    <div class="profile">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="">
+                        <div>
+                            <h4>রফিক উদ্দিন</h4>
+                            <span>মধুপুর</span>
+                        </div>
+                    </div>
+
+                    <div class="rating">★★★★☆</div>
+                    <p>
+                        তাদের স্বাস্থ্য ক্যাম্পের সেবা খুবই মানবিক।
+                    </p>
+                </div>
+                <br><br>
+                <div class="section-divider"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Donation Section -->
+    <section class="donation-section">
+        <div class="donation-container">
+            <!-- Left Side -->
+            <div class="donation-left">
+                <h2>আপনার দান <br><span>জীবন বাঁচাতে পারে</span></h2>
+
+                <p>
+                    আপনার সামান্য সহযোগিতায় একজন শিক্ষার্থীর পড়াশোনা, একজন রোগীর চিকিৎসা
+                    বা একটি পরিবারের মুখে হাসি ফোটাতে পারে।
+                </p>
+
+                <ul>
+                    <li>যাকাত</li>
+                    <li>সদকা</li>
+                    <li>সাধারণ দান</li>
+                    <li>কর্পোরেট অনুদান</li>
+                </ul>
+            </div>
+
+            <!-- Right Side -->
+            <div class="donation-right">
+                <h3>ডোনেশন ডিটেইলস</h3>
+
+                <div class="payment-box">
+                    <div class="payment-item">
+                        <h4>📱 Bkash</h4>
+                        <p>01706940942</p>
+                    </div>
+
+                    <div class="payment-item">
+                        <h4>🚀 Rocket</h4>
+                        <p>01706940942</p>
+                    </div>
+
+                    <div class="payment-item">
+                        <h4>💳 Nagad</h4>
+                        <p>01706940942</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -585,20 +845,20 @@ window.addEventListener('resize', () => {
 updateActiveClasses(0);
 
 // Scroll to Top Button Functionality
-const scrollToTopBtn = document.getElementById('scrollToTop');
+const scrollBtn = document.getElementById("scrollToTop");
 
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-        scrollToTopBtn.classList.add('show');
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+        scrollBtn.classList.add("show");
     } else {
-        scrollToTopBtn.classList.remove('show');
+        scrollBtn.classList.remove("show");
     }
 });
 
-scrollToTopBtn.addEventListener('click', () => {
+scrollBtn.addEventListener("click", () => {
     window.scrollTo({
         top: 0,
-        behavior: 'smooth'
+        behavior: "smooth"
     });
 });
 
@@ -675,11 +935,93 @@ window.addEventListener('resize', updateSuccessCarousel);
 if (successCards.length > 0) {
     updateSuccessCarousel();
 }
+
+
+
+/* Scroll Animation Amader poth chola*/
+const items = document.querySelectorAll('.timeline-item');
+
+function showOnScroll() {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    items.forEach(item => {
+        const boxTop = item.getBoundingClientRect().top;
+
+        if (boxTop < triggerBottom) {
+            item.classList.add('show');
+        }
+    });
+}
+
+window.addEventListener('scroll', showOnScroll);
+showOnScroll();
 </script>
 @endsection
 
 @push('styles')
 <style>
+/* ============== BLOG BUTTON ANIMATIONS ============== */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow-pulse {
+    0% {
+        box-shadow: 0 0 5px rgba(34, 197, 94, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(34, 197, 94, 0.8);
+    }
+
+    100% {
+        box-shadow: 0 0 5px rgba(34, 197, 94, 0.5);
+    }
+}
+
+.btn-animate {
+    animation: slideInUp 0.6s ease-out;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-animate::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+    z-index: 1;
+}
+
+.btn-animate:hover::before {
+    left: 100%;
+}
+
+.btn-animate:hover {
+    background-color: #22c55e !important;
+    color: #fff !important;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 28px rgba(34, 197, 94, 0.4);
+    animation: glow-pulse 1.5s ease-in-out infinite;
+}
+
+.btn-animate:active {
+    transform: translateY(-2px) scale(1.02);
+}
+
 /* Hero Section */
 .hero {
     height: 100vh;
@@ -687,7 +1029,6 @@ if (successCards.length > 0) {
     justify-content: center;
     align-items: center;
     background-image: url('https://scontent.fdac7-1.fna.fbcdn.net/v/t39.30808-6/540337865_3507613556041612_9101768104763696279_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=c7cdda&_nc_eui2=AeFM_EavUZrXbGtsj-onM9T4AkFxXIX1np8CQXFchfWenxozymaKhW6QyZwksdDVG9IeoKrh7xR87o0cg8W11u2Z&_nc_ohc=cjFeeg1-6sYQ7kNvwEqtNCl&_nc_oc=AdkDoFMlres1jTD5_TXfanoKio26ResaxpxxpyH1-FL-QzUDUyY1wegOcZoB6q-e2NQ&_nc_zt=23&_nc_ht=scontent.fdac7-1.fna&_nc_gid=zLM6HlWelpSRrRsohKUEQg&oh=00_AfsbgLkrqDtPDxzTKrPrVef6nAoua5fiVEzD58X42lENBw&oe=69A785DA');
-    /* Better community placeholder */
     background-size: cover;
     background-position: center;
     position: relative;
@@ -765,26 +1106,80 @@ if (successCards.length > 0) {
     gap: 1.5rem;
 }
 
+@keyframes buttonShine {
+    0% {
+        background-position: -200% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+@keyframes buttonPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+
+    50% {
+        box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+    }
+}
+
 .btn {
     padding: 0.8rem 2rem;
     border-radius: 30px;
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::before {
+    width: 300px;
+    height: 300px;
 }
 
 .btn-primary {
     background-color: #166534;
-    /* Darker green */
+    background: linear-gradient(90deg, #166534, #10b981, #166534);
+    background-size: 200% auto;
     color: white;
     border: none;
     padding: 0.8rem 2.5rem;
+    box-shadow: 0 4px 15px rgba(22, 101, 52, 0.3);
 }
 
 .btn-primary:hover {
     background-color: #14532d;
-    transform: scale(1.05);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+    animation: buttonShine 1.5s linear;
+}
+
+.btn-primary:focus {
+    animation: buttonPulse 1.5s infinite;
+}
+
+.btn-primary:active {
+    transform: translateY(-1px) scale(0.98);
 }
 
 .btn-secondary {
@@ -792,12 +1187,39 @@ if (successCards.length > 0) {
     color: #f59e0b;
     border: 2px solid #f59e0b;
     padding: 0.8rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4);
+}
+
+.btn-secondary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #f59e0b;
+    transition: left 0.4s ease;
+    z-index: -1;
 }
 
 .btn-secondary:hover {
-    background-color: #f59e0b;
     color: white;
-    transform: scale(1.05);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+}
+
+.btn-secondary:hover::after {
+    left: 0;
+}
+
+.btn-secondary:focus {
+    animation: buttonPulse 1.5s infinite;
+}
+
+.btn-secondary:active {
+    transform: translateY(-1px) scale(0.98);
 }
 
 /* Animations */
@@ -831,7 +1253,6 @@ if (successCards.length > 0) {
 @media (max-width: 768px) {
     .nav-links {
         display: none;
-        /* Add a mobile menu later if needed */
     }
 
     .hero-title {
@@ -848,12 +1269,57 @@ if (successCards.length > 0) {
     }
 }
 
+/* Global Section Header Styles - ইউনিফাইড ডিজাইন */
+.section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    padding: 0 15px;
+}
 
+.section-subtitle-tag {
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color, #10b981);
+    background-color: rgba(16, 185, 129, 0.1);
+    padding: 6px 18px;
+    border-radius: 30px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
 
+.section-main-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    color: #fff;
+    font-family: 'Hind Siliguri', sans-serif;
+    position: relative;
+    display: inline-block;
+}
 
+.section-main-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--secondary-color, #f59e0b);
+    border-radius: 2px;
+}
 
-
-
+.section-description {
+    font-size: 1.2rem;
+    color: var(--text-muted, #cbd5e1);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 25px auto 0;
+}
 
 /* Statistics Section Styles */
 .stats {
@@ -862,16 +1328,12 @@ if (successCards.length > 0) {
     color: white;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     cursor: pointer;
+    margin-top: 40px;
 }
 
 .stat-card {
@@ -941,30 +1403,6 @@ if (successCards.length > 0) {
     font-weight: 500;
 }
 
-@media (max-width: 1024px) {
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .stats {
-        padding: 60px 5%;
-    }
-}
-
-
-
-
-
-
-
-
-
 /* About Section (3rd Section) Styles */
 .about-section {
     background-color: #121212;
@@ -978,18 +1416,7 @@ if (successCards.length > 0) {
     grid-template-columns: 1.2fr 0.8fr;
     gap: 4rem;
     align-items: center;
-}
-
-.section-tag {
-    background-color: rgba(16, 185, 129, 0.1);
-    color: var(--primary-color);
-    padding: 6px 15px;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    display: inline-block;
-    margin-bottom: 1.5rem;
-    border: 1px solid rgba(16, 185, 129, 0.2);
+    margin-top: 40px;
 }
 
 .about-title {
@@ -1051,12 +1478,43 @@ if (successCards.length > 0) {
     border: 1px solid var(--primary-color);
     padding: 10px 25px;
     border-radius: 4px;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.learn-more-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    transition: left 0.4s ease;
+    z-index: -1;
 }
 
 .learn-more-btn:hover {
-    background-color: var(--primary-color);
     color: white;
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(16, 185, 129, 0.3);
+}
+
+.learn-more-btn:hover::before {
+    left: 0;
+}
+
+.learn-more-btn i {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.learn-more-btn:hover i {
+    transform: translateX(8px);
+}
+
+.learn-more-btn:active {
+    transform: translateX(3px) scale(0.98);
 }
 
 /* Mission & Vision Cards */
@@ -1145,160 +1603,22 @@ if (successCards.length > 0) {
     transition: all 1s ease-out;
 }
 
+.reveal-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
 .reveal-active {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0) translateY(0);
 }
-
-@media (max-width: 992px) {
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .about-title {
-        font-size: 2.5rem;
-    }
-
-    .mission-vision {
-        flex-direction: row;
-    }
-}
-
-@media (max-width: 768px) {
-    .about-section {
-        padding: 60px 5%;
-    }
-
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .about-title {
-        font-size: 2rem;
-    }
-
-    .about-desc {
-        font-size: 1rem;
-    }
-
-    .mission-vision {
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .info-card {
-        padding: 2rem;
-    }
-
-    .info-card h3 {
-        font-size: 1.3rem;
-    }
-
-    .founder-card {
-        max-width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .about-section {
-        padding: 40px 4%;
-    }
-
-    .about-grid {
-        gap: 1.5rem;
-    }
-
-    .about-title {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .about-desc {
-        font-size: 0.95rem;
-        margin-bottom: 1.2rem;
-    }
-
-    .section-tag {
-        padding: 4px 12px;
-        font-size: 0.75rem;
-    }
-
-    .founder-card {
-        padding: 0.8rem;
-        gap: 1rem;
-        margin: 1.5rem 0;
-    }
-
-    .founder-img img {
-        width: 50px;
-        height: 50px;
-    }
-
-    .founder-info h4 {
-        font-size: 1rem;
-    }
-
-    .founder-info p {
-        font-size: 0.75rem;
-    }
-
-    .learn-more-btn {
-        padding: 8px 20px;
-        font-size: 0.9rem;
-    }
-
-    .info-card {
-        padding: 1.5rem;
-    }
-
-    .info-card h3 {
-        font-size: 1.1rem;
-        margin-bottom: 0.8rem;
-    }
-
-    .info-card p {
-        font-size: 0.9rem;
-    }
-}
-
-
-
-
-
-
 
 /* Activities Section (4th Section) Styles */
 .activities-section {
     background-color: #0f172a;
     padding: 100px 5%;
     color: white;
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
-.section-title {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    font-family: 'Hind Siliguri', sans-serif;
-}
-
-.section-subtitle {
-    color: var(--text-muted);
-    font-size: 1.2rem;
-}
-
-.title-underline {
-    width: 80px;
-    height: 4px;
-    background-color: var(--secondary-color);
-    margin: 1.5rem auto 0;
-    border-radius: 2px;
 }
 
 .activities-slider-container {
@@ -1362,22 +1682,10 @@ if (successCards.length > 0) {
     color: white;
 }
 
-.tag-education {
-    background-color: #f59e0b;
-}
-
-.tag-health {
-    background-color: #f59e0b;
-}
-
-.tag-empowerment {
-    background-color: #f59e0b;
-}
-
-.tag-environment {
-    background-color: #f59e0b;
-}
-
+.tag-education,
+.tag-health,
+.tag-empowerment,
+.tag-environment,
 .tag-food {
     background-color: #f59e0b;
 }
@@ -1445,124 +1753,63 @@ if (successCards.length > 0) {
     border-radius: 10px;
 }
 
-/* Scroll to Top Button */
+/* Scroll To Top Button */
 .scroll-to-top-btn {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-    color: white;
+    bottom: 40px;
+    right: 40px;
+    width: 55px;
+    height: 55px;
     border: none;
     border-radius: 50%;
-    font-size: 24px;
     cursor: pointer;
-    display: none;
-    justify-content: center;
+    display: flex;
     align-items: center;
-    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
-    transition: all 0.3s ease;
+    justify-content: center;
+    font-size: 22px;
+    color: #fff;
+    background: linear-gradient(135deg, #10b981, #f59e0b);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
     z-index: 999;
 }
 
 .scroll-to-top-btn.show {
-    display: flex;
-    animation: slideUp 0.4s ease;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    animation: pulseGlow 2s infinite;
 }
 
 .scroll-to-top-btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
-    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    transform: translateY(-6px) scale(1.1);
+    box-shadow: 0 12px 30px rgba(245, 158, 11, 0.6);
 }
 
-.scroll-to-top-btn:active {
-    transform: translateY(-2px);
+.scroll-to-top-btn i {
+    transition: 0.3s;
 }
 
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.scroll-to-top-btn:hover i {
+    transform: translateY(-3px);
 }
 
-@media (max-width: 768px) {
-    .scroll-to-top-btn {
-        width: 45px;
-        height: 45px;
-        bottom: 20px;
-        right: 20px;
-        font-size: 20px;
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(16, 185, 129, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
     }
 }
-
-@media (max-width: 768px) {
-    .activity-card {
-        min-width: 280px;
-    }
-
-    .activities-section {
-        padding: 60px 5%;
-    }
-
-    .section-title {
-        font-size: 2.5rem;
-    }
-
-    .section-subtitle {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .activity-card {
-        min-width: 250px;
-    }
-
-    .card-img {
-        height: 180px;
-    }
-
-    .card-body {
-        padding: 1.5rem;
-    }
-
-    .card-body h3 {
-        font-size: 1.2rem;
-    }
-
-    .activities-section {
-        padding: 40px 3%;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .slider-dots {
-        margin-top: 2rem;
-        gap: 8px;
-    }
-
-    .dot {
-        width: 8px;
-        height: 8px;
-    }
-
-    .dot.active {
-        width: 24px;
-    }
-}
-
-
-
 
 /* Success Stories Section (5th Section) Styles */
 .success-stories {
@@ -1699,7 +1946,7 @@ if (successCards.length > 0) {
 
 .nav-btn {
     background-color: #222;
-    border: 1px solid #333;
+    border: 2px solid #333;
     color: white;
     width: 50px;
     height: 50px;
@@ -1708,326 +1955,49 @@ if (successCards.length > 0) {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     font-size: 1.2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-btn::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: var(--primary-color);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+    z-index: -1;
+}
+
+.nav-btn:hover::before {
+    width: 100px;
+    height: 100px;
 }
 
 .nav-btn:hover {
-    background-color: var(--primary-color);
+    color: white;
     border-color: var(--primary-color);
-    transform: scale(1.1);
+    transform: scale(1.15) rotate(10deg);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
 }
 
 .nav-btn:active {
-    transform: scale(0.95);
+    transform: scale(0.92) rotate(0deg);
 }
 
-@media (max-width: 992px) {
-    .story-card {
-        min-width: 100%;
-    }
+.nav-btn i {
+    transition: transform 0.4s ease;
 }
 
-@media (max-width: 768px) {
-    .success-stories {
-        padding: 60px 5%;
-    }
-
-    .success-carousel-container {
-        padding: 15px 0 10px 0;
-        overflow-x: auto;
-        overflow-y: hidden;
-        width: 100%;
-    }
-
-    .success-carousel {
-        gap: 1.5rem;
-        flex-wrap: nowrap;
-        transform: none !important;
-        width: 100%;
-        overflow-x: auto;
-        overflow-y: hidden;
-        padding-bottom: 10px;
-    }
-
-    .story-card {
-        min-width: 85vw;
-        flex-direction: column;
-        width: 85vw;
-        flex-shrink: 0;
-    }
-
-    .story-images {
-        width: 100%;
-        height: 300px;
-    }
-
-    .image-box {
-        width: 50%;
-        height: 300px;
-    }
-
-    .story-content {
-        width: 100%;
-        padding: 2rem;
-    }
-
-    .story-name {
-        font-size: 1.5rem;
-    }
-
-    .story-text {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .carousel-nav {
-        gap: 15px;
-        margin-top: 1rem;
-        margin-bottom: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        position: relative;
-    }
-
-    .nav-btn {
-        width: 45px;
-        height: 45px;
-        font-size: 1rem;
-    }
-
-    .section-title {
-        font-size: 2.5rem;
-    }
+.nav-btn:hover i {
+    transform: scale(1.2);
 }
-
-@media (max-width: 600px) {
-    .success-stories {
-        padding: 40px 4%;
-    }
-
-    .success-carousel-container {
-        padding: 10px 0 8px 0;
-        overflow-x: auto;
-        overflow-y: hidden;
-        width: 100%;
-    }
-
-    .success-carousel {
-        gap: 1rem;
-        margin-bottom: 0;
-        flex-wrap: nowrap;
-        transform: none !important;
-        width: 100%;
-        overflow-x: auto;
-        overflow-y: hidden;
-        padding-bottom: 8px;
-    }
-
-    .story-card {
-        min-width: 90vw;
-        flex-direction: column;
-        border-radius: 12px;
-        width: 90vw;
-        flex-shrink: 0;
-    }
-
-    .carousel-nav {
-        gap: 12px;
-        margin-top: 0.8rem;
-        margin-bottom: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        position: relative;
-    }
-
-    .nav-btn {
-        width: 38px;
-        height: 38px;
-        font-size: 0.85rem;
-    }
-
-    .story-images {
-        width: 100%;
-        height: 220px;
-    }
-
-    .image-box {
-        width: 50%;
-        height: 220px;
-    }
-
-    .image-box img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .img-tag {
-        top: 10px;
-        padding: 3px 8px;
-        font-size: 0.65rem;
-    }
-
-    .before .img-tag {
-        left: 10px;
-    }
-
-    .after .img-tag {
-        right: 10px;
-    }
-
-    .story-content {
-        width: 100%;
-        padding: 1.5rem;
-    }
-
-    .story-name {
-        font-size: 1.3rem;
-        margin-bottom: 0.3rem;
-    }
-
-    .story-date {
-        font-size: 0.8rem;
-        margin-bottom: 1rem;
-    }
-
-    .story-text {
-        font-size: 0.9rem;
-        line-height: 1.6;
-        margin-bottom: 1.2rem;
-    }
-
-    .story-status {
-        font-size: 0.9rem;
-        gap: 8px;
-    }
-
-    .story-status i {
-        font-size: 1rem;
-    }
-
-    .carousel-nav {
-        gap: 12px;
-        margin-top: 1.5rem;
-        display: flex;
-        justify-content: center;
-    }
-
-    .nav-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 0.9rem;
-    }
-
-    .section-title {
-        font-size: 1.8rem;
-    }
-
-    .section-subtitle {
-        font-size: 0.95rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .success-stories {
-        padding: 30px 3%;
-    }
-
-    .success-carousel-container {
-        padding: 8px 0 5px 0;
-        overflow-x: auto;
-        overflow-y: hidden;
-        width: 100%;
-    }
-
-    .success-carousel {
-        gap: 0.8rem;
-        flex-wrap: nowrap;
-        transform: none !important;
-        width: 100%;
-        overflow-x: auto;
-        overflow-y: hidden;
-        padding-bottom: 5px;
-    }
-
-    .story-card {
-        border-radius: 10px;
-        min-width: 90vw;
-        width: 90vw;
-        flex-shrink: 0;
-    }
-
-    .carousel-nav {
-        gap: 8px;
-        margin-top: 0.6rem;
-        margin-bottom: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        position: relative;
-    }
-
-    .nav-btn {
-        width: 32px;
-        height: 32px;
-        font-size: 0.75rem;
-    }
-
-    .story-images {
-        height: 180px;
-    }
-
-    .image-box {
-        height: 180px;
-    }
-
-    .story-content {
-        padding: 1.2rem;
-    }
-
-    .story-name {
-        font-size: 1.1rem;
-    }
-
-    .story-date {
-        font-size: 0.75rem;
-    }
-
-    .story-text {
-        font-size: 0.85rem;
-        margin-bottom: 1rem;
-    }
-
-    .carousel-nav {
-        gap: 10px;
-        margin-top: 1rem;
-        display: flex;
-        justify-content: center;
-    }
-
-    .nav-btn {
-        width: 35px;
-        height: 35px;
-        font-size: 0.8rem;
-    }
-
-    .section-title {
-        font-size: 1.5rem;
-    }
-}
-
-
-
-
-
-
-
 
 /* Events/Gallery Section (6th Section) */
 .events-gallery {
@@ -2040,6 +2010,7 @@ if (successCards.length > 0) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    margin-top: 40px;
 }
 
 .gallery-item {
@@ -2098,31 +2069,1052 @@ if (successCards.length > 0) {
     opacity: 1;
 }
 
-/* Reveal Up Animation */
-.reveal-up {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
+/* Timeline Section */
+.timeline-section {
+    background: #0d0d0d;
+    font-family: 'Hind Siliguri', 'Segoe UI', sans-serif;
+    color: #fff;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
 }
 
-.reveal-up.reveal-active {
+.timeline {
+    position: relative;
+    max-width: 1100px;
+    margin: 40px auto 0;
+}
+
+/* Center Line */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: #1e3a1e;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Timeline Item */
+.timeline-item {
+    padding: 20px 50px;
+    position: relative;
+    width: 50%;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: 0.8s ease;
+}
+
+.timeline-item.show {
     opacity: 1;
     transform: translateY(0);
 }
 
+/* Left Side */
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+}
+
+/* Right Side */
+.timeline-item.right {
+    left: 50%;
+}
+
+/* Dot Common Style */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff8c00;
+    border: 4px solid #0d0d0d;
+    top: 30px;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #ff8c00;
+}
+
+/* Left Dot */
+.timeline-item.left::after {
+    left: 100%;
+    transform: translateX(-50%);
+}
+
+/* Right Dot */
+.timeline-item.right::after {
+    left: 0;
+    transform: translateX(-50%);
+}
+
+/* Content Box */
+.content {
+    padding: 20px;
+}
+
+.content h2 {
+    color: #00ff7f;
+    margin-bottom: 5px;
+    font-size: 2rem;
+}
+
+.content h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.content p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* Section 8 Form Nibondon*/
+.section-8 {
+    padding: 100px 20px;
+    background: #000;
+    font-family: 'Segoe UI', sans-serif;
+    color: #fff;
+    overflow: hidden;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-8-container {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.section-8-left {
+    flex: 1;
+    animation: fadeUp 1s ease forwards;
+}
+
+.section-8-left h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.section-8-left p {
+    font-size: 18px;
+    color: #ddd;
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+.benefits {
+    list-style: none;
+}
+
+.benefits li {
+    margin-bottom: 15px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.benefits li:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.benefits li:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.benefits li:nth-child(3) {
+    animation-delay: 0.7s;
+}
+
+.benefits li:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
+.benefits li::before {
+    content: "✔";
+    color: #e6b800;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.section-8-right {
+    flex: 1;
+    animation: fadeUp 1.2s ease forwards;
+}
+
+.form-box {
+    background: #111;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    transition: 0.4s;
+}
+
+.form-box:hover {
+    box-shadow: 0 15px 40px rgba(184, 134, 11, 0.3);
+    transform: translateY(-5px);
+}
+
+.form-box h2 {
+    margin-bottom: 10px;
+}
+
+.form-box small {
+    color: #aaa;
+    display: block;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    outline: none;
+    background: #222;
+    color: #fff;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #b8860b;
+    box-shadow: 0 0 10px rgba(184, 134, 11, 0.4);
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+@keyframes submitButtonShine {
+    0% {
+        background-position: -200% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #b8860b, #d4a017, #b8860b);
+    background-size: 200% auto;
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(90deg, #d4a017, #f0d000, #d4a017);
+    background-size: 200% auto;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(212, 160, 23, 0.5);
+    animation: submitButtonShine 1.5s linear;
+}
+
+.submit-btn:focus {
+    box-shadow: 0 0 0 4px rgba(212, 160, 23, 0.3), 0 12px 35px rgba(212, 160, 23, 0.5);
+}
+
+.submit-btn:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+/* Blog section */
+.news-section {
+    padding: 100px 20px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+    margin: 0;
+    font-family: 'Hind Siliguri', sans-serif;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    color: #fff;
+}
+
+.card-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.news-card {
+    background: #1b1b1b;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 350px;
+    text-align: left;
+    transition: all 0.4s ease;
+    border: 1px solid #222;
+    position: relative;
+    animation: slideUp 0.8s ease forwards;
+}
+
+.news-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 35px rgba(34, 197, 94, 0.2);
+    border-color: #22c55e;
+}
+
+.news-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.news-card:hover img {
+    transform: scale(1.08);
+}
+
+.card-content {
+    padding: 22px;
+}
+
+.date {
+    font-size: 14px;
+    color: #f39c12;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.news-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.news-card:hover h3 {
+    color: #22c55e;
+}
+
+.news-card p {
+    color: #bbb;
+    font-size: 15px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.news-card a {
+    color: #22c55e;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: 0.3s;
+}
+
+.news-card a::after {
+    content: " →";
+    transition: margin-left 0.3s ease;
+}
+
+.news-card a:hover::after {
+    margin-left: 6px;
+}
+
+.view-all {
+    margin-top: 60px;
+}
+
+.btn {
+    padding: 14px 35px;
+    border: 1px solid #22c55e;
+    color: #22c55e;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.4s ease;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background: #22c55e;
+    left: 0;
+    top: 0;
+    transition: 0.4s ease;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    width: 100%;
+}
+
+.btn:hover {
+    color: #111;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .section-main-title {
+        font-size: 3rem;
+    }
+
+    .news-card {
+        width: 320px;
+    }
+}
+
 @media (max-width: 1024px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 992px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .about-title {
+        font-size: 2.5rem;
+    }
+
+    .mission-vision {
+        flex-direction: row;
+    }
+
+    .section-main-title {
+        font-size: 2.5rem;
+    }
+
+    .section-description {
+        font-size: 1rem;
+    }
+
+    .section-8-left h1 {
+        font-size: 36px;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .timeline-main-title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-tagline {
+        font-size: 1.2rem;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stats {
+        padding: 60px 5%;
+    }
+
+    .about-section {
+        padding: 60px 5%;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-title {
+        font-size: 2rem;
+    }
+
+    .mission-vision {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .activity-card {
+        min-width: 280px;
+    }
+
+    .activities-section {
+        padding: 60px 5%;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .success-stories {
+        padding: 60px 5%;
+    }
+
+    .success-carousel-container {
+        padding: 15px 0 10px 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        width: 100%;
+    }
+
+    .success-carousel {
+        gap: 1.5rem;
+        flex-wrap: nowrap;
+        transform: none !important;
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 10px;
+    }
+
+    .story-card {
+        min-width: 85vw;
+        flex-direction: column;
+        width: 85vw;
+        flex-shrink: 0;
+    }
+
+    .story-images {
+        width: 100%;
+        height: 300px;
+    }
+
+    .image-box {
+        width: 50%;
+        height: 300px;
+    }
+
+    .story-content {
+        width: 100%;
+        padding: 2rem;
+    }
+
     .gallery-grid {
         grid-template-columns: 1fr;
     }
 
-    .gallery-item img {
-        height: 220px;
+    .section-8-container {
+        flex-direction: column;
+    }
+
+    /* Timeline Responsive */
+    .timeline::after {
+        left: 30px;
+        transform: none;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 80px;
+        padding-right: 30px;
+        left: 0 !important;
+        text-align: left !important;
+    }
+
+    .timeline-item::after {
+        left: 30px;
+        transform: translateX(-50%);
+    }
+
+    .timeline-item.left,
+    .timeline-item.right {
+        left: 0;
+    }
+
+    .section-main-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .activity-card {
+        min-width: 250px;
+    }
+
+    .card-img {
+        height: 180px;
+    }
+
+    .card-body {
+        padding: 1.5rem;
+    }
+
+    .activities-section {
+        padding: 40px 3%;
+    }
+
+    .success-stories {
+        padding: 40px 4%;
+    }
+
+    .section-main-title {
+        font-size: 2rem;
+    }
+
+    .section-subtitle-tag {
+        font-size: 0.9rem;
+        padding: 4px 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .about-section {
+        padding: 40px 4%;
+    }
+
+    .about-title {
+        font-size: 1.5rem;
+    }
+
+    .section-main-title {
+        font-size: 1.8rem;
+    }
+
+    .section-main-title::after {
+        width: 50px;
+        height: 3px;
+        bottom: -8px;
+    }
+
+    .founder-card {
+        padding: 0.8rem;
+        gap: 1rem;
+    }
+
+    .news-card {
+        width: 100%;
+    }
+
+    .news-card img {
+        height: 200px;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+
+    .scroll-to-top-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+        bottom: 25px;
+        right: 25px;
+    }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+/* ========================= */
+/* TESTIMONIAL SECTION */
+/* ========================= */
+
+.testimonial-section {
+    background: #0f1117;
+    padding: 100px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.section-title {
+    font-size: 42px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.section-subtitle {
+    color: #aaa;
+    margin-bottom: 60px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Orange underline */
+.section-subtitle::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #f97316;
+    margin: 12px auto 0;
+}
+
+/* Wrapper */
+.testimonial-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Card */
+.testimonial-card {
+    background: #111827;
+    border-radius: 15px;
+    padding: 30px;
+    width: 350px;
+    text-align: left;
+    position: relative;
+    transition: 0.4s ease;
+    border: 1px solid #1f2937;
+}
+
+/* Hover Effect */
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(249, 115, 22, 0.2);
+}
+
+/* Quote Icon */
+.quote-icon {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 60px;
+    color: rgba(34, 197, 94, 0.15);
+    font-weight: bold;
+}
+
+/* Profile */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.profile img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.profile span {
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* Rating */
+.rating {
+    color: #facc15;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+/* Text */
+.testimonial-card p {
+    color: #ddd;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* ========================= */
+/* Responsive */
+/* ========================= */
+
+@media (max-width: 992px) {
+    .testimonial-card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 30px;
+    }
+
+    .testimonial-card {
+        width: 100%;
+    }
+}
+
+.section-divider {
+    width: 85%;
+    height: 4px;
+    margin: 80px auto;
+    background: linear-gradient(to right, transparent, #facc15, transparent);
+    border-radius: 50px;
+    position: relative;
+}
+
+.section-divider::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -3px;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 10px;
+    background: #facc15;
+    filter: blur(12px);
+    opacity: 0.6;
+}
+
+
+
+
+/* ============================ */
+/* Donation Section */
+/* ============================ */
+
+.donation-section {
+    background: #0f1117;
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.donation-container {
+    display: flex;
+    max-width: 1100px;
+    width: 100%;
+    background: #111827;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Left */
+.donation-left {
+    flex: 1;
+    padding: 50px;
+    background: linear-gradient(135deg, #3a2208, #1a1a1a);
+    color: white;
+}
+
+.donation-left h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.donation-left h2 span {
+    color: #f97316;
+}
+
+.donation-left p {
+    color: #ddd;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.donation-left ul {
+    list-style: none;
+    padding: 0;
+}
+
+.donation-left ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.donation-left ul li::before {
+    content: "●";
+    color: #22c55e;
+    position: absolute;
+    left: 0;
+}
+
+/* Right */
+.donation-right {
+    flex: 1;
+    padding: 50px;
+    background: #1f2937;
+    color: white;
+}
+
+.donation-right h3 {
+    margin-bottom: 30px;
+}
+
+.payment-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.payment-item {
+    background: #111827;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 1px solid #2d3748;
+    transition: 0.3s ease;
+}
+
+.payment-item:hover {
+    border-color: #f97316;
+    transform: translateY(-3px);
+}
+
+.payment-item h4 {
+    margin-bottom: 5px;
+    color: #facc15;
+}
+
+.payment-item p {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Donate Button */
+.donate-btn {
+    background: #f97316;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.donate-btn:hover {
+    background: #ea580c;
+    transform: translateY(-3px);
+}
+
+/* ============================ */
+/* Responsive */
+/* ============================ */
+
+@media (max-width: 992px) {
+    .donation-container {
+        flex-direction: column;
+    }
+
+    .donation-left,
+    .donation-right {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .donation-left h2 {
+        font-size: 28px;
+    }
+
+    .donation-left,
+    .donation-right {
+        padding: 30px 20px;
     }
 }
 </style>
