@@ -798,6 +798,163 @@
         </div>
     </section>
 
+    <!-- Developer/Designer Identity Section -->
+    <section class="developer-identity-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle-tag">ডেভেলপার ও ডিজাইনার</span>
+                <pre></pre>
+                <h2 class="section-main-title">প্রযুক্তি সহযোগিতায়</h2>
+                <p class="section-description">ওয়েব অ্যাপ্লিকেশন ডিজাইন ও ডেভেলপমেন্ট</p>
+            </div>
+
+            <div class="developer-identity-wrapper">
+                <!-- Left Side - Image Card -->
+                <div class="developer-image-card reveal-left">
+                    <div class="developer-image-wrapper">
+                        <img src="https://scontent.fdac7-1.fna.fbcdn.net/v/t39.30808-6/561659522_3695781134051775_8011078114531792308_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=1d70fc&_nc_eui2=AeGYC4gW1qbwgKfqDICD1r1MaeCP85FCpQBp4I_zkUKlAIu0DnP9rHy2DHyttjVTuO6SDNkPbGYywrLmWdxpks4n&_nc_ohc=3eg5nxRfRQEQ7kNvwHefF49&_nc_oc=AdkjqK_fHa3NkIAcI5oNzPkYrbjccRk6mByxh6GYTa8uA9cjarqYgHvNgmdgJMLQ5Hk&_nc_zt=23&_nc_ht=scontent.fdac7-1.fna&_nc_gid=4pF3YU73CzGC4rR4cyNPfw&_nc_ss=8&oh=00_AfuicoI9EDNRauFgCNK665hkSYXYsue4OFZXwz2E4YWgDA&oe=69A83C37"
+                            alt="শেখ ফরিদ আহমেদ শান্ত" class="developer-image">
+                        <div class="developer-image-overlay">
+                            <div class="developer-social-links">
+                                <a href="https://github.com/SanviRahman" class="social-link"><i
+                                        class="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/sheikh-forid-ahmed-shanto-03919424a/"
+                                    class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.facebook.com/sheikhshanto.201/" class="social-link"><i
+                                        class="fab fa-facebook-f"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="developer-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>প্রযুক্তির মাধ্যমে সমাজের সেবা করা আমার লক্ষ্য। প্রতিটি লাইন কোড যেন বদলে দিতে পারে একটি
+                            জীবন।</p>
+                    </div>
+                </div>
+
+                <!-- Right Side - Identity Details -->
+                <div class="developer-details-card reveal-right">
+                    <h2 class="developer-name">শেখ ফরিদ আহমেদ শান্ত</h2>
+                    <p class="developer-title">Software Engineer</p>
+                    <p class="developer-company">SOFT-ITBD</p>
+
+                    <div class="developer-bio">
+                        <p>
+                            শেখ ফরিদ আহমেদ শান্ত একজন পেশাদার সফটওয়্যার ইঞ্জিনিয়ার ও ওয়েব ডেভেলপার।
+                            তিনি ড্যাফোডিল ইন্টারন্যাশনাল ইউনিভার্সিটি থেকে কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং-এ
+                            স্নাতক ডিগ্রি অর্জন করেছেন। বর্তমানে তিনি SOFT-ITBD-তে সফটওয়্যার ইঞ্জিনিয়ার হিসেবে
+                            কর্মরত আছেন।
+                        </p>
+                        <p>
+                            তার বিশেষ দক্ষতার মধ্যে রয়েছে ওয়েব অ্যাপ্লিকেশন ডেভেলপমেন্ট, UI/UX ডিজাইন,
+                            এবং ফুল-স্ট্যাক ডেভেলপমেন্ট। তিনি বিশ্বাস করেন, প্রযুক্তির মাধ্যমে সমাজের
+                            বিভিন্ন সমস্যার সমাধান সম্ভব।
+                        </p>
+                    </div>
+
+                    <div class="developer-info-grid">
+                        <!-- Education -->
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>শিক্ষা</h4>
+                                <p>BSc in CSE</p>
+                                <p style="font-size: 0.9rem; color: #10b981;">Daffodil International University</p>
+                            </div>
+                        </div>
+
+                        <!-- Permanent Address -->
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>স্থায়ী ঠিকানা</h4>
+                                <p>ঝাউগড়া, জামালপুর</p>
+                                <p style="font-size: 0.9rem; color: #f59e0b;">বাংলাদেশ</p>
+                            </div>
+                        </div>
+
+                        <!-- Present Address -->
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>বর্তমান ঠিকানা</h4>
+                                <p>ঢাকা, বাংলাদেশ</p>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>ইমেইল</h4>
+                                <p>sheikh15-3700@diu.edu.bd</p>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>মোবাইল</h4>
+                                <p>+880 1706-940942</p>
+                            </div>
+                        </div>
+
+                        <!-- Company -->
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>বর্তমান কর্মস্থল</h4>
+                                <p>SOFT-ITBD</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technical Skills -->
+                    <div class="developer-skills">
+                        <h3>প্রযুক্তিগত দক্ষতা</h3>
+                        <div class="skills-tags">
+                            <span class="skill-tag">HTML5/CSS3</span>
+                            <span class="skill-tag">C & C++</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Django</span>
+                            <span class="skill-tag">PHP</span>
+                            <span class="skill-tag">Laravel</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">Git & GitHub</span>
+                        </div>
+                    </div>
+
+                    <!-- Call to Action -->
+                    <div class="developer-cta">
+                        <a href="Message SFA Shanto on WhatsApp. https://wa.me/message/ABMBRACOIP5WL1"
+                            class="developer-contact-btn">
+                            <i class="fas fa-envelope"></i>
+                            যোগাযোগ করুন
+                        </a>
+                        <a href="https://sfashanto.netlify.app/" class="developer-portfolio-btn">
+                            <i class="fas fa-globe"></i>
+                            পোর্টফোলিও
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Scroll to Top Button -->
     <button id="scrollToTop" class="scroll-to-top-btn">
         <i class="fas fa-arrow-up"></i>
@@ -961,7 +1118,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
     const successCards = document.querySelectorAll('.story-card');
-    
+
     if (!successCarousel || !prevBtn || !nextBtn || successCards.length === 0) {
         console.log('Carousel elements not found');
         return;
@@ -984,7 +1141,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ক্যারোসেল আপডেট করার ফাংশন
     const updateCarousel = () => {
         const cardWidth = getCardWidth();
-        
+
         if (window.innerWidth < 768) {
             // মোবাইলে scrollLeft ব্যবহার
             successCarousel.scrollTo({
@@ -995,7 +1152,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // ডেস্কটপে transform ব্যবহার
             successCarousel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
         }
-        
+
         console.log('Current Index:', currentIndex); // ডিবাগging
     };
 
@@ -1008,7 +1165,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // লুপ করতে চাইলে (শেষ থেকে শুরুতে)
             // currentIndex = 0;
             // updateCarousel();
-            
+
             // অথবা alert দেখাতে
             console.log('Last card reached');
         }
@@ -1047,12 +1204,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     successCarousel.addEventListener('touchstart', (e) => {
         touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
+    }, {
+        passive: true
+    });
 
     successCarousel.addEventListener('touchend', (e) => {
         touchEndX = e.changedTouches[0].screenX;
         handleSwipe();
-    }, { passive: true });
+    }, {
+        passive: true
+    });
 
     const handleSwipe = () => {
         const swipeThreshold = 50;
@@ -1127,6 +1288,28 @@ window.addEventListener('scroll', () => {
             el.classList.add('active');
         }
     });
+});
+</script>
+<!-- Animation Script -->
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+    const reveals = document.querySelectorAll('.reveal-left, .reveal-right');
+
+    function checkReveal() {
+        const windowHeight = window.innerHeight;
+        const revealPoint = 150;
+
+        reveals.forEach(element => {
+            const revealTop = element.getBoundingClientRect().top;
+
+            if (revealTop < windowHeight - revealPoint) {
+                element.classList.add('reveal-active');
+            }
+        });
+    }
+
+    checkReveal();
+    window.addEventListener('scroll', checkReveal);
 });
 </script>
 @endsection
@@ -1742,19 +1925,24 @@ body {
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none; /* IE/Edge */
-        transform: none !important; /* transform বন্ধ */
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+        /* IE/Edge */
+        transform: none !important;
+        /* transform বন্ধ */
     }
-    
+
     .success-carousel::-webkit-scrollbar {
-        display: none; /* Chrome/Safari */
+        display: none;
+        /* Chrome/Safari */
     }
-    
+
     .story-card {
         scroll-snap-align: start;
         flex-shrink: 0;
-        width: calc(100vw - 60px); /* মোবাইলে পুরো width */
+        width: calc(100vw - 60px);
+        /* মোবাইলে পুরো width */
     }
 }
 
@@ -1774,7 +1962,7 @@ body {
     .story-card {
         min-width: 100%;
     }
-    
+
     .story-card:hover {
         border-color: var(--primary-color);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -1792,7 +1980,7 @@ body {
         width: 100%;
         height: 250px;
     }
-    
+
     .image-box {
         height: 250px;
     }
@@ -3413,6 +3601,618 @@ select:focus-visible {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--secondary-color);
+}
+
+
+
+
+
+/* ============== DEVELOPER IDENTITY SECTION ============== */
+.developer-identity-section {
+    background: linear-gradient(135deg, #0a0c14, #0f1117);
+    padding: 100px 0;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative Elements */
+.developer-identity-section::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.1), transparent);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.developer-identity-section::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.1), transparent);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.developer-identity-wrapper {
+    display: grid;
+    grid-template-columns: 0.6fr 1.4fr;
+    /* Changed from 0.9fr 1.1fr to 0.6fr 1.4fr (left side 50% smaller) */
+    gap: 50px;
+    position: relative;
+    z-index: 2;
+    margin-top: 40px;
+    align-items: start;
+    /* Align items to top */
+}
+
+/* ===== Left Side - Image Card (Now 50% smaller) ===== */
+.developer-image-card {
+    background: #111827;
+    border-radius: 30px;
+    padding: 25px;
+    /* Slightly reduced padding */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    max-width: 100%;
+}
+
+.developer-image-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(16, 185, 129, 0.3);
+    box-shadow: 0 30px 60px rgba(16, 185, 129, 0.1);
+}
+
+.developer-image-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    /* Reduced margin */
+    aspect-ratio: 1/1.2;
+}
+
+.developer-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.developer-image-card:hover .developer-image {
+    transform: scale(1.05);
+}
+
+.developer-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 15px;
+    /* Reduced padding */
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+.developer-image-card:hover .developer-image-overlay {
+    transform: translateY(0);
+}
+
+.developer-social-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    /* Reduced gap */
+}
+
+.container {
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============== SECTION HEADER ============== */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-subtitle-tag {
+    display: inline-block;
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    padding: 8px 20px;
+    border-radius: 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    margin-bottom: 20px;
+}
+
+.section-main-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-main-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: #f59e0b;
+    border-radius: 2px;
+}
+
+.section-description {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    max-width: 600px;
+    margin: 25px auto 0;
+}
+
+
+
+.social-link {
+    width: 35px;
+    /* Smaller icons */
+    height: 35px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+    /* Smaller font */
+    transition: all 0.3s ease;
+    text-decoration: none;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-link:hover {
+    background: #10b981;
+    transform: translateY(-5px) rotate(360deg);
+    border-color: transparent;
+}
+
+.developer-quote {
+    background: rgba(16, 185, 129, 0.05);
+    padding: 20px;
+    /* Reduced padding */
+    border-radius: 15px;
+    border-left: 4px solid #10b981;
+    position: relative;
+}
+
+.developer-quote i {
+    color: #10b981;
+    font-size: 1.3rem;
+    /* Smaller icon */
+    opacity: 0.3;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+
+.developer-quote p {
+    font-size: 0.95rem;
+    /* Slightly smaller text */
+    line-height: 1.7;
+    color: #cbd5e1;
+    font-style: italic;
+    margin-left: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== Right Side - Details Card ===== */
+.developer-details-card {
+    background: #111827;
+    border-radius: 30px;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.developer-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #fff, #10b981);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+.developer-title {
+    color: #f59e0b;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.developer-company {
+    color: #10b981;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.developer-company::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: #f59e0b;
+    border-radius: 2px;
+}
+
+.developer-bio {
+    margin-bottom: 30px;
+}
+
+.developer-bio p {
+    color: #cbd5e1;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+/* Info Grid */
+.developer-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.info-item:hover {
+    background: rgba(16, 185, 129, 0.05);
+    border-color: rgba(16, 185, 129, 0.2);
+    transform: translateX(5px);
+}
+
+.info-icon {
+    width: 45px;
+    height: 45px;
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.info-item:hover .info-icon {
+    background: #10b981;
+    color: white;
+    transform: rotate(360deg);
+}
+
+.info-content h4 {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    margin-bottom: 5px;
+}
+
+.info-content p {
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+}
+
+/* Skills Section */
+.developer-skills {
+    margin-bottom: 30px;
+}
+
+.developer-skills h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-tag {
+    padding: 8px 18px;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: 30px;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.skill-tag:hover {
+    background: #10b981;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+}
+
+/* Call to Action Buttons */
+.developer-cta {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.developer-contact-btn,
+.developer-portfolio-btn {
+    flex: 1;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.developer-contact-btn {
+    background: linear-gradient(135deg, #10b981, #f59e0b);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.developer-contact-btn:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+}
+
+.developer-portfolio-btn {
+    background: transparent;
+    color: white;
+    border: 2px solid #10b981;
+}
+
+.developer-portfolio-btn:hover {
+    background: #10b981;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+}
+
+/* Animation for reveal */
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 1s ease;
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 1s ease;
+}
+
+.reveal-active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ===== Responsive Design ===== */
+
+@media (max-width: 1199px) {
+    .developer-name {
+        font-size: 2.2rem;
+    }
+
+    .developer-info-grid {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 991px) {
+    .developer-identity-wrapper {
+        grid-template-columns: 1fr;
+        /* Stack on tablet */
+        gap: 40px;
+    }
+
+    .developer-image-card {
+        max-width: 400px;
+        /* Smaller max-width on tablet */
+        margin: 0 auto;
+    }
+
+    .developer-name {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .developer-title,
+    .developer-company {
+        text-align: center;
+    }
+
+    .developer-company::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .developer-bio {
+        text-align: center;
+    }
+
+    .developer-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-main-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .developer-identity-section {
+        padding: 70px 0;
+    }
+
+    .developer-image-card {
+        max-width: 350px;
+        /* Even smaller on mobile */
+    }
+
+    .developer-details-card {
+        padding: 30px;
+    }
+
+    .developer-name {
+        font-size: 1.8rem;
+    }
+
+    .developer-info-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .info-item {
+        padding: 12px;
+    }
+
+    .skills-tags {
+        justify-content: center;
+    }
+
+    .developer-cta {
+        flex-direction: column;
+    }
+
+    .developer-contact-btn,
+    .developer-portfolio-btn {
+        width: 100%;
+    }
+
+    .section-main-title {
+        font-size: 2rem;
+    }
+
+    .section-description {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .developer-identity-section {
+        padding: 50px 0;
+    }
+
+    .developer-image-card {
+        max-width: 300px;
+        /* Even smaller on extra small devices */
+    }
+
+    .developer-image-card,
+    .developer-details-card {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .developer-name {
+        font-size: 1.5rem;
+    }
+
+    .developer-title {
+        font-size: 1rem;
+    }
+
+    .developer-company {
+        font-size: 0.95rem;
+    }
+
+    .developer-bio p {
+        font-size: 0.95rem;
+    }
+
+    .info-content h4 {
+        font-size: 0.85rem;
+    }
+
+    .info-content p {
+        font-size: 0.95rem;
+    }
+
+    .skill-tag {
+        font-size: 0.8rem;
+        padding: 6px 14px;
+    }
+
+    .developer-quote p {
+        font-size: 0.95rem;
+    }
+
+    .section-subtitle-tag {
+        font-size: 0.9rem;
+        padding: 6px 16px;
+    }
+
+    .section-main-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .developer-identity-wrapper {
+        gap: 30px;
+    }
+
+    .developer-image-wrapper {
+        max-height: 250px;
+    }
+}
+
+.reveal-left.reveal-active,
+.reveal-right.reveal-active {
+    opacity: 1;
+    transform: translateX(0);
 }
 </style>
 @endpush
