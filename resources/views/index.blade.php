@@ -13,11 +13,12 @@
             <h1 class="hero-title">ঝাউগড়া কল্যাণ সংগঠন</h1>
             <p class="hero-tagline">"ঐক্যই আমাদের শক্তি, উন্নয়নই আমাদের লক্ষ্য"</p>
             <div class="hero-btns">
-                <button class="btn btn-primary" style="color: white;"><a href="#ইভেন্ট" style="text-decoration: none; color: white;">আমাদের কাজ জানুন</a>
+                <button class="btn btn-primary" style="color: white;"><a href="#ইভেন্ট"
+                        style="text-decoration: none; color: white;">আমাদের কাজ জানুন</a>
                 </button>
-                
+
                 <button class="btn btn-secondary">
-                  <a href="#সহায়তা-করুন" style="text-decoration: none;color: white;">সহায়তা করুন</a>
+                    <a href="#সহায়তা-করুন" style="text-decoration: none;color: white;">সহায়তা করুন</a>
                 </button>
             </div>
         </div>
@@ -797,17 +798,17 @@
 
                 <div class="info-item">
                     <i class="fas fa-map-marker-alt"></i>
-                    <span>বাজার রোড, নান্দাইল, ময়মনসিংহ</span>
+                    <span>ঝাউগড়া কল্যাণ সংগঠন,জামালপুর, বাংলাদেশ</span>
                 </div>
 
                 <div class="info-item">
                     <i class="fas fa-phone-alt"></i>
-                    <span>+880 1234-567890</span>
+                    <span>+8801706940942</span>
                 </div>
 
                 <div class="info-item">
                     <i class="fas fa-envelope"></i>
-                    <span>info@example.com</span>
+                    <span>sheikh15-3700@diu.edu.bd</span>
                 </div>
             </div>
 
@@ -1028,10 +1029,10 @@ scrollBtn.addEventListener("click", () => {
 //         }
 //     });
 
-    // Second button: "সহায়তা করুন" - can be used for donation link
-    // heroButtons[1].addEventListener('click', () => {
-    //     alert('ধন্যবাদ আমাদের সাহায্য করার জন্য আগ্রহ প্রকাশের জন্য!');
-    // });
+// Second button: "সহায়তা করুন" - can be used for donation link
+// heroButtons[1].addEventListener('click', () => {
+//     alert('ধন্যবাদ আমাদের সাহায্য করার জন্য আগ্রহ প্রকাশের জন্য!');
+// });
 //}
 
 
@@ -1135,7 +1136,7 @@ window.addEventListener('scroll', () => {
         const position = el.getBoundingClientRect().top;
         const screen = window.innerHeight;
 
-        if(position < screen - 100){
+        if (position < screen - 100) {
             el.classList.add('active');
         }
     });
@@ -2254,39 +2255,42 @@ window.addEventListener('scroll', () => {
     opacity: 1;
 }
 
-/* Timeline Section */
+
+/* ================= Timeline Section ================= */
 .timeline-section {
-    background: #0d0d0d;
-    font-family: 'Hind Siliguri', 'Segoe UI', sans-serif;
-    color: #fff;
-    padding: 100px 20px;
-    position: relative;
-    overflow: hidden;
+    background-color: black;
+    padding: 100px 5%;
+    color: white;
+
+}
+.timeline-section .section-header {
+    margin-bottom: 80px;
 }
 
 .timeline {
     position: relative;
     max-width: 1100px;
-    margin: 40px auto 0;
+    margin: 50px auto;
 }
 
-/* Center Line */
-.timeline::after {
-    content: '';
+/* Center Line Desktop */
+.timeline::before {
+    content: "";
     position: absolute;
-    width: 4px;
-    background: #1e3a1e;
     top: 0;
-    bottom: 0;
+    bottom: 0;   /* full height fix */
     left: 50%;
+    width: 8px;
+    background: linear-gradient(to bottom, #00ff7f, #ff8c00);
     transform: translateX(-50%);
+    border-radius: 4px;
 }
 
-/* Timeline Item */
+/* ================= Timeline Item ================= */
 .timeline-item {
-    padding: 20px 50px;
     position: relative;
     width: 50%;
+    padding: 20px 40px;
     opacity: 0;
     transform: translateY(60px);
     transition: 0.8s ease;
@@ -2308,51 +2312,76 @@ window.addEventListener('scroll', () => {
     left: 50%;
 }
 
-/* Dot Common Style */
+/* ================= Dot ================= */
+
 .timeline-item::after {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     background: #ff8c00;
     border: 4px solid #0d0d0d;
-    top: 30px;
+    top: 25px;
     border-radius: 50%;
-    box-shadow: 0 0 15px #ff8c00;
+    box-shadow: 0 0 10px #ff8c00;
 }
 
-/* Left Dot */
+/* Dot Left */
 .timeline-item.left::after {
-    left: 100%;
-    transform: translateX(-50%);
+    right: -9px;
 }
 
-/* Right Dot */
+/* Dot Right */
 .timeline-item.right::after {
-    left: 0;
-    transform: translateX(-50%);
+    left: -9px;
 }
 
-/* Content Box */
+/* ================= Content ================= */
+
 .content {
+    background: #111827;
     padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
 
 .content h2 {
     color: #00ff7f;
-    margin-bottom: 5px;
     font-size: 2rem;
 }
 
 .content h3 {
-    margin-bottom: 10px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    margin: 8px 0;
 }
 
 .content p {
     color: #ccc;
-    line-height: 1.6;
 }
+
+/* ================= Responsive ================= */
+@media (max-width: 992px) {
+
+    .timeline::before {
+        left: 6px;
+        transform: none;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 20px;
+        text-align: left !important;
+        left: 0 !important;
+    }
+
+    /* PERFECT CENTER ALIGNMENT */
+    .timeline-item::after {
+        left: 11px;   /* exact center match */
+        right: auto;
+    }
+}
+
 
 /* Section 8 Form Nibondon*/
 .section-8 {
@@ -3152,7 +3181,7 @@ window.addEventListener('scroll', () => {
 } */
 
 .section-divider {
-    width: 150%;
+    width: 100%;
     max-width: 600px;
     height: 4px;
     margin: 80px auto;
