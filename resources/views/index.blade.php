@@ -13,8 +13,12 @@
             <h1 class="hero-title">ঝাউগড়া কল্যাণ সংগঠন</h1>
             <p class="hero-tagline">"ঐক্যই আমাদের শক্তি, উন্নয়নই আমাদের লক্ষ্য"</p>
             <div class="hero-btns">
-                <button class="btn btn-primary" style="color: white;">আমাদের কাজ জানুন</button>
-                <button class="btn btn-secondary" style="color: white;">সহায়তা করুন</button>
+                <button class="btn btn-primary" style="color: white;"><a href="#ইভেন্ট" style="text-decoration: none; color: white;">আমাদের কাজ জানুন</a>
+                </button>
+                
+                <button class="btn btn-secondary">
+                  <a href="#সহায়তা-করুন" style="text-decoration: none;color: white;">সহায়তা করুন</a>
+                </button>
             </div>
         </div>
     </section>
@@ -55,7 +59,7 @@
 
 
     <!-- About Section (3rd Section) -->
-    <section class="about-section" id="আমাদের সম্পর্কে">
+    <section class="about-section" id="আমাদের-সম্পর্কে">
         <div class="container">
             <div class="section-header">
                 <span class="section-subtitle-tag">আমাদের পরিচয়</span>
@@ -81,11 +85,11 @@
 
                     <div class="founder-card">
                         <div class="founder-img">
-                            <img src="https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg"
+                            <img src="https://scontent.fdac7-1.fna.fbcdn.net/v/t39.30808-6/472784840_3609891402635161_2251782403261547896_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=53a332&_nc_eui2=AeEcqa7Y3QGjRS8R2TWwpOVfOLrXNMOqlFQ4utc0w6qUVFtK7-h3fDEo4MOjERO0tyKSqomb0Vdeld19RDI6Hgsk&_nc_ohc=MGJEpZFvaCsQ7kNvwEs5dI6&_nc_oc=AdnZb3tfiNgpGOvM-P1M0XsjoW3e-tEFosYguTAhzFrOCT_OLe8QrcvEv3iWGvecoOE&_nc_zt=23&_nc_ht=scontent.fdac7-1.fna&_nc_gid=ECvn_dTMf2PQi9P-Mm0A_g&_nc_ss=8&oh=00_AfvNYlNVq1ZNoo3XOyRoo4VDGeidwth1R0ev7fz29o-6dw&oe=69A80B30"
                                 alt="Founder">
                         </div>
                         <div class="founder-info">
-                            <h4>মোঃ রফিকুল ইসলাম</h4>
+                            <h4>মোঃ ইউসুফ আলী</h4>
                             <p>প্রতিষ্ঠাতা ও সভাপতি</p>
                         </div>
                     </div>
@@ -93,7 +97,7 @@
                     <a href="#" class="learn-more-btn">আরও জানুন <i class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <div class="mission-vision reveal-right">
+                <div class="mission-vision reveal-right" style="cursor: pointer;">
                     <div class="info-card mission-card">
                         <div class="info-icon"><i class="fas fa-globe"></i></div>
                         <h3>আমাদের মিশন</h3>
@@ -215,7 +219,7 @@
                 <p class="section-description">যাদের জীবন বদলে গেছে আমাদের প্রচেষ্টায়</p>
             </div>
 
-            <div class="success-carousel-container">
+            <div class="success-carousel-container" style="cursor: pointer;">
                 <div class="success-carousel">
                     <!-- Story 1 -->
                     <div class="story-card">
@@ -491,38 +495,41 @@
                         <h2>নিবন্ধন ফর্ম</h2>
                         <small>আপনার তথ্য দিন, আমরা যোগাযোগ করব</small>
 
-                        <form>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label>নাম</label>
-                                    <input type="text" placeholder="আপনার নাম">
+                        <div style="cursor: pointer;">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>নাম</label>
+                                        <input type="text" placeholder="আপনার নাম">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>ফোন</label>
+                                        <input type="text" placeholder="01XXXXXXXXX">
+                                    </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label>ফোন</label>
-                                    <input type="text" placeholder="01XXXXXXXXX">
+                                    <label>ইমেইল</label>
+                                    <input type="email" placeholder="example@mail.com">
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label>ইমেইল</label>
-                                <input type="email" placeholder="example@mail.com">
-                            </div>
+                                <div class="form-group">
+                                    <label>আগ্রহের ক্ষেত্র</label>
+                                    <select>
+                                        <option>শিক্ষা</option>
+                                        <option>স্বাস্থ্য</option>
+                                        <option>পরিবেশ</option>
+                                        <option>প্রযুক্তি</option>
+                                    </select>
+                                </div>
 
-                            <div class="form-group">
-                                <label>আগ্রহের ক্ষেত্র</label>
-                                <select>
-                                    <option>শিক্ষা</option>
-                                    <option>স্বাস্থ্য</option>
-                                    <option>পরিবেশ</option>
-                                    <option>প্রযুক্তি</option>
-                                </select>
-                            </div>
+                                <button type="submit" class="submit-btn">
+                                    স্বেচ্ছাসেবক হন
+                                </button>
+                            </form>
+                        </div>
 
-                            <button type="submit" class="submit-btn">
-                                স্বেচ্ছাসেবক হন
-                            </button>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -563,7 +570,6 @@
                         <a href="#">আরও পড়ুন</a>
                     </div>
                 </div>
-
                 <!-- Card 3 -->
                 <div class="news-card">
                     <img src="https://scontent.fdac7-1.fna.fbcdn.net/v/t39.30808-6/558812590_3549518041851163_3899106297584745642_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=110&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeEVFOyBGx1kW4Vf97uaYgvtD1Jl9w15fKcPUmX3DXl8pyinJ8qQwS_eP-aI3wWqVjKhEAbwmcYKt6xn06mBS9Hk&_nc_ohc=amsv5JwgEEwQ7kNvwFGclcI&_nc_oc=AdnldJsDZyGRjD-0FgsGA2uP8gJ5iCpaFaeHJ4wLrPW8POpkxlDLgEVSSyVLOugoaZQ&_nc_zt=23&_nc_ht=scontent.fdac7-1.fna&_nc_gid=eVVF7FcHldiKtLyiPfS6Kw&oh=00_AfuRMHUShPSgpYBCLOObVLI843siRGNlTDx_mBSLQWWS2w&oe=69A7ABCD"
@@ -645,6 +651,7 @@
                         তাদের স্বাস্থ্য ক্যাম্পের সেবা খুবই মানবিক।
                     </p>
                 </div>
+
                 <br><br>
                 <div class="section-divider"></div>
             </div>
@@ -653,8 +660,9 @@
 
 
     <!-- Donation Section -->
-    <section class="donation-section">
+    <section class="donation-section" id="সহায়তা-করুন">
         <div class="donation-container">
+
             <!-- Left Side -->
             <div class="donation-left">
                 <h2>আপনার দান <br><span>জীবন বাঁচাতে পারে</span></h2>
@@ -676,7 +684,7 @@
             <div class="donation-right">
                 <h3>ডোনেশন ডিটেইলস</h3>
 
-                <div class="payment-box">
+                <div class="payment-box" style="cursor: pointer;">
                     <div class="payment-item">
                         <h4>📱 Bkash</h4>
                         <p>01706940942</p>
@@ -697,6 +705,151 @@
         </div>
     </section>
 
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div style="text-align:center;">
+                <span class="section-subtitle-tag">সচরাচর জিজ্ঞাসা</span>
+            </div>
+            <pre></pre>
+            <h2 class="faq-title">সচরাচর জিজ্ঞাসা</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    আমি কিভাবে সদস্য হতে পারি?
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    আমাদের অফিসে এসে অথবা অনলাইনে ফর্ম পূরণ করে সদস্য হওয়া যায়।
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    আপনারা কি যাকাত গ্রহণ করেন?
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    হ্যাঁ, আমরা যাকাত গ্রহণ করি এবং নির্ধারিত খাতে বিতরণ করি।
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    স্বেচ্ছাসেবক হিসেবে কাজ করতে চাই, কী করব?
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    স্বেচ্ছাসেবক হিসেবে যুক্ত হতে আমাদের ওয়েবসাইটে রেজিস্ট্রেশন করুন।
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    আপনাদের কার্যক্রম কোন এলাকায় সীমাবদ্ধ?
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    আমাদের কার্যক্রম সারা বাংলাদেশ জুড়ে পরিচালিত হয়।
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    ডোনেশন কি ট্যাক্স মুক্ত?
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    হ্যাঁ, নির্দিষ্ট শর্ত পূরণ সাপেক্ষে ডোনেশন ট্যাক্স মুক্ত।
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    আমি কি নির্দিষ্ট কোনো প্রজেক্টে দান করতে পারি?
+                    <span class="arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    হ্যাঁ, আপনি চাইলে নির্দিষ্ট কোনো প্রজেক্ট বেছে নিয়ে দান করতে পারবেন।
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Contact -->
+    <section class="section-13" id="যোগাযোগ">
+
+        <div class="section-title">
+            <span class="section-subtitle-tag">যোগাযোগের তথ্য</span>
+            <pre></pre>
+            <h2>যোগাযোগ</h2>
+            <p>যেকোনো প্রয়োজনে আমাদের সাথে যোগাযোগ করুন</p>
+        </div>
+
+        <div class="contact-wrapper">
+
+            <!-- Left -->
+            <div class="glass-card contact-info">
+                <h3>যোগাযোগের তথ্য</h3>
+
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>বাজার রোড, নান্দাইল, ময়মনসিংহ</span>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+880 1234-567890</span>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@example.com</span>
+                </div>
+            </div>
+
+            <!-- Right -->
+            <div class="glass-card contact-form">
+                <h3>বার্তা পাঠান</h3>
+
+                <form>
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="আপনার নাম" required>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" placeholder="ফোন নম্বর" required>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="ইমেইল ঠিকানা" required>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fas fa-comment"></i>
+                        <textarea placeholder="আপনার বার্তা লিখুন..." required></textarea>
+                    </div>
+
+                    <button type="submit">বার্তা পাঠান</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Google Map -->
+        <div class="map">
+            <iframe src="https://www.google.com/maps?q=23.8103,90.4125&hl=bn&z=14&output=embed" allowfullscreen=""
+                loading="lazy">
+            </iframe>
+        </div>
+
+    </section>
     <!-- Scroll to Top Button -->
     <button id="scrollToTop" class="scroll-to-top-btn">
         <i class="fas fa-arrow-up"></i>
@@ -863,24 +1016,23 @@ scrollBtn.addEventListener("click", () => {
 });
 
 // Hero Button Click Events
-const heroButtons = document.querySelectorAll('.hero-btns .btn');
-if (heroButtons.length > 0) {
-    // First button: "আমাদের কাজ জানুন" - scroll to Success Stories
-    heroButtons[0].addEventListener('click', () => {
-        const successSection = document.getElementById('সাফল্যের-গল্প');
-        if (successSection) {
-            successSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
+// const heroButtons = document.querySelectorAll('.hero-btns .btn');
+// if (heroButtons.length > 0) {
+//     heroButtons[0].addEventListener('click', () => {
+//         const successSection = document.getElementById('সাফল্যের-গল্প');
+//         if (successSection) {
+//             successSection.scrollIntoView({
+//                 behavior: 'smooth',
+//                 block: 'start'
+//             });
+//         }
+//     });
 
     // Second button: "সহায়তা করুন" - can be used for donation link
-    heroButtons[1].addEventListener('click', () => {
-        alert('ধন্যবাদ আমাদের সাহায্য করার জন্য আগ্রহ প্রকাশের জন্য!');
-    });
-}
+    // heroButtons[1].addEventListener('click', () => {
+    //     alert('ধন্যবাদ আমাদের সাহায্য করার জন্য আগ্রহ প্রকাশের জন্য!');
+    // });
+//}
 
 
 
@@ -955,6 +1107,39 @@ function showOnScroll() {
 
 window.addEventListener('scroll', showOnScroll);
 showOnScroll();
+
+
+// FAQ Accordion Logic
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item => {
+    item.addEventListener("click", () => {
+
+        // Close others
+        faqItems.forEach(i => {
+            if (i !== item) {
+                i.classList.remove("active");
+            }
+        });
+
+        // Toggle current
+        item.classList.toggle("active");
+    });
+});
+
+/* Scroll Animation */
+const elements = document.querySelectorAll('.glass-card, .map');
+
+window.addEventListener('scroll', () => {
+    elements.forEach(el => {
+        const position = el.getBoundingClientRect().top;
+        const screen = window.innerHeight;
+
+        if(position < screen - 100){
+            el.classList.add('active');
+        }
+    });
+});
 </script>
 @endsection
 
@@ -2395,22 +2580,24 @@ showOnScroll();
 }
 
 .card-wrapper {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    flex-wrap: wrap;
     margin-top: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
 }
 
 .news-card {
     background: #1b1b1b;
     border-radius: 15px;
     overflow: hidden;
-    width: 350px;
     text-align: left;
     transition: all 0.4s ease;
     border: 1px solid #222;
-    position: relative;
+    cursor: pointer;
     animation: slideUp 0.8s ease forwards;
 }
 
@@ -2517,10 +2704,7 @@ showOnScroll();
     .section-main-title {
         font-size: 3rem;
     }
-
-    .news-card {
-        width: 320px;
-    }
+}
 }
 
 @media (max-width: 1024px) {
@@ -2853,10 +3037,13 @@ showOnScroll();
 
 /* Wrapper */
 .testimonial-wrapper {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    flex-wrap: wrap;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
 }
 
 /* Card */
@@ -2864,7 +3051,6 @@ showOnScroll();
     background: #111827;
     border-radius: 15px;
     padding: 30px;
-    width: 350px;
     text-align: left;
     position: relative;
     transition: 0.4s ease;
@@ -2930,9 +3116,13 @@ showOnScroll();
 /* Responsive */
 /* ========================= */
 
-@media (max-width: 992px) {
-    .testimonial-card {
-        width: 45%;
+@media (max-width: 1024px) {
+    .card-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonial-wrapper {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -2941,18 +3131,37 @@ showOnScroll();
         font-size: 30px;
     }
 
-    .testimonial-card {
-        width: 100%;
+    .card-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-wrapper {
+        grid-template-columns: 1fr;
     }
 }
 
-.section-divider {
-    width: 85%;
+/* .section-divider {
+    width: 200%;
     height: 4px;
     margin: 80px auto;
     background: linear-gradient(to right, transparent, #facc15, transparent);
     border-radius: 50px;
     position: relative;
+    overflow: hidden;
+    
+} */
+
+.section-divider {
+    width: 150%;
+    max-width: 600px;
+    height: 4px;
+    margin: 80px auto;
+    background: linear-gradient(to right, transparent, #facc15, transparent);
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+    left: 0;
+    right: 0;
 }
 
 .section-divider::after {
@@ -3115,6 +3324,378 @@ showOnScroll();
     .donation-left,
     .donation-right {
         padding: 30px 20px;
+    }
+}
+
+
+
+/* FAQ Section */
+
+/* Section */
+.faq-section {
+    background: black;
+    padding: 100px 20px;
+    color: #fff;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Title */
+.faq-title {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.faq-title::after {
+    content: '';
+    width: 80px;
+    height: 3px;
+    background: orange;
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+}
+
+/* FAQ Item */
+.faq-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 18px 10px;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.faq-question:hover {
+    color: #00ffcc;
+}
+
+.arrow {
+    font-size: 14px;
+    transition: 0.4s ease;
+}
+
+/* Answer Animation */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.4s ease;
+    opacity: 0;
+    font-size: 15px;
+    margin-top: 10px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+/* Active State */
+.faq-item.active .faq-answer {
+    max-height: 200px;
+    opacity: 1;
+}
+
+.faq-item.active .arrow {
+    transform: rotate(180deg);
+}
+
+/* Responsive */
+@media(max-width:768px) {
+    .faq-title {
+        font-size: 30px;
+    }
+
+    .faq-question {
+        font-size: 16px;
+    }
+
+    .faq-answer {
+        font-size: 14px;
+    }
+}
+
+
+
+
+/* Section */
+.section-13 {
+    background: #0b1120;
+    color: #fff;
+    padding: 120px 8%;
+    background: radial-gradient(circle at top left, #111827, #0b1120);
+    position: relative;
+    overflow: hidden;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.section-title h2 {
+    font-size: 52px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.section-title p {
+    color: #94a3b8;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* Grid */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+/* Glass Card */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 45px;
+    transition: 0.4s;
+    opacity: 0;
+    transform: translateY(60px);
+}
+
+.glass-card.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.glass-card:hover {
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.3);
+}
+
+/* Contact Info */
+.contact-info h3,
+.contact-form h3 {
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.info-item i {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #22c55e, #3b82f6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+/* Form */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.07);
+    color: #fff;
+    outline: none;
+    font-size: 15px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 16px;
+    color: #22c55e;
+}
+
+textarea {
+    resize: none;
+    height: 120px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #22c55e, #3b82f6);
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.contact-form button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
+}
+
+/* Map */
+.map {
+    margin-top: 80px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transform: scale(0.8);
+    transition: 0.6s;
+}
+
+.map.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+iframe {
+    width: 100%;
+    height: 400px;
+    border: 0;
+}
+
+/* ========================= */
+/* ===== RESPONSIVE ======== */
+/* ========================= */
+
+/* Large Laptop */
+@media(max-width:1200px) {
+    .section-13 {
+        padding: 100px 6%;
+    }
+
+    .section-title h2 {
+        font-size: 44px;
+    }
+}
+
+/* Tablet */
+@media(max-width:992px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .glass-card {
+        padding: 35px;
+    }
+
+    iframe {
+        height: 350px;
+    }
+}
+
+/* Small Tablet */
+@media(max-width:768px) {
+    .section-13 {
+        padding: 80px 5%;
+    }
+
+    .section-title {
+        margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+        font-size: 36px;
+    }
+
+    .section-title p {
+        font-size: 16px;
+    }
+
+    .glass-card {
+        padding: 30px;
+        border-radius: 16px;
+    }
+
+    .contact-info h3,
+    .contact-form h3 {
+        font-size: 20px;
+    }
+
+    iframe {
+        height: 300px;
+    }
+}
+
+/* Mobile */
+@media(max-width:576px) {
+    .section-13 {
+        padding: 60px 4%;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    .section-title p {
+        font-size: 14px;
+    }
+
+    .info-item {
+        font-size: 14px;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .info-item i {
+        width: 38px;
+        height: 38px;
+        font-size: 14px;
+    }
+
+    .input-group input,
+    .input-group textarea {
+        font-size: 14px;
+        padding: 14px 14px 14px 40px;
+    }
+
+    .contact-form button {
+        font-size: 14px;
+        padding: 14px;
+    }
+
+    iframe {
+        height: 250px;
+    }
+}
+
+/* Small Mobile */
+@media(max-width:400px) {
+    .section-title h2 {
+        font-size: 24px;
+    }
+
+    .glass-card {
+        padding: 22px;
+    }
+
+    iframe {
+        height: 220px;
     }
 }
 </style>
