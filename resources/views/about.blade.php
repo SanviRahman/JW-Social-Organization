@@ -677,7 +677,7 @@
             <div class="container">
                 <h1 class="page-title reveal">আমাদের সম্পর্কে বিস্তারিত</h1>
                 <div class="breadcrumb reveal delay-1">
-                    <a href="{{ url('/') }}">হোম ফিরে যান</a> / <span>বিস্তারিত</span>
+                    <a href="{{ url('/') }}">হোম</a> / <span>বিস্তারিত</span>
                 </div>
             </div>
         </section>
@@ -921,13 +921,13 @@
                 <div class="footer-col reveal">
                     <h4>দ্রুত লিংক</h4>
                     <ul>
-                        <li><a href="#হোম">হোম</a></li>
-                        <li><a href="#আমাদের-সম্পর্কে">আমাদের সম্পর্কে</a></li>
-                        <li><a href="#কার্যক্রম">কার্যক্রম</a></li>
-                        <li><a href="#ইভেন্ট">ইভেন্ট</a></li>
-                        <li><a href="#গ্যালারি">গ্যালারি</a></li>
-                        <li><a href="#ব্লগ">ব্লগ</a></li>
-                        <li><a href="#যোগাযোগ">যোগাযোগ</a></li>
+                        <li><a href="{{ url('/') }}#হোম">হোম</a></li>
+                        <li><a href="{{ url('/') }}#আমাদের-সম্পর্কে">আমাদের সম্পর্কে</a></li>
+                        <li><a href="{{ url('/') }}#কার্যক্রম">কার্যক্রম</a></li>
+                        <li><a href="{{ url('/') }}#ইভেন্ট">ইভেন্ট</a></li>
+                        <li><a href="{{ url('/') }}#গ্যালারি">গ্যালারি</a></li>
+                        <li><a href="{{ url('/') }}#ব্লগ">ব্লগ</a></li>
+                        <li><a href="{{ url('/') }}#যোগাযোগ">যোগাযোগ</a></li>
                     </ul>
                 </div>
 

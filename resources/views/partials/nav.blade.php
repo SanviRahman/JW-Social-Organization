@@ -22,7 +22,6 @@
                 <li><a href="#হোম" class="nav-link">হোম</a></li>
                 <li><a href="#আমাদের-সম্পর্কে" class="nav-link">আমাদের সম্পর্কে</a></li>
                 <li><a href="#কার্যক্রম" class="nav-link">কার্যক্রম</a></li>
-                <li><a href="#ইভেন্ট" class="nav-link">ইভেন্ট</a></li>
                 <li><a href="#গ্যালারি" class="nav-link">গ্যালারি</a></li>
                 <li><a href="#ব্লগ" class="nav-link">ব্লগ</a></li>
                 <li><a href="#স্বেচ্ছাসেবক-হন" class="nav-link">যোগ দিন</a></li>

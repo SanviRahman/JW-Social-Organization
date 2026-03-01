@@ -118,80 +118,25 @@
                 <p class="section-description">সমাজের উন্নয়নে আমাদের নিরলস প্রচেষ্টা</p>
             </div>
 
-            <div class="activities-slider-container">
-                <div class="activities-slider">
-                    <!-- Card 1: Education -->
+            <div class="activities-slider-container" style="cursor:pointer;">
+                <div class="activities-slider" id="activitiesSlider">
+                    @foreach($workshops as $workshop)
                     <div class="activity-card">
                         <div class="card-img">
-                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                                alt="Education">
-                            <span class="card-tag tag-education">শিক্ষা</span>
+                            <img src="{{ asset($workshop->image) }}" alt="{{ $workshop->title }}">
+                            <span class="card-tag tag-education">{{ $workshop->category ?? 'কার্যক্রম' }}</span>
                         </div>
                         <div class="card-body">
-                            <h3>শিক্ষা সহায়তা কর্মসূচি</h3>
-                            <p>দরিদ্র শিক্ষার্থীদের শিক্ষা উপকরণ বিতরণ।</p>
-                            <a href="#" class="card-link">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
+                            <h3>{{ $workshop->title }}</h3>
+                            <p>{{ Str::limit($workshop->description, 100) }}</p>
+                            <a href="{{ route('workshop.details', $workshop->id) }}" class="card-link">বিস্তারিত<i
+                                    class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
-
-                    <!-- Card 2: Health -->
-                    <div class="activity-card">
-                        <div class="card-img">
-                            <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                                alt="Health">
-                            <span class="card-tag tag-health">স্বাস্থ্য</span>
-                        </div>
-                        <div class="card-body">
-                            <h3>বিনামূল্যে স্বাস্থ্য ক্যাম্প</h3>
-                            <p>বিনামূল্যে চিকিৎসা সেবা ও ঔষধ প্রদান।</p>
-                            <a href="#" class="card-link">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Card 3: Empowerment -->
-                    <div class="activity-card">
-                        <div class="card-img">
-                            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                                alt="Empowerment">
-                            <span class="card-tag tag-empowerment">নারী উন্নয়ন</span>
-                        </div>
-                        <div class="card-body">
-                            <h3>নারী স্বাবলম্বীকরণ</h3>
-                            <p>নারীদের দক্ষতা উন্নয়ন ও কর্মসংস্থান।</p>
-                            <a href="#" class="card-link">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Card 4: Environment -->
-                    <div class="activity-card">
-                        <div class="card-img">
-                            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                                alt="Environment">
-                            <span class="card-tag tag-environment">পরিবেশ</span>
-                        </div>
-                        <div class="card-body">
-                            <h3>পরিবেশ সুরক্ষা</h3>
-                            <p>বৃক্ষরোপণ ও পরিবেশ সচেতনতা।</p>
-                            <a href="#" class="card-link">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Card 5: Food Aid -->
-                    <div class="activity-card">
-                        <div class="card-img">
-                            <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                                alt="Food">
-                            <span class="card-tag tag-food">খাদ্য সহায়তা</span>
-                        </div>
-                        <div class="card-body">
-                            <h3>খাদ্য সহায়তা</h3>
-                            <p>দুস্থ পরিবারের মাঝে খাদ্য সামগ্রী বিতরণ।</p>
-                            <a href="#" class="card-link">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-
-                <!-- Pagination Dots -->
+                <!-- স্লাইডার ডটস (অতিরিক্ত) -->
                 <div class="slider-dots"></div>
             </div>
         </div>
@@ -379,7 +324,8 @@
             </div>
 
             <div class="gallery-actions">
-                <a href="#" class="learn-more-btn">সব ইভেন্ট দেখুন <i class="fas fa-arrow-right"></i></a>
+                <a href="{{ route('events')}}" class="learn-more-btn">সব ইভেন্ট দেখুন <i
+                        class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
@@ -570,7 +516,7 @@
                 <p class="section-description">আমাদের সেবাগ্রহীতাদের কথা</p>
             </div>
 
-            <div class="testimonial-wrapper">
+            <div class="testimonial-wrapper" style="cursor:pointer;">
                 <!-- Card 1 -->
                 <div class="testimonial-card">
                     <div class="quote-icon">“</div>
@@ -940,8 +886,7 @@
 
                     <!-- Call to Action -->
                     <div class="developer-cta">
-                        <a href="https://wa.me/message/ABMBRACOIP5WL1"
-                            class="developer-contact-btn">
+                        <a href="https://wa.me/message/ABMBRACOIP5WL1" class="developer-contact-btn">
                             <i class="fas fa-envelope"></i>
                             যোগাযোগ করুন
                         </a>
@@ -962,355 +907,267 @@
 </main>
 
 <script>
-// Statistics Counter Animation
-const stats = document.querySelectorAll('.stat-number');
-const convertToBengali = (num) => {
-    const bengaliDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
-    return num.toString().split('').map(digit => {
-        return !isNaN(digit) ? bengaliDigits[digit] : digit;
-    }).join('');
-};
-
-const animateCounter = (el) => {
-    const target = +el.getAttribute('data-target');
-    const duration = 2000;
-    const stepTime = 20;
-    const totalSteps = duration / stepTime;
-    const increment = target / totalSteps;
-    let current = 0;
-
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            current = target;
-            clearInterval(timer);
-        }
-
-        let displayValue = Math.floor(current);
-        let formattedValue = convertToBengali(displayValue);
-
-        if (target === 500 || target === 25 || target === 1000) {
-            formattedValue += '+';
-        }
-
-        el.innerText = formattedValue;
-    }, stepTime);
-};
-
-// Intersection Observer for stats
-const statsSection = document.querySelector('.stats');
-const observerOptions = {
-    threshold: 0.5
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            stats.forEach(stat => animateCounter(stat));
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-if (statsSection) {
-    observer.observe(statsSection);
-}
-
-// Scroll Reveal Animation
-const reveals = document.querySelectorAll('.reveal-left, .reveal-right, .reveal-up');
-
-const revealOnScroll = () => {
-    const windowHeight = window.innerHeight;
-    reveals.forEach(el => {
-        const elementTop = el.getBoundingClientRect().top;
-        const elementVisible = 150;
-        if (elementTop < windowHeight - elementVisible) {
-            el.classList.add('reveal-active');
-        }
-    });
-};
-
-window.addEventListener('scroll', revealOnScroll);
-revealOnScroll();
-
-// Activities Slider Logic
-const slider = document.querySelector('.activities-slider');
-const cards = document.querySelectorAll('.activity-card');
-const dotsContainer = document.querySelector('.slider-dots');
-let currentIndex = 0;
-let cardWidth = cards[0]?.offsetWidth + 32 || 0;
-let isAutoScrolling = true;
-
-// Generate Dots
-if (cards.length > 0 && dotsContainer) {
-    cards.forEach((_, index) => {
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
-        if (index === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => {
-            goToSlide(index);
-            isAutoScrolling = false;
-            setTimeout(() => isAutoScrolling = true, 5000);
-        });
-        dotsContainer.appendChild(dot);
-    });
-
-    const dots = document.querySelectorAll('.dot');
-
-    const updateActiveClasses = (index) => {
-        cards.forEach((card, i) => {
-            card.classList.remove('active');
-            if (i === index) card.classList.add('active');
-        });
-        dots.forEach((dot, i) => {
-            dot.classList.remove('active');
-            if (i === index) dot.classList.add('active');
-        });
+(function() {
+    // ============== STATISTICS COUNTER ==============
+    const stats = document.querySelectorAll('.stat-number');
+    const convertToBengali = (num) => {
+        const bengaliDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+        return num.toString().split('').map(digit => !isNaN(digit) ? bengaliDigits[digit] : digit).join('');
     };
 
-    const goToSlide = (index) => {
-        currentIndex = index;
-        const offset = -currentIndex * cardWidth;
-        slider.style.transform = `translateX(${offset}px)`;
-        updateActiveClasses(currentIndex);
+    const animateCounter = (el) => {
+        const target = +el.getAttribute('data-target');
+        const duration = 2000;
+        const stepTime = 20;
+        const totalSteps = duration / stepTime;
+        const increment = target / totalSteps;
+        let current = 0;
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            let displayValue = Math.floor(current);
+            let formattedValue = convertToBengali(displayValue);
+            if (target === 500 || target === 25 || target === 1000) formattedValue += '+';
+            el.innerText = formattedValue;
+        }, stepTime);
     };
 
-    const nextSlide = () => {
-        currentIndex = (currentIndex + 1) % cards.length;
-        goToSlide(currentIndex);
-    };
-
-    setInterval(() => {
-        if (isAutoScrolling) {
-            nextSlide();
-        }
-    }, 3000);
-
-    window.addEventListener('resize', () => {
-        cardWidth = cards[0].offsetWidth + 32;
-        goToSlide(currentIndex);
-    });
-
-    updateActiveClasses(0);
-}
-
-// Scroll to Top Button
-const scrollBtn = document.getElementById("scrollToTop");
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-        scrollBtn.classList.add("show");
-    } else {
-        scrollBtn.classList.remove("show");
+    const statsSection = document.querySelector('.stats');
+    if (statsSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    stats.forEach(stat => animateCounter(stat));
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+        observer.observe(statsSection);
     }
-});
 
-scrollBtn.addEventListener("click", () => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-});
+    // ============== SCROLL REVEAL ==============
+    const reveals = document.querySelectorAll('.reveal-left, .reveal-right, .reveal-up');
+    const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        reveals.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < windowHeight - 150) el.classList.add('reveal-active');
+        });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
 
-// Success Stories Carousel
-// Success Stories Carousel Logic - ফিক্সড ভার্সন
-document.addEventListener('DOMContentLoaded', function() {
+    // ============== ACTIVITIES SLIDER (AUTO SCROLL RIGHT TO LEFT) ==============
+    const activitiesSlider = document.getElementById('activitiesSlider');
+    if (activitiesSlider) {
+        const cards = document.querySelectorAll('.activity-card');
+        const dotsContainer = document.querySelector('.slider-dots');
+        let currentIndex = 0;
+        let cardWidth = cards[0]?.offsetWidth + 30 || 0;
+        let autoScrollInterval;
+        const totalCards = cards.length;
+
+        if (dotsContainer && totalCards > 0) {
+            dotsContainer.innerHTML = ''; // clear previous dots
+            for (let i = 0; i < totalCards; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                dot.addEventListener('click', () => {
+                    goToSlide(i);
+                    resetAutoScroll();
+                });
+                dotsContainer.appendChild(dot);
+            }
+            updateDots();
+        }
+
+        function goToSlide(index) {
+            if (index < 0 || index >= totalCards) return;
+            currentIndex = index;
+            activitiesSlider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+            updateDots();
+        }
+
+        function updateDots() {
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, i) => {
+                if (i === currentIndex) dot.classList.add('active');
+                else dot.classList.remove('active');
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalCards;
+            goToSlide(currentIndex);
+        }
+
+        function startAutoScroll() {
+            if (autoScrollInterval) clearInterval(autoScrollInterval);
+            autoScrollInterval = setInterval(nextSlide, 3000);
+        }
+
+        function resetAutoScroll() {
+            clearInterval(autoScrollInterval);
+            startAutoScroll();
+        }
+
+        window.addEventListener('resize', () => {
+            cardWidth = cards[0]?.offsetWidth + 30 || 0;
+            goToSlide(currentIndex);
+        });
+
+        activitiesSlider.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
+        activitiesSlider.addEventListener('mouseleave', startAutoScroll);
+
+        let touchStartX = 0;
+        activitiesSlider.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {
+            passive: true
+        });
+        activitiesSlider.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].screenX;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0 && currentIndex < totalCards - 1) currentIndex++;
+                else if (diff < 0 && currentIndex > 0) currentIndex--;
+                goToSlide(currentIndex);
+                resetAutoScroll();
+            }
+        }, {
+            passive: true
+        });
+
+        startAutoScroll();
+    }
+
+    // ============== SUCCESS STORIES CAROUSEL ==============
     const successCarousel = document.getElementById('successCarousel');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
     const successCards = document.querySelectorAll('.story-card');
 
-    if (!successCarousel || !prevBtn || !nextBtn || successCards.length === 0) {
-        console.log('Carousel elements not found');
-        return;
+    if (successCarousel && prevBtn && nextBtn && successCards.length > 0) {
+        let currentIdx = 0;
+        const total = successCards.length;
+
+        const getCardWidth = () => {
+            return window.innerWidth < 768 ?
+                successCards[0].offsetWidth + 16 :
+                successCards[0].offsetWidth + 40;
+        };
+
+        const updateCarousel = () => {
+            const w = getCardWidth();
+            if (window.innerWidth < 768) {
+                successCarousel.scrollTo({
+                    left: currentIdx * w,
+                    behavior: 'smooth'
+                });
+            } else {
+                successCarousel.style.transform = `translateX(-${currentIdx * w}px)`;
+            }
+        };
+
+        nextBtn.addEventListener('click', () => {
+            if (currentIdx < total - 1) {
+                currentIdx++;
+                updateCarousel();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIdx > 0) {
+                currentIdx--;
+                updateCarousel();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                successCarousel.style.transform = `translateX(-${currentIdx * getCardWidth()}px)`;
+                successCarousel.style.scrollBehavior = 'auto';
+            } else {
+                successCarousel.style.transform = 'none';
+                successCarousel.scrollLeft = currentIdx * getCardWidth();
+            }
+        });
+
+        let touchStartX = 0;
+        successCarousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {
+            passive: true
+        });
+        successCarousel.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].screenX;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0 && currentIdx < total - 1) currentIdx++;
+                else if (diff < 0 && currentIdx > 0) currentIdx--;
+                updateCarousel();
+            }
+        }, {
+            passive: true
+        });
+
+        updateCarousel();
     }
 
-    let currentIndex = 0;
-    const totalCards = successCards.length;
-
-    // কার্ডের width ক্যালকুলেট করার ফাংশন
-    const getCardWidth = () => {
-        if (window.innerWidth < 768) {
-            // মোবাইলে
-            return successCards[0].offsetWidth + 16; // gap 16px
-        } else {
-            // ডেস্কটপে
-            return successCards[0].offsetWidth + 40; // gap 40px
-        }
+    // ============== TIMELINE ANIMATION ==============
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const showTimelineOnScroll = () => {
+        const triggerBottom = window.innerHeight * 0.85;
+        timelineItems.forEach(item => {
+            if (item.getBoundingClientRect().top < triggerBottom) {
+                item.classList.add('show');
+            }
+        });
     };
+    window.addEventListener('scroll', showTimelineOnScroll);
+    showTimelineOnScroll();
 
-    // ক্যারোসেল আপডেট করার ফাংশন
-    const updateCarousel = () => {
-        const cardWidth = getCardWidth();
+    // ============== FAQ ACCORDION ==============
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        item.addEventListener('click', () => {
+            faqItems.forEach(i => {
+                if (i !== item) i.classList.remove('active');
+            });
+            item.classList.toggle('active');
+        });
+    });
 
-        if (window.innerWidth < 768) {
-            // মোবাইলে scrollLeft ব্যবহার
-            successCarousel.scrollTo({
-                left: currentIndex * cardWidth,
+    // ============== GLASS CARD ANIMATION ==============
+    const glassCards = document.querySelectorAll('.glass-card, .map');
+    window.addEventListener('scroll', () => {
+        glassCards.forEach(el => {
+            if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                el.classList.add('active');
+            }
+        });
+    });
+
+    // ============== SCROLL TO TOP BUTTON ==============
+    const scrollBtn = document.getElementById('scrollToTop');
+    if (scrollBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) scrollBtn.classList.add('show');
+            else scrollBtn.classList.remove('show');
+        });
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
                 behavior: 'smooth'
             });
-        } else {
-            // ডেস্কটপে transform ব্যবহার
-            successCarousel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-        }
-
-        console.log('Current Index:', currentIndex); // ডিবাগging
-    };
-
-    // নেক্সট বাটন ক্লিক
-    nextBtn.addEventListener('click', () => {
-        if (currentIndex < totalCards - 1) {
-            currentIndex++;
-            updateCarousel();
-        } else {
-            // লুপ করতে চাইলে (শেষ থেকে শুরুতে)
-            // currentIndex = 0;
-            // updateCarousel();
-
-            // অথবা alert দেখাতে
-            console.log('Last card reached');
-        }
-    });
-
-    // প্রিভ বাটন ক্লিক
-    prevBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateCarousel();
-        } else {
-            console.log('First card reached');
-        }
-    });
-
-    // রেসাইজ ইভেন্ট
-    window.addEventListener('resize', () => {
-        // রেসাইজের পর current index রিসেট করা
-        if (window.innerWidth >= 768) {
-            // ডেস্কটপে transform ব্যবহার
-            const cardWidth = getCardWidth();
-            successCarousel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-            successCarousel.style.scrollBehavior = 'auto';
-        } else {
-            // মোবাইলে scroll behavior
-            successCarousel.style.transform = 'none';
-            successCarousel.style.scrollBehavior = 'smooth';
-            const cardWidth = getCardWidth();
-            successCarousel.scrollLeft = currentIndex * cardWidth;
-        }
-    });
-
-    // টাচ ইভেন্টের জন্য (মোবাইল)
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    successCarousel.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    }, {
-        passive: true
-    });
-
-    successCarousel.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    }, {
-        passive: true
-    });
-
-    const handleSwipe = () => {
-        const swipeThreshold = 50;
-        if (touchEndX < touchStartX - swipeThreshold) {
-            // সোয়াইপ Left - Next
-            if (currentIndex < totalCards - 1) {
-                currentIndex++;
-                updateCarousel();
-            }
-        }
-        if (touchEndX > touchStartX + swipeThreshold) {
-            // সোয়াইপ Right - Prev
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateCarousel();
-            }
-        }
-    };
-
-    // স্ক্রলের পর current index আপডেট করা (মোবাইলের জন্য)
-    let scrollTimeout;
-    successCarousel.addEventListener('scroll', () => {
-        if (window.innerWidth < 768) {
-            clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(() => {
-                const cardWidth = getCardWidth();
-                const newIndex = Math.round(successCarousel.scrollLeft / cardWidth);
-                if (newIndex !== currentIndex && newIndex >= 0 && newIndex < totalCards) {
-                    currentIndex = newIndex;
-                    console.log('Scroll updated index:', currentIndex);
-                }
-            }, 100);
-        }
-    });
-
-    // ইনিশিয়াল আপডেট
-    updateCarousel();
-});
-// Timeline Animation
-const timelineItems = document.querySelectorAll('.timeline-item');
-
-function showTimelineOnScroll() {
-    const triggerBottom = window.innerHeight * 0.85;
-    timelineItems.forEach(item => {
-        const boxTop = item.getBoundingClientRect().top;
-        if (boxTop < triggerBottom) {
-            item.classList.add('show');
-        }
-    });
-}
-window.addEventListener('scroll', showTimelineOnScroll);
-showTimelineOnScroll();
-
-// FAQ Accordion
-const faqItems = document.querySelectorAll(".faq-item");
-faqItems.forEach(item => {
-    item.addEventListener("click", () => {
-        faqItems.forEach(i => {
-            if (i !== item) i.classList.remove("active");
-        });
-        item.classList.toggle("active");
-    });
-});
-
-// Glass Card Animation
-const glassCards = document.querySelectorAll('.glass-card, .map');
-window.addEventListener('scroll', () => {
-    glassCards.forEach(el => {
-        const position = el.getBoundingClientRect().top;
-        const screen = window.innerHeight;
-        if (position < screen - 100) {
-            el.classList.add('active');
-        }
-    });
-});
-</script>
-<!-- Animation Script -->
-<script>
-window.addEventListener('DOMContentLoaded', function() {
-    const reveals = document.querySelectorAll('.reveal-left, .reveal-right');
-
-    function checkReveal() {
-        const windowHeight = window.innerHeight;
-        const revealPoint = 150;
-
-        reveals.forEach(element => {
-            const revealTop = element.getBoundingClientRect().top;
-
-            if (revealTop < windowHeight - revealPoint) {
-                element.classList.add('reveal-active');
-            }
         });
     }
-
-    checkReveal();
-    window.addEventListener('scroll', checkReveal);
-});
+})();
 </script>
 @endsection
 
@@ -1834,6 +1691,7 @@ body {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
+
 }
 
 .card-link:hover {
@@ -4213,6 +4071,149 @@ select:focus-visible {
 .reveal-right.reveal-active {
     opacity: 1;
     transform: translateX(0);
+}
+
+
+
+
+
+
+/* ===== Activities Slider ===== */
+.activities-section {
+    background: #0f172a;
+    padding: 80px 0;
+}
+
+.activities-slider-container {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0 60px;
+    margin-top: 40px;
+}
+
+.activities-slider {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+.activity-card {
+    flex: 0 0 350px;
+    /* fixed width */
+    background: #1e293b;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.activity-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.5);
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.card-img {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.activity-card:hover .card-img img {
+    transform: scale(1.1);
+}
+
+.card-tag {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: var(--secondary-color);
+    color: var(--text-white);
+    z-index: 2;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.card-body h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: var(--text-white);
+}
+
+.card-body p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    color: var(--primary-color);
+}
+
+
+.card-link i {
+    transition: transform 0.3s ease;
+}
+
+.card-link:hover i {
+    transform: translateX(5px);
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #334155;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: var(--secondary-color);
+    width: 30px;
+    border-radius: 10px;
+}
+
+/* রেসপন্সিভ */
+@media (max-width: 767px) {
+    .activity-card {
+        flex: 0 0 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .activity-card {
+        flex: 0 0 240px;
+    }
 }
 </style>
 @endpush

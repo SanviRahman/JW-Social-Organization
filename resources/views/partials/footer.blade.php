@@ -6,9 +6,8 @@
             <p>আমরা সমাজের উন্নয়ন এবং সেবার কাজে নিয়োজিত একটি সংগঠন।</p>
 
             <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/share/1NPqATstmz/"><i class="fab fa-facebook-f"></i></a>
+    
             </div>
         </div>
 
