@@ -474,6 +474,7 @@
                         <a href="{{ route('blog-details', $blog->id) }}">আরও পড়ুন <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
     </section>

@@ -46,4 +46,15 @@ class PublicController extends Controller
             ->get();
         return view('workshop-details', compact('workshop', 'relatedWorkshops'));
     }
+
+    public function blogDetails($id)
+    {
+        $blog = Blog::findOrFail($id);
+        // Fetch 3 other blogs (excluding current) – you can order by date or random
+        $relatedBlogs = Blog::where('id', '!=', $id)
+            ->orderBy('created_at', 'desc')
+            ->take(9)
+            ->get();
+        return view('blog-details', compact('blog', 'relatedBlogs'));
+    }
 }
