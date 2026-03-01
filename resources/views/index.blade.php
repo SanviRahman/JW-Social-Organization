@@ -86,7 +86,7 @@
                         </div>
                     </div>
 
-                    <a href="{{ route('about') }}" class="learn-more-btn" target="_blank">আরও জানুন <i
+                    <a href="{{ route('about') }}" class="learn-more-btn">আরও জানুন <i
                             class="fas fa-arrow-right"></i></a>
                 </div>
 

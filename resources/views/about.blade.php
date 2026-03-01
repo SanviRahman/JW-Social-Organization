@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ঝাউগড়া কল্যাণ সংগঠন - বিস্তারিত</title>
     <!-- Google Fonts for Bengali -->
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
@@ -865,7 +866,7 @@
                         <h4>সমাজ পরিবর্তনের অংশীদার</h4>
                         <p>আপনার কাজ সরাসরি সমাজে ইতিবাচক প্রভাব ফেলবে। পরিবর্তনের সাক্ষী হোন।</p>
                     </div>
-                     <!-- 8 -->
+                    <!-- 8 -->
                     <div class="card volunteer-card reveal-up">
                         <div class="card-icon volunteer-icon">
                             <i class="fas fa-certificate"></i>
@@ -911,9 +912,7 @@
                     <p>আমরা সমাজের উন্নয়ন এবং সেবার কাজে নিয়োজিত একটি সংগঠন।</p>
 
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/share/1NPqATstmz/"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
 

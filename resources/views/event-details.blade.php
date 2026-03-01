@@ -37,10 +37,22 @@
         margin: 0;
         padding: 80px 0;
     }
-    .section-tight { padding: 50px 0; }
-    .section-compact { padding: 60px 0; }
-    .section-pt0 { padding-top: 0; }
-    .section-pb0 { padding-bottom: 0; }
+
+    .section-tight {
+        padding: 50px 0;
+    }
+
+    .section-compact {
+        padding: 60px 0;
+    }
+
+    .section-pt0 {
+        padding-top: 0;
+    }
+
+    .section-pb0 {
+        padding-bottom: 0;
+    }
 
     h1,
     h2,
@@ -714,7 +726,7 @@
         <!-- ========== PROFESSIONAL EXTRA SECTIONS ========== -->
 
 
-    
+
 
         <!-- 3. সম্পর্কিত ইভেন্ট (Related Events - Dynamic) -->
         <section class="section-dark section-pt0">
