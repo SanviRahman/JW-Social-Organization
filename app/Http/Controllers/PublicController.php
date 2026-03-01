@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\AmaderKarjokrom;
 use App\Models\Event;
+use App\Models\Blog;
 
 class PublicController extends Controller
 {
     public function index()
     {
         $workshops = AmaderKarjokrom::orderBy('created_at', 'desc')->get();
-        return view('index', compact('workshops'));
+        $blogs     = Blog::orderBy('created_at', 'desc')->get();
+        return view('index', compact('workshops', 'blogs'));
     }
 
     public function about()
@@ -24,7 +26,6 @@ class PublicController extends Controller
         return view('events', compact('events'));
     }
 
-
     public function eventDetails($id)
     {
         $event = Event::findOrFail($id);
@@ -37,12 +38,12 @@ class PublicController extends Controller
     }
 
     public function workshopDetails($id)
-{
-    $workshop = AmaderKarjokrom::findOrFail($id);
-    $relatedWorkshops = AmaderKarjokrom::where('id', '!=', $id)
-                        ->orderBy('created_at', 'desc')
-                        ->take(9)
-                        ->get();
-    return view('workshop-details', compact('workshop', 'relatedWorkshops'));
-}
+    {
+        $workshop         = AmaderKarjokrom::findOrFail($id);
+        $relatedWorkshops = AmaderKarjokrom::where('id', '!=', $id)
+            ->orderBy('created_at', 'desc')
+            ->take(9)
+            ->get();
+        return view('workshop-details', compact('workshop', 'relatedWorkshops'));
+    }
 }

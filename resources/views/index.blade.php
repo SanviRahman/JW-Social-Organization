@@ -158,12 +158,12 @@
                     <div class="story-card">
                         <div class="story-images">
                             <div class="image-box before">
-                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                                <img src="{{ asset('image/Rohima-1.jpg') }}"
                                     alt="Before">
                                 <span class="img-tag">আগে</span>
                             </div>
                             <div class="image-box after">
-                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                                <img src="{{ asset('image/Rohima-2.jpg') }}"
                                     alt="After">
                                 <span class="img-tag">পরে</span>
                             </div>
@@ -184,12 +184,12 @@
                     <div class="story-card">
                         <div class="story-images">
                             <div class="image-box before">
-                                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                                <img src="{{ asset('image/Karim-1.jpg') }}"
                                     alt="Before">
                                 <span class="img-tag">আগে</span>
                             </div>
                             <div class="image-box after">
-                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                                <img src="{{ asset('image/Karim-2.jpg') }}"
                                     alt="After">
                                 <span class="img-tag">পরে</span>
                             </div>
@@ -210,12 +210,12 @@
                     <div class="story-card">
                         <div class="story-images">
                             <div class="image-box before">
-                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                                <img src="{{ asset('image/Amina-1.jpg') }}"
                                     alt="Before">
                                 <span class="img-tag">আগে</span>
                             </div>
                             <div class="image-box after">
-                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                                <img src="{{ asset('image/Amina-2.jpg') }}"
                                     alt="After">
                                 <span class="img-tag">পরে</span>
                             </div>
@@ -236,12 +236,12 @@
                     <div class="story-card">
                         <div class="story-images">
                             <div class="image-box before">
-                                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                                <img src="{{ asset('image/Jamal-1.jpg') }}"
                                     alt="Before">
                                 <span class="img-tag">আগে</span>
                             </div>
                             <div class="image-box after">
-                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                                <img src="{{ asset('image/Jamal-2.jpg') }}"
                                     alt="After">
                                 <span class="img-tag">পরে</span>
                             </div>
@@ -464,44 +464,16 @@
 
             <div class="card-wrapper">
                 <!-- Card 1 -->
+                 @foreach($blogs as $blog)
                 <div class="news-card">
-                    <img src="https://scontent.fdac7-1.fna.fbcdn.net/v/t39.30808-6/558812590_3549518041851163_3899106297584745642_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=110&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeEVFOyBGx1kW4Vf97uaYgvtD1Jl9w15fKcPUmX3DXl8pyinJ8qQwS_eP-aI3wWqVjKhEAbwmcYKt6xn06mBS9Hk&_nc_ohc=amsv5JwgEEwQ7kNvwFGclcI&_nc_oc=AdnldJsDZyGRjD-0FgsGA2uP8gJ5iCpaFaeHJ4wLrPW8POpkxlDLgEVSSyVLOugoaZQ&_nc_zt=23&_nc_ht=scontent.fdac7-1.fna&_nc_gid=eVVF7FcHldiKtLyiPfS6Kw&oh=00_AfuRMHUShPSgpYBCLOObVLI843siRGNlTDx_mBSLQWWS2w&oe=69A7ABCD"
-                        alt="News Image">
+                    <img src="{{ $blog->image }}" alt="News Image">
                     <div class="card-content">
-                        <span class="date"><i class="far fa-calendar-alt"></i> ২০/১২/২০২৪</span>
-                        <h3>শীতবস্ত্র বিতরণ কর্মসূচি ২০২৪</h3>
-                        <p>এবারের শীতে আমরা ৫০০টি পরিবারের মাঝে কম্বল বিতরণ করেছি।</p>
-                        <a href="#">আরও পড়ুন <i class="fas fa-arrow-right"></i></a>
+                        <span class="date"><i class="far fa-calendar-alt"></i> {{ $blog->event_date }}</span>
+                        <h3>{{ $blog->title }}</h3>
+                        <p>{{ $blog->description }}</p>
+                        <a href="{{ route('blog-details', $blog->id) }}">আরও পড়ুন <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-
-                <!-- Card 2 -->
-                <div class="news-card">
-                    <img src="https://scontent.fdac7-1.fna.fbcdn.net/v/t39.30808-6/558812590_3549518041851163_3899106297584745642_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=110&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeEVFOyBGx1kW4Vf97uaYgvtD1Jl9w15fKcPUmX3DXl8pyinJ8qQwS_eP-aI3wWqVjKhEAbwmcYKt6xn06mBS9Hk&_nc_ohc=amsv5JwgEEwQ7kNvwFGclcI&_nc_oc=AdnldJsDZyGRjD-0FgsGA2uP8gJ5iCpaFaeHJ4wLrPW8POpkxlDLgEVSSyVLOugoaZQ&_nc_zt=23&_nc_ht=scontent.fdac7-1.fna&_nc_gid=eVVF7FcHldiKtLyiPfS6Kw&oh=00_AfuRMHUShPSgpYBCLOObVLI843siRGNlTDx_mBSLQWWS2w&oe=69A7ABCD"
-                        alt="News Image">
-                    <div class="card-content">
-                        <span class="date"><i class="far fa-calendar-alt"></i> ১৫/১২/২০২৪</span>
-                        <h3>পরিবেশ রক্ষায় আমাদের করণীয়</h3>
-                        <p>গাছ লাগান, পরিবেশ বাঁচান। আমাদের নতুন ক্যাম্পেইন সম্পর্কে জানুন।</p>
-                        <a href="#">আরও পড়ুন <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="news-card">
-                    <img src="https://scontent.fdac7-1.fna.fbcdn.net/v/t39.30808-6/558812590_3549518041851163_3899106297584745642_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=110&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeEVFOyBGx1kW4Vf97uaYgvtD1Jl9w15fKcPUmX3DXl8pyinJ8qQwS_eP-aI3wWqVjKhEAbwmcYKt6xn06mBS9Hk&_nc_ohc=amsv5JwgEEwQ7kNvwFGclcI&_nc_oc=AdnldJsDZyGRjD-0FgsGA2uP8gJ5iCpaFaeHJ4wLrPW8POpkxlDLgEVSSyVLOugoaZQ&_nc_zt=23&_nc_ht=scontent.fdac7-1.fna&_nc_gid=eVVF7FcHldiKtLyiPfS6Kw&oh=00_AfuRMHUShPSgpYBCLOObVLI843siRGNlTDx_mBSLQWWS2w&oe=69A7ABCD"
-                        alt="News Image">
-                    <div class="card-content">
-                        <span class="date"><i class="far fa-calendar-alt"></i> ১০/১২/২০২৪</span>
-                        <h3>শিক্ষা বৃত্তি প্রদান</h3>
-                        <p>৫০ জন মেধাবী ছাত্র-ছাত্রীদের মাঝে বৃত্তি প্রদান করা হয়েছে।</p>
-                        <a href="#">আরও পড়ুন <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="view-all">
-                <a href="#" class="btn btn-animate">সব খবর দেখুন <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
