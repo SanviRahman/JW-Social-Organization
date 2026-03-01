@@ -86,7 +86,7 @@
                         </div>
                     </div>
 
-                    <a href="https://sfashanto.netlify.app/" class="learn-more-btn" target="_blank">আরও জানুন <i
+                    <a href="{{ route('about') }}" class="learn-more-btn" target="_blank">আরও জানুন <i
                             class="fas fa-arrow-right"></i></a>
                 </div>
 
@@ -436,7 +436,7 @@
     </section>
 
     <!-- Volunteer Section -->
-    <section class="section-8">
+    <section class="section-8" id="স্বেচ্ছাসেবক-হন">
         <div class="container">
             <div class="section-header">
                 <span class="section-subtitle-tag">যোগ দিন আমাদের সাথে</span>
@@ -838,7 +838,7 @@
                     <p class="developer-title">Software Engineer</p>
                     <p class="developer-company">SOFT-ITBD</p>
 
-                    <div class="developer-bio">
+                    <div class="developer-bio" style="text-align: justify;">
                         <p>
                             শেখ ফরিদ আহমেদ শান্ত একজন পেশাদার সফটওয়্যার ইঞ্জিনিয়ার ও ওয়েব ডেভেলপার।
                             তিনি ড্যাফোডিল ইন্টারন্যাশনাল ইউনিভার্সিটি থেকে কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং-এ
@@ -940,7 +940,7 @@
 
                     <!-- Call to Action -->
                     <div class="developer-cta">
-                        <a href="Message SFA Shanto on WhatsApp. https://wa.me/message/ABMBRACOIP5WL1"
+                        <a href="https://wa.me/message/ABMBRACOIP5WL1"
                             class="developer-contact-btn">
                             <i class="fas fa-envelope"></i>
                             যোগাযোগ করুন

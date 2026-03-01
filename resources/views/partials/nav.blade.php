@@ -25,6 +25,7 @@
                 <li><a href="#ইভেন্ট" class="nav-link">ইভেন্ট</a></li>
                 <li><a href="#গ্যালারি" class="nav-link">গ্যালারি</a></li>
                 <li><a href="#ব্লগ" class="nav-link">ব্লগ</a></li>
+                <li><a href="#স্বেচ্ছাসেবক-হন" class="nav-link">যোগ দিন</a></li>
                 <li><a href="#যোগাযোগ" class="nav-link">যোগাযোগ</a></li>
             </ul>
             <div class="mobile-donate">
