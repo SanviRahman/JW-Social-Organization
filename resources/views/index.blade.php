@@ -2,9 +2,354 @@
 
 @section('title', 'ঝাউগড়া কল্যাণ সংগঠন - হোম')
 
-
 @section('content')
 <main>
+    <!-- Modal CSS (শুধু প্রয়োজন হলেই লোড হবে) -->
+    @if(session('success') || session('error') || $errors->any())
+    <style>
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(5px);
+        z-index: 9998;
+        animation: fadeIn 0.3s ease;
+    }
+
+    .custom-modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: linear-gradient(135deg, #1f2937, #111827);
+        padding: 0;
+        border-radius: 20px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+        width: 90%;
+        max-width: 400px;
+        animation: slideUp 0.4s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .modal-header-custom {
+        padding: 20px 25px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .modal-header-custom h5 {
+        margin: 0;
+        font-size: 1.3rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .modal-header-custom h5 i {
+        font-size: 1.5rem;
+    }
+
+    .close-btn-custom {
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: white;
+        font-size: 1.2rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .close-btn-custom:hover {
+        background: #ef4444;
+        transform: rotate(90deg);
+        border-color: transparent;
+    }
+
+    .modal-body-custom {
+        padding: 30px 25px;
+        text-align: center;
+    }
+
+    .modal-body-custom p {
+        color: #d1d5db;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .icon-circle {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        font-size: 2.5rem;
+        animation: pulse 2s infinite;
+    }
+
+    .modal-footer-custom {
+        padding: 20px 25px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        justify-content: center;
+    }
+
+    .modal-btn-custom {
+        color: white;
+        border: none;
+        padding: 12px 35px;
+        border-radius: 40px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .modal-btn-custom i {
+        font-size: 0.9rem;
+        transition: transform 0.3s ease;
+    }
+
+    .modal-btn-custom:hover i {
+        transform: translateX(5px);
+    }
+
+    /* সাকসেস মডেল */
+    .success-modal .modal-header-custom {
+        background: rgba(16, 185, 129, 0.1);
+    }
+
+    .success-modal .modal-header-custom h5 {
+        color: #10b981;
+    }
+
+    .success-modal .icon-circle {
+        background: rgba(16, 185, 129, 0.2);
+        color: #10b981;
+    }
+
+    .success-modal .modal-btn-custom {
+        background: linear-gradient(135deg, #10b981, #059669);
+    }
+
+    .success-modal .modal-btn-custom:hover {
+        box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.5);
+    }
+
+    /* এরর মডেল (সেশন এরর ও ভ্যালিডেশন এরর) */
+    .error-modal .modal-header-custom {
+        background: rgba(239, 68, 68, 0.1);
+    }
+
+    .error-modal .modal-header-custom h5 {
+        color: #ef4444;
+    }
+
+    .error-modal .icon-circle {
+        background: rgba(239, 68, 68, 0.2);
+        color: #ef4444;
+    }
+
+    .error-modal .modal-btn-custom {
+        background: linear-gradient(135deg, #ef4444, #b91c1c);
+    }
+
+    .error-modal .modal-btn-custom:hover {
+        box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.5);
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translate(-50%, -30%);
+        }
+
+        to {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 currentColor;
+        }
+
+        70% {
+            box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+        }
+
+        100% {
+            box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .custom-modal {
+            width: 95%;
+        }
+
+        .modal-header-custom h5 {
+            font-size: 1.1rem;
+        }
+
+        .modal-body-custom p {
+            font-size: 1rem;
+        }
+
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            font-size: 2rem;
+        }
+    }
+    </style>
+
+    <!-- ========== সাকসেস মডেল ========== -->
+    @if(session('success'))
+    <div id="successModal" style="display: none;">
+        <div class="modal-overlay" onclick="closeModal('successModal')"></div>
+        <div class="custom-modal success-modal">
+            <div class="modal-header-custom">
+                <h5><i class="fas fa-check-circle"></i> সফল হয়েছে!</h5>
+                <button class="close-btn-custom" onclick="closeModal('successModal')"><i
+                        class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body-custom">
+                <div class="icon-circle"><i class="fas fa-check-circle"></i></div>
+                <p>{{ session('success') }}</p>
+            </div>
+            <div class="modal-footer-custom">
+                <button class="modal-btn-custom" onclick="closeModal('successModal')">ঠিক আছে <i
+                        class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </div>
+    @endif
+
+    <!-- ========== সেশন এরর মডেল (যখন কন্ট্রোলার থেকে with('error', '...') পাঠানো হয়) ========== -->
+    @if(session('error'))
+    <div id="sessionErrorModal" style="display: none;">
+        <div class="modal-overlay" onclick="closeModal('sessionErrorModal')"></div>
+        <div class="custom-modal error-modal">
+            <div class="modal-header-custom">
+                <h5><i class="fas fa-exclamation-triangle"></i> ত্রুটি!</h5>
+                <button class="close-btn-custom" onclick="closeModal('sessionErrorModal')"><i
+                        class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body-custom">
+                <div class="icon-circle"><i class="fas fa-exclamation-triangle"></i></div>
+                <p>{{ session('error') }}</p>
+            </div>
+            <div class="modal-footer-custom">
+                <button class="modal-btn-custom" onclick="closeModal('sessionErrorModal')">ঠিক আছে <i
+                        class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </div>
+    @endif
+
+    <!-- ========== ভ্যালিডেশন এরর মডেল (যখন ফর্ম ভ্যালিডেশন ফেল করে) ========== -->
+    @if($errors->any())
+    <div id="validationErrorModal" style="display: none;">
+        <div class="modal-overlay" onclick="closeModal('validationErrorModal')"></div>
+        <div class="custom-modal error-modal">
+            <div class="modal-header-custom">
+                <h5><i class="fas fa-exclamation-triangle"></i> ত্রুটি!</h5>
+                <button class="close-btn-custom" onclick="closeModal('validationErrorModal')"><i
+                        class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body-custom">
+                <div class="icon-circle"><i class="fas fa-exclamation-triangle"></i></div>
+                <div style="text-align: left; color: #d1d5db;">
+                    <ul style="margin: 0; padding-left: 20px;">
+                        @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer-custom">
+                <button class="modal-btn-custom" onclick="closeModal('validationErrorModal')">ঠিক আছে <i
+                        class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </div>
+    @endif
+
+    <!-- ========== জাভাস্ক্রিপ্ট ========== -->
+    <script>
+    function showModal(modalId) {
+        var modal = document.getElementById(modalId);
+        if (modal) {
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function closeModal(modalId) {
+        var modal = document.getElementById(modalId);
+        if (modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    window.onload = function() {
+        @if(session('success'))
+        showModal('successModal');
+        @elseif(session('error'))
+        showModal('sessionErrorModal');
+        @elseif($errors->any())
+        showModal('validationErrorModal');
+        @endif
+    };
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            @if(session('success'))
+            closeModal('successModal');
+            @elseif(session('error'))
+            closeModal('sessionErrorModal');
+            @elseif($errors->any())
+            closeModal('validationErrorModal');
+            @endif
+        }
+    });
+    </script>
+    @endif
+
+
     <!-- Hero Section -->
     <section class="hero" id="হোম">
         <div class="hero-overlay"></div>
@@ -65,16 +410,11 @@
             <div class="about-grid">
                 <div class="about-content reveal-left">
                     <h2 class="about-title">মানবতার সেবায় <br> <span>নিবেদিত প্রাণ</span></h2>
-                    <p class="about-desc">
-                        ঝাউগড়া কল্যাণ সংগঠন একটি অলাভজনক সামাজিক সংগঠন যা ২০১৭ সাল থেকে সমাজের সুবিধাবঞ্চিত মানুষের
-                        জীবনমান উন্নয়নে কাজ করে যাচ্ছে। আমাদের মূল লক্ষ্য হলো একটি শিক্ষিত, স্বাস্থ্যসম্মত এবং
-                        স্বাবলম্বী সমাজ গড়ে তোলা।
-                    </p>
-                    <p class="about-desc">
-                        আমরা বিশ্বাস করি, সম্মিলিত প্রচেষ্টায় যেকোনো অসাধ্য সাধন করা সম্ভব। আমাদের স্বেচ্ছাসেবকদের
-                        অক্লান্ত পরিশ্রম এবং দাতাদের উদার সহযোগিতায় আমরা এগিয়ে চলেছি।
-                    </p>
-
+                    <p class="about-desc">ঝাউগড়া কল্যাণ সংগঠন একটি অলাভজনক সামাজিক সংগঠন যা ২০১৭ সাল থেকে সমাজের
+                        সুবিধাবঞ্চিত মানুষের জীবনমান উন্নয়নে কাজ করে যাচ্ছে। আমাদের মূল লক্ষ্য হলো একটি শিক্ষিত,
+                        স্বাস্থ্যসম্মত এবং স্বাবলম্বী সমাজ গড়ে তোলা।</p>
+                    <p class="about-desc">আমরা বিশ্বাস করি, সম্মিলিত প্রচেষ্টায় যেকোনো অসাধ্য সাধন করা সম্ভব। আমাদের
+                        স্বেচ্ছাসেবকদের অক্লান্ত পরিশ্রম এবং দাতাদের উদার সহযোগিতায় আমরা এগিয়ে চলেছি।</p>
                     <div class="founder-card">
                         <div class="founder-img">
                             <img
@@ -85,11 +425,9 @@
                             <p>প্রতিষ্ঠাতা ও সভাপতি</p>
                         </div>
                     </div>
-
                     <a href="{{ route('about') }}" class="learn-more-btn">আরও জানুন <i
                             class="fas fa-arrow-right"></i></a>
                 </div>
-
                 <div class="mission-vision reveal-right">
                     <div class="info-card mission-card">
                         <div class="info-icon"><i class="fas fa-globe"></i></div>
@@ -117,7 +455,6 @@
                 <h2 class="section-main-title">আমাদের কার্যক্রম</h2>
                 <p class="section-description">সমাজের উন্নয়নে আমাদের নিরলস প্রচেষ্টা</p>
             </div>
-
             <div class="activities-slider-container" style="cursor:pointer;">
                 <div class="activities-slider" id="activitiesSlider">
                     @foreach($workshops as $workshop)
@@ -130,13 +467,11 @@
                             <h3>{{ $workshop->title }}</h3>
                             <p>{{ Str::limit($workshop->description, 100) }}</p>
                             <a href="{{ route('workshop.details', $workshop->id) }}" class="card-link">বিস্তারিত<i
-                                    class="fas fa-arrow-right"></i>
-                            </a>
+                                    class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                     @endforeach
                 </div>
-                <!-- স্লাইডার ডটস (অতিরিক্ত) -->
                 <div class="slider-dots"></div>
             </div>
         </div>
@@ -151,115 +486,72 @@
                 <h2 class="section-main-title">সাফল্যের গল্প</h2>
                 <p class="section-description">যাদের জীবন বদলে গেছে আমাদের প্রচেষ্টায়</p>
             </div>
-
             <div class="success-carousel-container">
                 <div class="success-carousel" id="successCarousel">
                     <!-- Story 1 -->
                     <div class="story-card">
                         <div class="story-images">
-                            <div class="image-box before">
-                                <img src="{{ asset('image/Rohima-1.jpg') }}"
-                                    alt="Before">
-                                <span class="img-tag">আগে</span>
-                            </div>
-                            <div class="image-box after">
-                                <img src="{{ asset('image/Rohima-2.jpg') }}"
-                                    alt="After">
-                                <span class="img-tag">পরে</span>
-                            </div>
+                            <div class="image-box before"><img src="{{ asset('image/Rohima-1.jpg') }}"
+                                    alt="Before"><span class="img-tag">আগে</span></div>
+                            <div class="image-box after"><img src="{{ asset('image/Rohima-2.jpg') }}" alt="After"><span
+                                    class="img-tag">পরে</span></div>
                         </div>
                         <div class="story-content">
                             <h3 class="story-name">রাহিমা বেগম</h3>
                             <span class="story-date">১২/১১/২০২৪</span>
-                            <p class="story-text">
-                                "সেলাই মেশিন পেয়ে এখন তিনি নিজের পায়ে দাঁড়িয়েছেন। তার পরিবারের স্বচ্ছলতা ফিরে এসেছে।"
-                            </p>
-                            <div class="story-status">
-                                <i class="far fa-check-circle"></i> সফলভাবে পুনর্বাসিত
-                            </div>
+                            <p class="story-text">"সেলাই মেশিন পেয়ে এখন তিনি নিজের পায়ে দাঁড়িয়েছেন। তার পরিবারের
+                                স্বচ্ছলতা ফিরে এসেছে।"</p>
+                            <div class="story-status"><i class="far fa-check-circle"></i> সফলভাবে পুনর্বাসিত</div>
                         </div>
                     </div>
-
                     <!-- Story 2 -->
                     <div class="story-card">
                         <div class="story-images">
-                            <div class="image-box before">
-                                <img src="{{ asset('image/Karim-1.jpg') }}"
-                                    alt="Before">
-                                <span class="img-tag">আগে</span>
-                            </div>
-                            <div class="image-box after">
-                                <img src="{{ asset('image/Karim-2.jpg') }}"
-                                    alt="After">
-                                <span class="img-tag">পরে</span>
-                            </div>
+                            <div class="image-box before"><img src="{{ asset('image/Karim-1.jpg') }}" alt="Before"><span
+                                    class="img-tag">আগে</span></div>
+                            <div class="image-box after"><img src="{{ asset('image/Karim-2.jpg') }}" alt="After"><span
+                                    class="img-tag">পরে</span></div>
                         </div>
                         <div class="story-content">
                             <h3 class="story-name">করিম মিয়া</h3>
                             <span class="story-date">৫/১০/২০২৪</span>
-                            <p class="story-text">
-                                "আমাদের কৃষি প্রকল্পের মাধ্যমে তিনি একজন সফল খামারি হতে পেরেছেন।"
-                            </p>
-                            <div class="story-status">
-                                <i class="far fa-check-circle"></i> স্বাবলম্বী খামারি
-                            </div>
+                            <p class="story-text">"আমাদের কৃষি প্রকল্পের মাধ্যমে তিনি একজন সফল খামারি হতে পেরেছেন।"</p>
+                            <div class="story-status"><i class="far fa-check-circle"></i> স্বাবলম্বী খামারি</div>
                         </div>
                     </div>
-
                     <!-- Story 3 -->
                     <div class="story-card">
                         <div class="story-images">
-                            <div class="image-box before">
-                                <img src="{{ asset('image/Amina-1.jpg') }}"
-                                    alt="Before">
-                                <span class="img-tag">আগে</span>
-                            </div>
-                            <div class="image-box after">
-                                <img src="{{ asset('image/Amina-2.jpg') }}"
-                                    alt="After">
-                                <span class="img-tag">পরে</span>
-                            </div>
+                            <div class="image-box before"><img src="{{ asset('image/Amina-1.jpg') }}" alt="Before"><span
+                                    class="img-tag">আগে</span></div>
+                            <div class="image-box after"><img src="{{ asset('image/Amina-2.jpg') }}" alt="After"><span
+                                    class="img-tag">পরে</span></div>
                         </div>
                         <div class="story-content">
                             <h3 class="story-name">আমিনা খাতুন</h3>
                             <span class="story-date">২০/০৯/২০২৪</span>
-                            <p class="story-text">
-                                "আমাদের প্রশিক্ষণ কেন্দ্র থেকে সেলাই শিখে এখন তিনি নিজের একটি দোকান দিয়েছেন।"
-                            </p>
-                            <div class="story-status">
-                                <i class="far fa-check-circle"></i> স্বাবলম্বী উদ্যোক্তা
-                            </div>
+                            <p class="story-text">"আমাদের প্রশিক্ষণ কেন্দ্র থেকে সেলাই শিখে এখন তিনি নিজের একটি দোকান
+                                দিয়েছেন।"</p>
+                            <div class="story-status"><i class="far fa-check-circle"></i> স্বাবলম্বী উদ্যোক্তা</div>
                         </div>
                     </div>
-
                     <!-- Story 4 -->
                     <div class="story-card">
                         <div class="story-images">
-                            <div class="image-box before">
-                                <img src="{{ asset('image/Jamal-1.jpg') }}"
-                                    alt="Before">
-                                <span class="img-tag">আগে</span>
-                            </div>
-                            <div class="image-box after">
-                                <img src="{{ asset('image/Jamal-2.jpg') }}"
-                                    alt="After">
-                                <span class="img-tag">পরে</span>
-                            </div>
+                            <div class="image-box before"><img src="{{ asset('image/Jamal-1.jpg') }}" alt="Before"><span
+                                    class="img-tag">আগে</span></div>
+                            <div class="image-box after"><img src="{{ asset('image/Jamal-2.jpg') }}" alt="After"><span
+                                    class="img-tag">পরে</span></div>
                         </div>
                         <div class="story-content">
                             <h3 class="story-name">জামাল উদ্দিন</h3>
                             <span class="story-date">১৫/০৮/২০২৪</span>
-                            <p class="story-text">
-                                "ক্ষুদ্র ব্যবসার জন্য পুঁজি পেয়ে এখন তিনি সফলভাবে তার ব্যবসা পরিচালনা করছেন।"
-                            </p>
-                            <div class="story-status">
-                                <i class="far fa-check-circle"></i> সফল ব্যবসায়ী
-                            </div>
+                            <p class="story-text">"ক্ষুদ্র ব্যবসার জন্য পুঁজি পেয়ে এখন তিনি সফলভাবে তার ব্যবসা পরিচালনা
+                                করছেন।"</p>
+                            <div class="story-status"><i class="far fa-check-circle"></i> সফল ব্যবসায়ী</div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Carousel Controls -->
                 <div class="carousel-nav">
                     <button class="nav-btn prev-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
                     <button class="nav-btn next-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
@@ -277,52 +569,44 @@
                 <h2 class="section-main-title">আসন্ন ইভেন্ট</h2>
                 <p class="section-description">আমাদের পরবর্তী কার্যক্রমে অংশগ্রহণ করুন</p>
             </div>
-
             <div class="gallery-grid">
                 <div class="gallery-item reveal-up">
                     <img src="{{ asset('image/Barshik-sova.jpg') }}" alt="বার্ষিক সাধারণ সভা">
-                    <div class="gallery-overlay">
-                        <span class="gallery-badge">MAR 15</span>
+                    <div class="gallery-overlay"><span class="gallery-badge">MAR 15</span>
                         <h3 class="gallery-title">বার্ষিক সাধারণ সভা ২০২৫</h3>
                     </div>
                 </div>
                 <div class="gallery-item reveal-up">
                     <img src="{{ asset('image/ponno.jpg') }}" alt="ঈদ সামগ্রী বিতরণ">
-                    <div class="gallery-overlay">
-                        <span class="gallery-badge">APR 10</span>
+                    <div class="gallery-overlay"><span class="gallery-badge">APR 10</span>
                         <h3 class="gallery-title">ঈদ সামগ্রী বিতরণ</h3>
                     </div>
                 </div>
                 <div class="gallery-item reveal-up">
                     <img src="{{ asset('image/Treatment.jpg') }}" alt="ফ্রি মেডিকেল ক্যাম্প">
-                    <div class="gallery-overlay">
-                        <span class="gallery-badge">MAY 20</span>
+                    <div class="gallery-overlay"><span class="gallery-badge">MAY 20</span>
                         <h3 class="gallery-title">ফ্রি মেডিকেল ক্যাম্প</h3>
                     </div>
                 </div>
                 <div class="gallery-item reveal-up">
                     <img src="{{ asset('image/britti.jpg') }}" alt="শিক্ষা বৃত্তি প্রদান">
-                    <div class="gallery-overlay">
-                        <span class="gallery-badge">JUN 05</span>
+                    <div class="gallery-overlay"><span class="gallery-badge">JUN 05</span>
                         <h3 class="gallery-title">শিক্ষা বৃত্তি প্রদান</h3>
                     </div>
                 </div>
                 <div class="gallery-item reveal-up">
                     <img src="{{ asset('image/Tree.jpg') }}" alt="পরিবেশ সচেতনতা">
-                    <div class="gallery-overlay">
-                        <span class="gallery-badge">JUL 18</span>
+                    <div class="gallery-overlay"><span class="gallery-badge">JUL 18</span>
                         <h3 class="gallery-title">পরিবেশ সচেতনতা</h3>
                     </div>
                 </div>
                 <div class="gallery-item reveal-up">
                     <img src="{{ asset('image/Barshik-sova.jpg') }}" alt="স্বেচ্ছাসেবক সম্মাননা">
-                    <div class="gallery-overlay">
-                        <span class="gallery-badge">AUG 02</span>
+                    <div class="gallery-overlay"><span class="gallery-badge">AUG 02</span>
                         <h3 class="gallery-title">স্বেচ্ছাসেবক সম্মাননা</h3>
                     </div>
                 </div>
             </div>
-
             <div class="gallery-actions">
                 <a href="{{ route('events')}}" class="learn-more-btn">সব ইভেন্ট দেখুন <i
                         class="fas fa-arrow-right"></i></a>
@@ -339,7 +623,6 @@
                 <h2 class="section-main-title">আমাদের পথচলা</h2>
                 <p class="section-description">২০১৭ সালে যাত্রা শুরু করে আমরা আজ অবধি নিরলসভাবে কাজ করে যাচ্ছি।</p>
             </div>
-
             <div class="timeline">
                 <div class="timeline-item right">
                     <div class="content">
@@ -390,16 +673,11 @@
                 <h2 class="section-main-title">স্বেচ্ছাসেবক হন</h2>
                 <p class="section-description">আপনার সময় এবং মেধা দিয়ে সমাজের উন্নয়নে অবদান রাখুন</p>
             </div>
-
             <div class="section-8-container">
-                <!-- Left Side -->
                 <div class="section-8-left">
                     <h2>স্বেচ্ছাসেবক হন</h2>
-                    <p>
-                        আপনার সময় এবং মেধা দিয়ে সমাজের উন্নয়নে অবদান রাখুন।
-                        আমাদের টিমে যোগ দিন এবং পরিবর্তনের অংশীদার হন।
-                    </p>
-
+                    <p>আপনার সময় এবং মেধা দিয়ে সমাজের উন্নয়নে অবদান রাখুন। আমাদের টিমে যোগ দিন এবং পরিবর্তনের অংশীদার
+                        হন।</p>
                     <ul class="benefits">
                         <li><i class="fas fa-check-circle"></i> সামাজিক নেটওয়ার্কিং</li>
                         <li><i class="fas fa-check-circle"></i> নেতৃত্বের দক্ষতা উন্নয়ন</li>
@@ -407,44 +685,49 @@
                         <li><i class="fas fa-check-circle"></i> মানসিক প্রশান্তি</li>
                     </ul>
                 </div>
-
-                <!-- Right Side -->
                 <div class="section-8-right">
                     <div class="form-box">
                         <h3>নিবন্ধন ফর্ম</h3>
                         <p class="form-subtitle">আপনার তথ্য দিন, আমরা যোগাযোগ করব</p>
-
-                        <form>
+                        <form action="{{ route('nibondon.submit') }}" method="POST">
+                            @csrf
                             <div class="form-row">
                                 <div class="form-group">
                                     <label>নাম</label>
-                                    <input type="text" placeholder="আপনার নাম">
+                                    <input type="text" placeholder="আপনার নাম" value="{{ old('name') }}" name="name"
+                                        required>
                                 </div>
-
+                                @error('name')<div class="error-message">{{ $message }}</div>@enderror
                                 <div class="form-group">
                                     <label>ফোন</label>
-                                    <input type="text" placeholder="01XXXXXXXXX">
+                                    <input type="text" placeholder="01XXXXXXXXX" value="{{ old('phone') }}" name="phone"
+                                        required>
                                 </div>
+                                @error('phone')<div class="error-message">{{ $message }}</div>@enderror
                             </div>
-
                             <div class="form-group">
                                 <label>ইমেইল</label>
-                                <input type="email" placeholder="example@mail.com">
+                                <input type="email" placeholder="example@mail.com" value="{{ old('email') }}"
+                                    name="email" required>
                             </div>
-
+                            @error('email')<div class="error-message">{{ $message }}</div>@enderror
                             <div class="form-group">
                                 <label>আগ্রহের ক্ষেত্র</label>
-                                <select>
-                                    <option>শিক্ষা</option>
-                                    <option>স্বাস্থ্য</option>
-                                    <option>পরিবেশ</option>
-                                    <option>প্রযুক্তি</option>
+                                <select name="interests" required>
+                                    <option value="">ক্ষেত্র নির্বাচন করুন</option>
+                                    <option value="education" {{ old('interests')=='education' ? 'selected' : '' }}>
+                                        শিক্ষা</option>
+                                    <option value="health" {{ old('interests')=='health' ? 'selected' : '' }}>স্বাস্থ্য
+                                    </option>
+                                    <option value="environment" {{ old('interests')=='environment' ? 'selected' : '' }}>
+                                        পরিবেশ</option>
+                                    <option value="technology" {{ old('interests')=='technology' ? 'selected' : '' }}>
+                                        প্রযুক্তি</option>
                                 </select>
                             </div>
-
-                            <button type="submit" class="submit-btn">
-                                স্বেচ্ছাসেবক হন <i class="fas fa-arrow-right"></i>
-                            </button>
+                            @error('interests')<div class="error-message">{{ $message }}</div>@enderror
+                            <button type="submit" class="submit-btn">স্বেচ্ছাসেবক হন <i
+                                    class="fas fa-arrow-right"></i></button>
                         </form>
                     </div>
                 </div>
@@ -452,7 +735,7 @@
         </div>
     </section>
 
-    <!-- Blog section -->
+    <!-- Blog section with Carousel (Updated) -->
     <section class="news-section" id="ব্লগ">
         <div class="container">
             <div class="section-header">
@@ -462,19 +745,28 @@
                 <p class="section-description">আমাদের সাম্প্রতিক কর্মকাণ্ড ও আপডেট</p>
             </div>
 
-            <div class="card-wrapper">
-                <!-- Card 1 -->
-                 @foreach($blogs as $blog)
-                <div class="news-card">
-                    <img src="{{ $blog->image }}" alt="News Image">
-                    <div class="card-content">
-                        <span class="date"><i class="far fa-calendar-alt"></i> {{ $blog->event_date }}</span>
-                        <h3>{{ $blog->title }}</h3>
-                        <p>{{ $blog->description }}</p>
-                        <a href="{{ route('blog-details', $blog->id) }}">আরও পড়ুন <i class="fas fa-arrow-right"></i></a>
+            <div class="blog-carousel-container">
+                <div class="blog-carousel" id="blogCarousel">
+                    @foreach($blogs as $blog)
+                    <div class="news-card">
+                        <img src="{{ $blog->image }}" alt="News Image">
+                        <div class="card-content">
+                            <span class="date"><i class="far fa-calendar-alt"></i> {{ $blog->event_date }}</span>
+                            <h3>{{ $blog->title }}</h3>
+                            <p>{{ $blog->description }}</p>
+                            <a href="{{ route('blog-details', $blog->id) }}">আরও পড়ুন <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
+                    @endforeach
                 </div>
-                @endforeach
+
+                <!-- Carousel Navigation Arrows -->
+                <div class="blog-carousel-nav">
+                    <button class="blog-nav-btn prev-blog" id="prevBlogBtn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="blog-nav-btn next-blog" id="nextBlogBtn"><i
+                            class="fas fa-chevron-right"></i></button>
+                </div>
             </div>
         </div>
     </section>
@@ -488,44 +780,35 @@
                 <h2 class="section-main-title">মতামত</h2>
                 <p class="section-description">আমাদের সেবাগ্রহীতাদের কথা</p>
             </div>
-
             <div class="testimonial-wrapper" style="cursor:pointer;">
-                <!-- Card 1 -->
                 <div class="testimonial-card">
                     <div class="quote-icon">“</div>
                     <div class="profile">
                         <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
                         <div>
-                            <h4>আব্দুল মালেক</h4>
-                            <span>বাউড়িয়া</span>
+                            <h4>আব্দুল মালেক</h4><span>বাউড়িয়া</span>
                         </div>
                     </div>
                     <div class="rating">★★★★★</div>
                     <p>তাদের সহযোগিতায় আমার মেয়ের বিয়ে দিতে পেরেছি। আল্লাহ তাদের ভালো করুন।</p>
                 </div>
-
-                <!-- Card 2 -->
                 <div class="testimonial-card">
                     <div class="quote-icon">“</div>
                     <div class="profile">
                         <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="">
                         <div>
-                            <h4>সালমা খাতুন</h4>
-                            <span>নালডাঙা</span>
+                            <h4>সালমা খাতুন</h4><span>নালডাঙা</span>
                         </div>
                     </div>
                     <div class="rating">★★★★★</div>
                     <p>সেলাই মেশিন পেয়ে আমি এখন নিজের উপার্জন করছি।</p>
                 </div>
-
-                <!-- Card 3 -->
                 <div class="testimonial-card">
                     <div class="quote-icon">“</div>
                     <div class="profile">
                         <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="">
                         <div>
-                            <h4>রফিক উদ্দিন</h4>
-                            <span>মধুপুর</span>
+                            <h4>রফিক উদ্দিন</h4><span>মধুপুর</span>
                         </div>
                     </div>
                     <div class="rating">★★★★☆</div>
@@ -545,15 +828,11 @@
                 <h2 class="section-main-title">দান করুন</h2>
                 <p class="section-description">আপনার সামান্য সহযোগিতায় বদলে যেতে পারে একটি জীবন</p>
             </div>
-
             <div class="donation-container">
-                <!-- Left Side -->
                 <div class="donation-left">
                     <h2>আপনার দান <span>জীবন বাঁচাতে পারে</span></h2>
-                    <p>
-                        আপনার সামান্য সহযোগিতায় একজন শিক্ষার্থীর পড়াশোনা, একজন রোগীর চিকিৎসা
-                        বা একটি পরিবারের মুখে হাসি ফোটাতে পারে।
-                    </p>
+                    <p>আপনার সামান্য সহযোগিতায় একজন শিক্ষার্থীর পড়াশোনা, একজন রোগীর চিকিৎসা বা একটি পরিবারের মুখে হাসি
+                        ফোটাতে পারে।</p>
                     <ul>
                         <li><i class="fas fa-check-circle"></i> যাকাত</li>
                         <li><i class="fas fa-check-circle"></i> সদকা</li>
@@ -561,8 +840,6 @@
                         <li><i class="fas fa-check-circle"></i> কর্পোরেট অনুদান</li>
                     </ul>
                 </div>
-
-                <!-- Right Side -->
                 <div class="donation-right">
                     <h3>ডোনেশন ডিটেইলস</h3>
                     <div class="payment-box">
@@ -593,65 +870,34 @@
                 <h2 class="section-main-title">জিজ্ঞাসা ও উত্তর</h2>
                 <p class="section-description">আপনার মনে প্রশ্ন? উত্তর নিচে দেওয়া হলো</p>
             </div>
-
             <div class="faq-item">
-                <div class="faq-question">
-                    <span>আমি কিভাবে সদস্য হতে পারি?</span>
-                    <span class="arrow">&#9660;</span>
+                <div class="faq-question"><span>আমি কিভাবে সদস্য হতে পারি?</span><span class="arrow">&#9660;</span>
                 </div>
-                <div class="faq-answer">
-                    আমাদের অফিসে এসে অথবা অনলাইনে ফর্ম পূরণ করে সদস্য হওয়া যায়।
-                </div>
+                <div class="faq-answer">আমাদের অফিসে এসে অথবা অনলাইনে ফর্ম পূরণ করে সদস্য হওয়া যায়।</div>
             </div>
-
             <div class="faq-item">
-                <div class="faq-question">
-                    <span>আপনারা কি যাকাত গ্রহণ করেন?</span>
-                    <span class="arrow">&#9660;</span>
+                <div class="faq-question"><span>আপনারা কি যাকাত গ্রহণ করেন?</span><span class="arrow">&#9660;</span>
                 </div>
-                <div class="faq-answer">
-                    হ্যাঁ, আমরা যাকাত গ্রহণ করি এবং নির্ধারিত খাতে বিতরণ করি।
-                </div>
+                <div class="faq-answer">হ্যাঁ, আমরা যাকাত গ্রহণ করি এবং নির্ধারিত খাতে বিতরণ করি।</div>
             </div>
-
             <div class="faq-item">
-                <div class="faq-question">
-                    <span>স্বেচ্ছাসেবক হিসেবে কাজ করতে চাই, কী করব?</span>
-                    <span class="arrow">&#9660;</span>
-                </div>
-                <div class="faq-answer">
-                    স্বেচ্ছাসেবক হিসেবে যুক্ত হতে আমাদের ওয়েবসাইটে রেজিস্ট্রেশন করুন।
-                </div>
+                <div class="faq-question"><span>স্বেচ্ছাসেবক হিসেবে কাজ করতে চাই, কী করব?</span><span
+                        class="arrow">&#9660;</span></div>
+                <div class="faq-answer">স্বেচ্ছাসেবক হিসেবে যুক্ত হতে আমাদের ওয়েবসাইটে রেজিস্ট্রেশন করুন।</div>
             </div>
-
             <div class="faq-item">
-                <div class="faq-question">
-                    <span>আপনাদের কার্যক্রম কোন এলাকায় সীমাবদ্ধ?</span>
-                    <span class="arrow">&#9660;</span>
-                </div>
-                <div class="faq-answer">
-                    আমাদের কার্যক্রম সারা বাংলাদেশ জুড়ে পরিচালিত হয়।
-                </div>
+                <div class="faq-question"><span>আপনাদের কার্যক্রম কোন এলাকায় সীমাবদ্ধ?</span><span
+                        class="arrow">&#9660;</span></div>
+                <div class="faq-answer">আমাদের কার্যক্রম সারা বাংলাদেশ জুড়ে পরিচালিত হয়।</div>
             </div>
-
             <div class="faq-item">
-                <div class="faq-question">
-                    <span>ডোনেশন কি ট্যাক্স মুক্ত?</span>
-                    <span class="arrow">&#9660;</span>
-                </div>
-                <div class="faq-answer">
-                    হ্যাঁ, নির্দিষ্ট শর্ত পূরণ সাপেক্ষে ডোনেশন ট্যাক্স মুক্ত।
-                </div>
+                <div class="faq-question"><span>ডোনেশন কি ট্যাক্স মুক্ত?</span><span class="arrow">&#9660;</span></div>
+                <div class="faq-answer">হ্যাঁ, নির্দিষ্ট শর্ত পূরণ সাপেক্ষে ডোনেশন ট্যাক্স মুক্ত।</div>
             </div>
-
             <div class="faq-item">
-                <div class="faq-question">
-                    <span>আমি কি নির্দিষ্ট কোনো প্রজেক্টে দান করতে পারি?</span>
-                    <span class="arrow">&#9660;</span>
-                </div>
-                <div class="faq-answer">
-                    হ্যাঁ, আপনি চাইলে নির্দিষ্ট কোনো প্রজেক্ট বেছে নিয়ে দান করতে পারবেন।
-                </div>
+                <div class="faq-question"><span>আমি কি নির্দিষ্ট কোনো প্রজেক্টে দান করতে পারি?</span><span
+                        class="arrow">&#9660;</span></div>
+                <div class="faq-answer">হ্যাঁ, আপনি চাইলে নির্দিষ্ট কোনো প্রজেক্ট বেছে নিয়ে দান করতে পারবেন।</div>
             </div>
         </div>
     </section>
@@ -665,54 +911,39 @@
                 <h2 class="section-main-title">যোগাযোগ</h2>
                 <p class="section-description">যেকোনো প্রয়োজনে আমাদের সাথে যোগাযোগ করুন</p>
             </div>
-
             <div class="contact-wrapper">
-                <!-- Left -->
                 <div class="glass-card contact-info">
                     <h3>যোগাযোগের তথ্য</h3>
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>ঝাউগড়া কল্যাণ সংগঠন, জামালপুর, বাংলাদেশ</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <span>+880 1706-940942</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>sheikh15-3700@diu.edu.bd</span>
-                    </div>
+                    <div class="info-item"><i class="fas fa-map-marker-alt"></i><span>ঝাউগড়া কল্যাণ সংগঠন, জামালপুর,
+                            বাংলাদেশ</span></div>
+                    <div class="info-item"><i class="fas fa-phone-alt"></i><span>+880 1706-940942</span></div>
+                    <div class="info-item"><i class="fas fa-envelope"></i><span>sheikh15-3700@diu.edu.bd</span></div>
                 </div>
-
-                <!-- Right -->
                 <div class="glass-card contact-form">
                     <h3>বার্তা পাঠান</h3>
-                    <form>
-                        <div class="input-group">
-                            <i class="fas fa-user"></i>
-                            <input type="text" placeholder="আপনার নাম" required>
-                        </div>
-                        <div class="input-group">
-                            <i class="fas fa-phone"></i>
-                            <input type="tel" placeholder="ফোন নম্বর" required>
-                        </div>
-                        <div class="input-group">
-                            <i class="fas fa-envelope"></i>
-                            <input type="email" placeholder="ইমেইল ঠিকানা" required>
-                        </div>
-                        <div class="input-group">
-                            <i class="fas fa-comment"></i>
-                            <textarea placeholder="আপনার বার্তা লিখুন..." required></textarea>
-                        </div>
+                    <form action="{{ route('contact.submit') }}" method="POST">
+                        @csrf
+                        <div class="input-group"><i class="fas fa-user"></i><input type="text" name="name"
+                                placeholder="আপনার নাম" value="{{ old('name') }}" required></div>
+                        @error('name')<div class="error-message">{{ $message }}</div>@enderror
+                        <div class="input-group"><i class="fas fa-phone"></i><input type="tel" name="phone"
+                                placeholder="ফোন নম্বর" value="{{ old('phone') }}" required></div>
+                        @error('phone')<div class="error-message">{{ $message }}</div>@enderror
+                        <div class="input-group"><i class="fas fa-envelope"></i><input type="email" name="email"
+                                placeholder="ইমেইল ঠিকানা" value="{{ old('email') }}" required></div>
+                        @error('email')<div class="error-message">{{ $message }}</div>@enderror
+                        <div class="input-group"><i class="fas fa-comment"></i><textarea name="message"
+                                placeholder="আপনার বার্তা লিখুন..." required>{{ old('message') }}</textarea></div>
+                        @error('message')<div class="error-message">{{ $message }}</div>@enderror
                         <button type="submit">বার্তা পাঠান <i class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
             </div>
-
-            <!-- Google Map -->
             <div class="map">
-                <iframe src="https://www.google.com/maps?q=23.8103,90.4125&hl=bn&z=14&output=embed" allowfullscreen
-                    loading="lazy"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.13306595747!2d89.86998757627705!3d24.893442343935565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fd831d54cf98f1%3A0x394d125a7b0a6206!2sJhaugara%20High%20School!5e0!3m2!1sen!2sbd!4v1772417686575!5m2!1sen!2sbd"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
@@ -726,9 +957,7 @@
                 <h2 class="section-main-title">প্রযুক্তি সহযোগিতায়</h2>
                 <p class="section-description">ওয়েব অ্যাপ্লিকেশন ডিজাইন ও ডেভেলপমেন্ট</p>
             </div>
-
             <div class="developer-identity-wrapper">
-                <!-- Left Side - Image Card -->
                 <div class="developer-image-card reveal-left">
                     <div class="developer-image-wrapper">
                         <img src="https://scontent.fdac7-1.fna.fbcdn.net/v/t39.30808-6/561659522_3695781134051775_8011078114531792308_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=1d70fc&_nc_eui2=AeGYC4gW1qbwgKfqDICD1r1MaeCP85FCpQBp4I_zkUKlAIu0DnP9rHy2DHyttjVTuO6SDNkPbGYywrLmWdxpks4n&_nc_ohc=3eg5nxRfRQEQ7kNvwHefF49&_nc_oc=AdkjqK_fHa3NkIAcI5oNzPkYrbjccRk6mByxh6GYTa8uA9cjarqYgHvNgmdgJMLQ5Hk&_nc_zt=23&_nc_ht=scontent.fdac7-1.fna&_nc_gid=4pF3YU73CzGC4rR4cyNPfw&_nc_ss=8&oh=00_AfuicoI9EDNRauFgCNK665hkSYXYsue4OFZXwz2E4YWgDA&oe=69A83C37"
@@ -750,123 +979,78 @@
                             জীবন।</p>
                     </div>
                 </div>
-
-                <!-- Right Side - Identity Details -->
                 <div class="developer-details-card reveal-right">
                     <h2 class="developer-name">শেখ ফরিদ আহমেদ শান্ত</h2>
                     <p class="developer-title">Software Engineer</p>
                     <p class="developer-company">SOFT-ITBD</p>
-
                     <div class="developer-bio" style="text-align: justify;">
-                        <p>
-                            শেখ ফরিদ আহমেদ শান্ত একজন পেশাদার সফটওয়্যার ইঞ্জিনিয়ার ও ওয়েব ডেভেলপার।
-                            তিনি ড্যাফোডিল ইন্টারন্যাশনাল ইউনিভার্সিটি থেকে কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং-এ
-                            স্নাতক ডিগ্রি অর্জন করেছেন। বর্তমানে তিনি SOFT-ITBD-তে সফটওয়্যার ইঞ্জিনিয়ার হিসেবে
-                            কর্মরত আছেন।
-                        </p>
-                        <p>
-                            তার বিশেষ দক্ষতার মধ্যে রয়েছে ওয়েব অ্যাপ্লিকেশন ডেভেলপমেন্ট, UI/UX ডিজাইন,
-                            এবং ফুল-স্ট্যাক ডেভেলপমেন্ট। তিনি বিশ্বাস করেন, প্রযুক্তির মাধ্যমে সমাজের
-                            বিভিন্ন সমস্যার সমাধান সম্ভব।
-                        </p>
+                        <p>শেখ ফরিদ আহমেদ শান্ত একজন পেশাদার সফটওয়্যার ইঞ্জিনিয়ার ও ওয়েব ডেভেলপার। তিনি ড্যাফোডিল
+                            ইন্টারন্যাশনাল ইউনিভার্সিটি থেকে কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং-এ স্নাতক ডিগ্রি
+                            অর্জন করেছেন। বর্তমানে তিনি SOFT-ITBD-তে সফটওয়্যার ইঞ্জিনিয়ার হিসেবে কর্মরত আছেন।</p>
+                        <p>তার বিশেষ দক্ষতার মধ্যে রয়েছে ওয়েব অ্যাপ্লিকেশন ডেভেলপমেন্ট, UI/UX ডিজাইন, এবং ফুল-স্ট্যাক
+                            ডেভেলপমেন্ট। তিনি বিশ্বাস করেন, প্রযুক্তির মাধ্যমে সমাজের বিভিন্ন সমস্যার সমাধান সম্ভব।</p>
                     </div>
-
                     <div class="developer-info-grid">
-                        <!-- Education -->
                         <div class="info-item">
-                            <div class="info-icon">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
+                            <div class="info-icon"><i class="fas fa-graduation-cap"></i></div>
                             <div class="info-content">
                                 <h4>শিক্ষা</h4>
                                 <p>BSc in CSE</p>
-                                <p style="font-size: 0.9rem; color: #10b981;">Daffodil International University</p>
+                                <p style="font-size:0.9rem;color:#10b981;">Daffodil International University</p>
                             </div>
                         </div>
-
-                        <!-- Permanent Address -->
                         <div class="info-item">
-                            <div class="info-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
+                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
                             <div class="info-content">
                                 <h4>স্থায়ী ঠিকানা</h4>
                                 <p>ঝাউগড়া, জামালপুর</p>
-                                <p style="font-size: 0.9rem; color: #f59e0b;">বাংলাদেশ</p>
+                                <p style="font-size:0.9rem;color:#f59e0b;">বাংলাদেশ</p>
                             </div>
                         </div>
-
-                        <!-- Present Address -->
                         <div class="info-item">
-                            <div class="info-icon">
-                                <i class="fas fa-home"></i>
-                            </div>
+                            <div class="info-icon"><i class="fas fa-home"></i></div>
                             <div class="info-content">
                                 <h4>বর্তমান ঠিকানা</h4>
                                 <p>ঢাকা, বাংলাদেশ</p>
                             </div>
                         </div>
-
-                        <!-- Email -->
                         <div class="info-item">
-                            <div class="info-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
+                            <div class="info-icon"><i class="fas fa-envelope"></i></div>
                             <div class="info-content">
                                 <h4>ইমেইল</h4>
                                 <p>sheikh15-3700@diu.edu.bd</p>
                             </div>
                         </div>
-
-                        <!-- Phone -->
                         <div class="info-item">
-                            <div class="info-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
+                            <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
                             <div class="info-content">
                                 <h4>মোবাইল</h4>
                                 <p>+880 1706-940942</p>
                             </div>
                         </div>
-
-                        <!-- Company -->
                         <div class="info-item">
-                            <div class="info-icon">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
+                            <div class="info-icon"><i class="fas fa-briefcase"></i></div>
                             <div class="info-content">
                                 <h4>বর্তমান কর্মস্থল</h4>
                                 <p>SOFT-ITBD</p>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Technical Skills -->
                     <div class="developer-skills">
                         <h3>প্রযুক্তিগত দক্ষতা</h3>
                         <div class="skills-tags">
-                            <span class="skill-tag">HTML5/CSS3</span>
-                            <span class="skill-tag">C & C++</span>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">Django</span>
-                            <span class="skill-tag">PHP</span>
-                            <span class="skill-tag">Laravel</span>
-                            <span class="skill-tag">MySQL</span>
-                            <span class="skill-tag">Git & GitHub</span>
+                            <span class="skill-tag">HTML5/CSS3</span><span class="skill-tag">C & C++</span><span
+                                class="skill-tag">JavaScript</span><span class="skill-tag">Python</span><span
+                                class="skill-tag">Django</span><span class="skill-tag">PHP</span><span
+                                class="skill-tag">Laravel</span><span class="skill-tag">MySQL</span><span
+                                class="skill-tag">Git & GitHub</span>
                         </div>
                     </div>
-
-                    <!-- Call to Action -->
                     <div class="developer-cta">
-                        <a href="https://wa.me/message/ABMBRACOIP5WL1" class="developer-contact-btn">
-                            <i class="fas fa-envelope"></i>
-                            যোগাযোগ করুন
-                        </a>
-                        <a href="https://sfashanto.netlify.app/" class="developer-portfolio-btn">
-                            <i class="fas fa-globe"></i>
-                            পোর্টফোলিও
-                        </a>
+                        <a href="https://wa.me/message/ABMBRACOIP5WL1" class="developer-contact-btn"><i
+                                class="fas fa-envelope"></i> যোগাযোগ করুন</a>
+                        <a href="https://sfashanto.netlify.app/" class="developer-portfolio-btn"><i
+                                class="fas fa-globe"></i> পোর্টফোলিও</a>
                     </div>
                 </div>
             </div>
@@ -874,9 +1058,7 @@
     </section>
 
     <!-- Scroll to Top Button -->
-    <button id="scrollToTop" class="scroll-to-top-btn">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <button id="scrollToTop" class="scroll-to-top-btn"><i class="fas fa-arrow-up"></i></button>
 </main>
 
 <script>
@@ -887,7 +1069,6 @@
         const bengaliDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
         return num.toString().split('').map(digit => !isNaN(digit) ? bengaliDigits[digit] : digit).join('');
     };
-
     const animateCounter = (el) => {
         const target = +el.getAttribute('data-target');
         const duration = 2000;
@@ -907,7 +1088,6 @@
             el.innerText = formattedValue;
         }, stepTime);
     };
-
     const statsSection = document.querySelector('.stats');
     if (statsSection) {
         const observer = new IntersectionObserver((entries) => {
@@ -935,7 +1115,7 @@
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll();
 
-    // ============== ACTIVITIES SLIDER (AUTO SCROLL RIGHT TO LEFT) ==============
+    // ============== ACTIVITIES SLIDER ==============
     const activitiesSlider = document.getElementById('activitiesSlider');
     if (activitiesSlider) {
         const cards = document.querySelectorAll('.activity-card');
@@ -944,9 +1124,8 @@
         let cardWidth = cards[0]?.offsetWidth + 30 || 0;
         let autoScrollInterval;
         const totalCards = cards.length;
-
         if (dotsContainer && totalCards > 0) {
-            dotsContainer.innerHTML = ''; // clear previous dots
+            dotsContainer.innerHTML = '';
             for (let i = 0; i < totalCards; i++) {
                 const dot = document.createElement('div');
                 dot.classList.add('dot');
@@ -988,15 +1167,12 @@
             clearInterval(autoScrollInterval);
             startAutoScroll();
         }
-
         window.addEventListener('resize', () => {
             cardWidth = cards[0]?.offsetWidth + 30 || 0;
             goToSlide(currentIndex);
         });
-
         activitiesSlider.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
         activitiesSlider.addEventListener('mouseleave', startAutoScroll);
-
         let touchStartX = 0;
         activitiesSlider.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
@@ -1015,7 +1191,6 @@
         }, {
             passive: true
         });
-
         startAutoScroll();
     }
 
@@ -1024,17 +1199,13 @@
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
     const successCards = document.querySelectorAll('.story-card');
-
     if (successCarousel && prevBtn && nextBtn && successCards.length > 0) {
         let currentIdx = 0;
         const total = successCards.length;
-
         const getCardWidth = () => {
-            return window.innerWidth < 768 ?
-                successCards[0].offsetWidth + 16 :
-                successCards[0].offsetWidth + 40;
+            return window.innerWidth < 768 ? successCards[0].offsetWidth + 16 : successCards[0].offsetWidth +
+                40;
         };
-
         const updateCarousel = () => {
             const w = getCardWidth();
             if (window.innerWidth < 768) {
@@ -1046,21 +1217,18 @@
                 successCarousel.style.transform = `translateX(-${currentIdx * w}px)`;
             }
         };
-
         nextBtn.addEventListener('click', () => {
             if (currentIdx < total - 1) {
                 currentIdx++;
                 updateCarousel();
             }
         });
-
         prevBtn.addEventListener('click', () => {
             if (currentIdx > 0) {
                 currentIdx--;
                 updateCarousel();
             }
         });
-
         window.addEventListener('resize', () => {
             if (window.innerWidth >= 768) {
                 successCarousel.style.transform = `translateX(-${currentIdx * getCardWidth()}px)`;
@@ -1070,7 +1238,6 @@
                 successCarousel.scrollLeft = currentIdx * getCardWidth();
             }
         });
-
         let touchStartX = 0;
         successCarousel.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
@@ -1088,7 +1255,6 @@
         }, {
             passive: true
         });
-
         updateCarousel();
     }
 
@@ -1140,13 +1306,97 @@
             });
         });
     }
+
+    // ============== BLOG CAROUSEL (NEW) ==============
+    const blogCarousel = document.getElementById('blogCarousel');
+    const prevBlogBtn = document.getElementById('prevBlogBtn');
+    const nextBlogBtn = document.getElementById('nextBlogBtn');
+    const blogCards = document.querySelectorAll('.blog-carousel .news-card');
+
+    if (blogCarousel && prevBlogBtn && nextBlogBtn && blogCards.length > 0) {
+        let currentBlogIndex = 0;
+        const totalBlogCards = blogCards.length;
+
+        function getVisibleBlogCards() {
+            if (window.innerWidth < 768) return 1;
+            if (window.innerWidth >= 768 && window.innerWidth < 992) return 2;
+            return 3;
+        }
+
+        function getBlogCardWidth() {
+            const card = blogCards[0];
+            let gap = 30;
+            if (window.innerWidth < 768) gap = 15;
+            else if (window.innerWidth >= 768 && window.innerWidth < 992) gap = 15;
+            else gap = 30;
+            return card.offsetWidth + gap;
+        }
+
+        function updateBlogCarousel() {
+            const cardWidth = getBlogCardWidth();
+            const visible = getVisibleBlogCards();
+            const maxIndex = Math.max(0, totalBlogCards - visible);
+
+            if (currentBlogIndex < 0) currentBlogIndex = 0;
+            if (currentBlogIndex > maxIndex) currentBlogIndex = maxIndex;
+
+            blogCarousel.style.transform = `translateX(-${currentBlogIndex * cardWidth}px)`;
+
+            prevBlogBtn.disabled = currentBlogIndex === 0;
+            nextBlogBtn.disabled = currentBlogIndex >= maxIndex;
+        }
+
+        nextBlogBtn.addEventListener('click', () => {
+            const visible = getVisibleBlogCards();
+            if (currentBlogIndex < totalBlogCards - visible) {
+                currentBlogIndex++;
+                updateBlogCarousel();
+            }
+        });
+
+        prevBlogBtn.addEventListener('click', () => {
+            if (currentBlogIndex > 0) {
+                currentBlogIndex--;
+                updateBlogCarousel();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            updateBlogCarousel();
+        });
+
+        updateBlogCarousel();
+
+        // Touch support for mobile
+        let touchStartX = 0;
+        blogCarousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {
+            passive: true
+        });
+
+        blogCarousel.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].screenX;
+            const diff = touchStartX - touchEndX;
+            const visible = getVisibleBlogCards();
+            if (Math.abs(diff) > 50) {
+                if (diff > 0 && currentBlogIndex < totalBlogCards - visible) {
+                    currentBlogIndex++;
+                } else if (diff < 0 && currentBlogIndex > 0) {
+                    currentBlogIndex--;
+                }
+                updateBlogCarousel();
+            }
+        }, {
+            passive: true
+        });
+    }
 })();
 </script>
-@endsection
 
 @push('styles')
 <style>
-/* ============== GLOBAL STYLES ============== */
+/* ============== GLOBAL STYLES (unchanged) ============== */
 :root {
     --primary-color: #10b981;
     --secondary-color: #f59e0b;
@@ -2401,115 +2651,6 @@ body {
 }
 
 .submit-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
-}
-
-/* ============== BLOG SECTION ============== */
-.news-section {
-    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
-    padding: 80px 0;
-}
-
-.card-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.news-card {
-    background: #1b1b1b;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid #222;
-    transition: all 0.3s ease;
-}
-
-.news-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(34, 197, 94, 0.2);
-    border-color: var(--primary-color);
-}
-
-.news-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.news-card:hover img {
-    transform: scale(1.05);
-}
-
-.card-content {
-    padding: 25px;
-}
-
-.date {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--secondary-color);
-    font-size: 0.9rem;
-    margin-bottom: 12px;
-}
-
-.news-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 12px;
-    transition: color 0.3s ease;
-}
-
-.news-card:hover h3 {
-    color: var(--primary-color);
-}
-
-.news-card p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    line-height: 1.7;
-    margin-bottom: 20px;
-}
-
-.news-card a {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 600;
-    transition: gap 0.3s ease;
-}
-
-.news-card a:hover {
-    gap: 12px;
-}
-
-.view-all {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.btn-animate {
-    padding: 14px 35px;
-    background: transparent;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
-    text-decoration: none;
-    border-radius: 40px;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.btn-animate:hover {
-    background: var(--primary-color);
-    color: var(--text-white);
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
 }
@@ -4188,5 +4329,206 @@ select:focus-visible {
         flex: 0 0 240px;
     }
 }
+
+/* ============== BLOG CAROUSEL STYLES ============== */
+.blog-carousel-container {
+    position: relative;
+    width: 100%;
+    margin-top: 40px;
+    padding: 20px 0;
+    overflow: hidden;
+}
+
+.blog-carousel {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+
+.blog-carousel .news-card {
+    flex: 0 0 calc(33.333% - 20px);
+    /* 3 cards on desktop */
+    min-width: 0;
+    background: #1b1b1b;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #222;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    max-height: 480px;
+    /* Set a max height to keep consistency */
+    animation: cardFadeIn 0.6s ease forwards;
+    opacity: 0;
+    /* Start invisible, animation reveals */
+}
+
+@keyframes cardFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.blog-carousel .news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(34, 197, 94, 0.2);
+    border-color: var(--primary-color);
+}
+
+/* Fix image container */
+.blog-carousel .news-card img {
+    width: 100%;
+    height: 200px;
+    /* Fixed height for all images */
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.blog-carousel .news-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Card content area with fixed height */
+.blog-carousel .card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background: #1b1b1b;
+}
+
+.blog-carousel .card-content .date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.blog-carousel .card-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    color: var(--text-white);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 3.6rem;
+    /* Approx 2 lines */
+}
+
+.blog-carousel .card-content p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 1;
+}
+
+.blog-carousel .card-content a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: gap 0.3s ease;
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.blog-carousel .card-content a:hover {
+    gap: 12px;
+}
+
+/* Tablet: 2 cards */
+@media (min-width: 768px) and (max-width: 991px) {
+    .blog-carousel .news-card {
+        flex: 0 0 calc(50% - 15px);
+    }
+
+    .blog-carousel .news-card img {
+        height: 180px;
+    }
+}
+
+/* Mobile: 1 card */
+@media (max-width: 767px) {
+    .blog-carousel .news-card {
+        flex: 0 0 calc(100% - 20px);
+    }
+
+    .blog-carousel {
+        gap: 15px;
+    }
+
+    .blog-carousel .news-card img {
+        height: 180px;
+    }
+
+    .blog-carousel .card-content h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Carousel navigation buttons */
+.blog-carousel-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.blog-nav-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #222;
+    border: 2px solid #333;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.blog-nav-btn:hover:not(:disabled) {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+.blog-nav-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+@media (max-width: 480px) {
+    .blog-nav-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+}
 </style>
 @endpush
+@endsection

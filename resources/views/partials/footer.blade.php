@@ -7,7 +7,7 @@
 
             <div class="social-links">
                 <a href="https://www.facebook.com/share/1NPqATstmz/"><i class="fab fa-facebook-f"></i></a>
-    
+
             </div>
         </div>
 
@@ -39,8 +39,11 @@
             <p>আমাদের সর্বশেষ আপডেট পান</p>
 
             <div class="newsletter">
-                <input type="email" placeholder="আপনার ইমেইল">
-                <button>সাবস্ক্রাইব</button>
+                <form action="{{ route('newsletter.subscribe') }}" method="POST">
+                    @csrf
+                    <input type="email" name="email" placeholder="আপনার ইমেইল" required>
+                    <button type="submit">সাবস্ক্রাইব</button>
+                </form>
             </div>
         </div>
 
@@ -48,7 +51,8 @@
 
     <div class="footer-bottom">
         <p>&copy;2026 ঝাউগড়া কল্যাণ সংগঠন সর্বস্বত্ব সংরক্ষিত। This website design & developed by
-            <a href="https://sfashanto.netlify.app/" target="_blank"><b style="color: #ffbd39;"> SFA Shanto</b></a></p>
+            <a href="https://sfashanto.netlify.app/" target="_blank"><b style="color: #ffbd39;"> SFA Shanto</b></a>
+        </p>
         <div class="footer-policy">
             <a href="#">গোপনীয়তা নীতি</a>
             <a href="#">শর্তাবলী</a>
@@ -213,6 +217,7 @@ document.addEventListener("DOMContentLoaded", function() {
     flex-wrap: wrap;
     font-size: 14px;
 }
+
 .footer-bottom a:hover {
     text-decoration: none;
     color: #22c55e;

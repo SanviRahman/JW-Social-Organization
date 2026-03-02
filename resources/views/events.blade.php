@@ -11,6 +11,350 @@
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
+    <!-- Modal CSS (শুধু প্রয়োজন হলেই লোড হবে) -->
+    @if(session('success') || session('error') || $errors->any())
+    <style>
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(5px);
+        z-index: 9998;
+        animation: fadeIn 0.3s ease;
+    }
+
+    .custom-modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: linear-gradient(135deg, #1f2937, #111827);
+        padding: 0;
+        border-radius: 20px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+        width: 90%;
+        max-width: 400px;
+        animation: slideUp 0.4s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .modal-header-custom {
+        padding: 20px 25px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .modal-header-custom h5 {
+        margin: 0;
+        font-size: 1.3rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .modal-header-custom h5 i {
+        font-size: 1.5rem;
+    }
+
+    .close-btn-custom {
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: white;
+        font-size: 1.2rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .close-btn-custom:hover {
+        background: #ef4444;
+        transform: rotate(90deg);
+        border-color: transparent;
+    }
+
+    .modal-body-custom {
+        padding: 30px 25px;
+        text-align: center;
+    }
+
+    .modal-body-custom p {
+        color: #d1d5db;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .icon-circle {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        font-size: 2.5rem;
+        animation: pulse 2s infinite;
+    }
+
+    .modal-footer-custom {
+        padding: 20px 25px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        justify-content: center;
+    }
+
+    .modal-btn-custom {
+        color: white;
+        border: none;
+        padding: 12px 35px;
+        border-radius: 40px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .modal-btn-custom i {
+        font-size: 0.9rem;
+        transition: transform 0.3s ease;
+    }
+
+    .modal-btn-custom:hover i {
+        transform: translateX(5px);
+    }
+
+    /* সাকসেস মডেল */
+    .success-modal .modal-header-custom {
+        background: rgba(16, 185, 129, 0.1);
+    }
+
+    .success-modal .modal-header-custom h5 {
+        color: #10b981;
+    }
+
+    .success-modal .icon-circle {
+        background: rgba(16, 185, 129, 0.2);
+        color: #10b981;
+    }
+
+    .success-modal .modal-btn-custom {
+        background: linear-gradient(135deg, #10b981, #059669);
+    }
+
+    .success-modal .modal-btn-custom:hover {
+        box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.5);
+    }
+
+    /* এরর মডেল (সেশন এরর ও ভ্যালিডেশন এরর) */
+    .error-modal .modal-header-custom {
+        background: rgba(239, 68, 68, 0.1);
+    }
+
+    .error-modal .modal-header-custom h5 {
+        color: #ef4444;
+    }
+
+    .error-modal .icon-circle {
+        background: rgba(239, 68, 68, 0.2);
+        color: #ef4444;
+    }
+
+    .error-modal .modal-btn-custom {
+        background: linear-gradient(135deg, #ef4444, #b91c1c);
+    }
+
+    .error-modal .modal-btn-custom:hover {
+        box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.5);
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translate(-50%, -30%);
+        }
+
+        to {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 currentColor;
+        }
+
+        70% {
+            box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+        }
+
+        100% {
+            box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .custom-modal {
+            width: 95%;
+        }
+
+        .modal-header-custom h5 {
+            font-size: 1.1rem;
+        }
+
+        .modal-body-custom p {
+            font-size: 1rem;
+        }
+
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            font-size: 2rem;
+        }
+    }
+    </style>
+
+    <!-- ========== সাকসেস মডেল ========== -->
+    @if(session('success'))
+    <div id="successModal" style="display: none;">
+        <div class="modal-overlay" onclick="closeModal('successModal')"></div>
+        <div class="custom-modal success-modal">
+            <div class="modal-header-custom">
+                <h5><i class="fas fa-check-circle"></i> সফল হয়েছে!</h5>
+                <button class="close-btn-custom" onclick="closeModal('successModal')"><i
+                        class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body-custom">
+                <div class="icon-circle"><i class="fas fa-check-circle"></i></div>
+                <p>{{ session('success') }}</p>
+            </div>
+            <div class="modal-footer-custom">
+                <button class="modal-btn-custom" onclick="closeModal('successModal')">ঠিক আছে <i
+                        class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </div>
+    @endif
+
+    <!-- ========== সেশন এরর মডেল (যখন কন্ট্রোলার থেকে with('error', '...') পাঠানো হয়) ========== -->
+    @if(session('error'))
+    <div id="sessionErrorModal" style="display: none;">
+        <div class="modal-overlay" onclick="closeModal('sessionErrorModal')"></div>
+        <div class="custom-modal error-modal">
+            <div class="modal-header-custom">
+                <h5><i class="fas fa-exclamation-triangle"></i> ত্রুটি!</h5>
+                <button class="close-btn-custom" onclick="closeModal('sessionErrorModal')"><i
+                        class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body-custom">
+                <div class="icon-circle"><i class="fas fa-exclamation-triangle"></i></div>
+                <p>{{ session('error') }}</p>
+            </div>
+            <div class="modal-footer-custom">
+                <button class="modal-btn-custom" onclick="closeModal('sessionErrorModal')">ঠিক আছে <i
+                        class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </div>
+    @endif
+
+    <!-- ========== ভ্যালিডেশন এরর মডেল (যখন ফর্ম ভ্যালিডেশন ফেল করে) ========== -->
+    @if($errors->any())
+    <div id="validationErrorModal" style="display: none;">
+        <div class="modal-overlay" onclick="closeModal('validationErrorModal')"></div>
+        <div class="custom-modal error-modal">
+            <div class="modal-header-custom">
+                <h5><i class="fas fa-exclamation-triangle"></i> ত্রুটি!</h5>
+                <button class="close-btn-custom" onclick="closeModal('validationErrorModal')"><i
+                        class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body-custom">
+                <div class="icon-circle"><i class="fas fa-exclamation-triangle"></i></div>
+                <div style="text-align: left; color: #d1d5db;">
+                    <ul style="margin: 0; padding-left: 20px;">
+                        @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer-custom">
+                <button class="modal-btn-custom" onclick="closeModal('validationErrorModal')">ঠিক আছে <i
+                        class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </div>
+    @endif
+
+    <!-- ========== জাভাস্ক্রিপ্ট ========== -->
+    <script>
+    function showModal(modalId) {
+        var modal = document.getElementById(modalId);
+        if (modal) {
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function closeModal(modalId) {
+        var modal = document.getElementById(modalId);
+        if (modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    window.onload = function() {
+        @if(session('success'))
+        showModal('successModal');
+        @elseif(session('error'))
+        showModal('sessionErrorModal');
+        @elseif($errors->any())
+        showModal('validationErrorModal');
+        @endif
+    };
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            @if(session('success'))
+            closeModal('successModal');
+            @elseif(session('error'))
+            closeModal('sessionErrorModal');
+            @elseif($errors->any())
+            closeModal('validationErrorModal');
+            @endif
+        }
+    });
+    </script>
+    @endif
     <style>
     /* ===== Global Styles (same as about.blade.php) ===== */
     * {
@@ -710,14 +1054,18 @@
                     <p><i class="fas fa-phone"></i> +8801706940942</p>
                     <p><i class="fas fa-map-marker-alt"></i> ঝাউগড়া কল্যাণ সংগঠন, জামালপুর, বাংলাদেশ</p>
                 </div>
-                <div class="footer-col reveal">
-                    <h4>নিউজলেটার</h4>
-                    <p>আমাদের সর্বশেষ আপডেট পান</p>
-                    <div class="newsletter">
-                        <input type="email" placeholder="আপনার ইমেইল">
-                        <button>সাবস্ক্রাইব</button>
-                    </div>
-                </div>
+                 <div class="footer-col reveal">
+            <h4>নিউজলেটার</h4>
+            <p>আমাদের সর্বশেষ আপডেট পান</p>
+
+            <div class="newsletter">
+                <form action="{{ route('newsletter.subscribe') }}" method="POST">
+                    @csrf
+                    <input type="email" name="email" placeholder="আপনার ইমেইল" required>
+                    <button type="submit">সাবস্ক্রাইব</button>
+                </form>
+            </div>
+        </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy;2026 ঝাউগড়া কল্যাণ সংগঠন সর্বস্বত্ব সংরক্ষিত। This website design & developed by
