@@ -1,0 +1,33 @@
+@extends('admin.layout')
+@section('title','নতুন ব্লগ')
+@section('content')
+<div class="top-actions">
+    <h1>নতুন ব্লগ</h1>
+    <a class="btn" href="{{ route('admin.blogs.index') }}">ফিরে যান</a>
+</div>
+
+<form action="{{ route('admin.blogs.store') }}" method="POST">
+    @csrf
+    <div class="form-row">
+        <div class="form-group">
+            <label>শিরোনাম</label>
+            <input type="text" name="title" required value="{{ old('title') }}">
+        </div>
+        <div class="form-group">
+            <label>তারিখ (যেমন: ১২/১১/২০২৪)</label>
+            <input type="text" name="date" value="{{ old('date') }}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label>ইমেজ পাথ (image/...) </label>
+        <input type="text" name="image" value="{{ old('image') }}">
+    </div>
+    <div class="form-group">
+        <label>বর্ণনা</label>
+        <textarea name="description" rows="10" required>{{ old('description') }}</textarea>
+    </div>
+    <div style="margin-top:20px">
+        <button class="btn" type="submit">সেভ</button>
+    </div>
+</form>
+@endsection
