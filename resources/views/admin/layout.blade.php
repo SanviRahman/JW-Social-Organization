@@ -108,7 +108,7 @@
     .btn {
         display: inline-block;
         padding: 10px 14px;
-        background:  #0e835c;
+        background: #04AA6D;
         color:white;
         border: 2px solid #fff;
         border-radius: 40px;
@@ -119,9 +119,9 @@
     }
 
     .btn:hover {
-        background: #ef4444;
+        background:  #10b981;
         color: #fff;
-        border-color: #ef4444
+        border-color:  #10b981
     }
 
     .btn-danger {
