@@ -1041,7 +1041,7 @@
                     <!-- Left Column - Image -->
                     <div class="image-box reveal-left">
                         <img src="https://scontent.fdac7-1.fna.fbcdn.net/v/t39.30808-6/561659522_3695781134051775_8011078114531792308_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=1d70fc&_nc_eui2=AeGYC4gW1qbwgKfqDICD1r1MaeCP85FCpQBp4I_zkUKlAIu0DnP9rHy2DHyttjVTuO6SDNkPbGYywrLmWdxpks4n&_nc_ohc=3eg5nxRfRQEQ7kNvwHefF49&_nc_oc=AdkjqK_fHa3NkIAcI5oNzPkYrbjccRk6mByxh6GYTa8uA9cjarqYgHvNgmdgJMLQ5Hk&_nc_zt=23&_nc_ht=scontent.fdac7-1.fna&_nc_gid=4pF3YU73CzGC4rR4cyNPfw&_nc_ss=8&oh=00_AfuicoI9EDNRauFgCNK665hkSYXYsue4OFZXwz2E4YWgDA&oe=69A83C37"
-                            alt="শেখ ফরিদ আহমেদ শান্ত" class="founder-img">
+                            alt="শেখ ফরিদ আহমেদ শান্ত" class="founder-img" style="cursor: pointer;">
                     </div>
 
                     <!-- Right Column - Details -->
@@ -1096,7 +1096,7 @@
                     <p class="section-description">আমরা যা করতে চাই এবং কেন করতে চাই</p>
                 </div>
 
-                <div class="grid-2 mission-vision-grid">
+                <div class="grid-2 mission-vision-grid" style="cursor:pointer;">
                     <!-- Mission Card -->
                     <div class="card mission-card reveal-up">
                         <div class="card-icon">
@@ -1152,7 +1152,7 @@
                     <p class="section-description">আপনার সময় ও মেধা দিয়ে সমাজ বদলের অংশীদার হোন</p>
                 </div>
 
-                <div class="grid-3 volunteer-grid">
+                <div class="grid-3 volunteer-grid" style="cursor: pointer;">
                     <!-- 1 -->
                     <div class="card volunteer-card reveal-up">
                         <div class="card-icon volunteer-icon">

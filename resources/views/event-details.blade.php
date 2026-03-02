@@ -1045,7 +1045,7 @@
         <section class="section-dark section-tight">
             <div class="container">
                 <div class="event-details reveal-up">
-                    <div class="event-image">
+                    <div class="event-image" style="cursor: pointer;" onclick="window.location.href='{{ route('event.details', $event->id) }}'">
                         <img src="{{ asset($event->image) }}" alt="{{ $event->title }}">
                     </div>
                     <div class="event-info">
@@ -1082,7 +1082,7 @@
                 <div class="events-grid">
                     @forelse($relatedEvents as $related)
                     <div class="event-card reveal-up">
-                        <div class="event-image">
+                        <div class="event-image" style="cursor: pointer;" onclick="window.location.href='{{ route('event.details', $related->id) }}'">
                             <img src="{{ asset($related->image) }}" alt="{{ $related->title }}">
                             <div class="event-date-badge">
                                 {{ \Carbon\Carbon::parse($related->event_date)->format('d M') }}</div>
@@ -1114,11 +1114,11 @@
                 <h2 class="section-title reveal">অংশগ্রহণকারীদের মতামত</h2>
                 <p class="section-subtitle reveal delay-1">পূর্ববর্তী ইভেন্টের কিছু অনুভূতি</p>
 
-                <div class="testimonials-grid">
+                <div class="testimonials-grid" style="cursor: pointer;">
                     <div class="testimonial-card reveal-up">
                         <i class="fas fa-quote-right"></i>
-                        <p>"অসাধারণ আয়োজন! এমন উদ্যোগ সত্যিই প্রশংসনীয়। সংগঠনের প্রতিটি মানুষ আন্তরিক।"</p>
-                        <p class="author">- মোঃ জাবেদ, স্থানীয় বাসিন্দা</p>
+                        <p>"অসাধারণ আয়োজন! এমন উদ্যোগ সত্যিই প্রশংসনীয়। সংগঠনের প্রতিটি মানুষ আন্তরিক।"</p>
+                        <p class="author">- মোঃ জাবেদ, স্থানীয় বাসিন্দা</p>
                     </div>
                     <div class="testimonial-card reveal-up delay-1">
                         <i class="fas fa-quote-right"></i>

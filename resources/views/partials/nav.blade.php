@@ -2,8 +2,7 @@
     <nav class="navbar">
         <div class="logo">
             <div class="logo-icon">
-                <img src="https://scontent.fdac7-1.fna.fbcdn.net/v/t39.30808-6/475054914_628267503061184_6035807701151321212_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=2a1932&_nc_eui2=AeHLxd5zRIQu5L0EbwXmmq54RzXRE4KOiMVHNdETgo6IxV3kT5ESVhIOlCyKa8ptV4infLRXHsMu4OvZDuKHcUV_&_nc_ohc=S4sdqTmbmy4Q7kNvwGNQpAv&_nc_oc=AdlbXo4jHMXlhI7mrq9G4DWSQBaiL1qpCF9izl_gKZEPaXohGojOblDhrV7iiIolOqU&_nc_zt=23&_nc_ht=scontent.fdac7-1.fna&_nc_gid=XzBmsmKUlPL8cOk608cJGQ&oh=00_AftfSneNraOHOfA2pr9FiX5HoEtc1OYHRVeSPyZa_nnj4w&oe=69A794CF"
-                    alt="ঝাউগড়া কল্যাণ সংগঠনের লোগো" height="120" width="80" style="border-radius: 30%;">
+                <img src="{{ asset('image/logo.jpg') }}" alt="ঝাউগড়া কল্যাণ সংগঠনের লোগো" height="110" width="90" style="border-radius: 30%;">
             </div>
             <div class="logo-text">
                 <h1>ঝাউগড়া কল্যাণ সংগঠন</h1>

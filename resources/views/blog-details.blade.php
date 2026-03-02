@@ -1175,7 +1175,7 @@
         <!-- Blog Details (Main) -->
         <section class="section-dark" style="padding-bottom: 50px;">
             <div class="container">
-                <div class="blog-details reveal-up">
+                <div class="blog-details reveal-up" style="cursor: pointer;">
                     <div class="blog-image">
                         <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}">
                     </div>
@@ -1216,7 +1216,7 @@
                 <h2 class="section-title reveal">আরও ব্লগ</h2>
                 <p class="section-subtitle reveal delay-1">আপনার জন্য অন্যান্য লেখা</p>
 
-                <div class="related-grid">
+                <div class="related-grid" style="cursor: pointer;">
                     @foreach($relatedBlogs as $related)
                     <div class="related-card reveal-up">
                         <div class="card-img">
@@ -1244,7 +1244,7 @@
                 <h2 class="section-title reveal">অংশগ্রহণকারীদের মতামত</h2>
                 <p class="section-subtitle reveal delay-1">পূর্ববর্তী ইভেন্টের কিছু অনুভূতি</p>
 
-                <div class="testimonials-grid">
+                <div class="testimonials-grid" style="cursor:pointer;">
                     <div class="testimonial-card reveal-up">
                         <i class="fas fa-quote-right"></i>
                         <p>"অসাধারণ আয়োজন! এমন উদ্যোগ সত্যিই প্রশংসনীয়। সংগঠনের প্রতিটি মানুষ আন্তরিক।"</p>

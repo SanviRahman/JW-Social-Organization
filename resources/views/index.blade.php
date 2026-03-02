@@ -373,7 +373,7 @@
                 <h2 class="section-main-title">পরিসংখ্যান</h2>
                 <p class="section-description">এক নজরে আমাদের কার্যক্রমের চিত্র</p>
             </div>
-            <div class="stats-grid">
+            <div class="stats-grid" style="cursor: pointer;">
                 <div class="stat-card">
                     <div class="stat-icon"><i class="far fa-clock"></i></div>
                     <h2 class="stat-number" data-target="2017">০</h2>
@@ -428,11 +428,11 @@
                     <a href="{{ route('about') }}" class="learn-more-btn">আরও জানুন <i
                             class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="mission-vision reveal-right">
+                <div class="mission-vision reveal-right" style="text-align: justify; cursor: pointer;">
                     <div class="info-card mission-card">
                         <div class="info-icon"><i class="fas fa-globe"></i></div>
                         <h3>আমাদের মিশন</h3>
-                        <p>দরিদ্র ও অসহায় মানুষের মৌলিক চাহিদা পূরণ এবং তাদের স্বাবলম্বী করে গড়ে তোলার মাধ্যমে একটি
+                        <p>দরিদ্র ও অসহায় মানুষের মৌলিক চাহিদা পূরণ এবং তাদের স্বাবলম্বী করে গড়ে তোলার মাধ্যমে একটি
                             বৈষম্যহীন সমাজ প্রতিষ্ঠা করা।</p>
                     </div>
                     <div class="info-card vision-card">
@@ -486,7 +486,7 @@
                 <h2 class="section-main-title">সাফল্যের গল্প</h2>
                 <p class="section-description">যাদের জীবন বদলে গেছে আমাদের প্রচেষ্টায়</p>
             </div>
-            <div class="success-carousel-container">
+            <div class="success-carousel-container" style="cursor:pointer;">
                 <div class="success-carousel" id="successCarousel">
                     <!-- Story 1 -->
                     <div class="story-card">
@@ -623,7 +623,7 @@
                 <h2 class="section-main-title">আমাদের পথচলা</h2>
                 <p class="section-description">২০১৭ সালে যাত্রা শুরু করে আমরা আজ অবধি নিরলসভাবে কাজ করে যাচ্ছি।</p>
             </div>
-            <div class="timeline">
+            <div class="timeline" style="cursor: pointer;">
                 <div class="timeline-item right">
                     <div class="content">
                         <h2>2017</h2>
@@ -632,28 +632,28 @@
                         </p>
                     </div>
                 </div>
-                <div class="timeline-item left">
+                <div class="timeline-item left" style="cursor: pointer;">
                     <div class="content">
                         <h2>2019</h2>
                         <h3>শিক্ষা প্রকল্প</h3>
                         <p>মেধাবী কিন্তু দরিদ্র শিক্ষার্থীদের জন্য বৃত্তি কর্মসূচি চালু।</p>
                     </div>
                 </div>
-                <div class="timeline-item right">
+                <div class="timeline-item right" style="cursor: pointer;">
                     <div class="content">
                         <h2>2021</h2>
-                        <h3>কোভিড-১৯ সহায়তা</h3>
-                        <p>মহামারির সময় ২০০০+ অসহায় পরিবারের মাঝে খাদ্য সহায়তা পৌঁছে দেওয়া।</p>
+                        <h3>কোভিড-১৯ সহায়তা</h3>
+                        <p>মহামারির সময় ২০০০+ অসহায় পরিবারের মাঝে খাদ্য সহায়তা পৌঁছে দেওয়া।</p>
                     </div>
                 </div>
-                <div class="timeline-item left">
+                <div class="timeline-item left" style="cursor: pointer;">
                     <div class="content">
                         <h2>2023</h2>
                         <h3>কারিগরি প্রশিক্ষণ</h3>
                         <p>বেকার যুবক-যুবতীদের জন্য কম্পিউটার ও কারিগরি প্রশিক্ষণ কেন্দ্র স্থাপন।</p>
                     </div>
                 </div>
-                <div class="timeline-item right">
+                <div class="timeline-item right" style="cursor: pointer;">
                     <div class="content">
                         <h2>2025</h2>
                         <h3>ডিজিটাল রূপান্তর</h3>
@@ -745,7 +745,7 @@
                 <p class="section-description">আমাদের সাম্প্রতিক কর্মকাণ্ড ও আপডেট</p>
             </div>
 
-            <div class="blog-carousel-container">
+            <div class="blog-carousel-container" style="cursor:pointer;">
                 <div class="blog-carousel" id="blogCarousel">
                     @foreach($blogs as $blog)
                     <div class="news-card">
@@ -842,16 +842,16 @@
                 </div>
                 <div class="donation-right">
                     <h3>ডোনেশন ডিটেইলস</h3>
-                    <div class="payment-box">
+                    <div class="payment-box" style="cursor: pointer;">
                         <div class="payment-item">
                             <h4><i class="fas fa-mobile-alt"></i> Bkash</h4>
                             <p>01706940942</p>
                         </div>
-                        <div class="payment-item">
+                        <div class="payment-item" style="cursor: pointer;">
                             <h4><i class="fas fa-rocket"></i> Rocket</h4>
                             <p>01706940942</p>
                         </div>
-                        <div class="payment-item">
+                        <div class="payment-item" style="cursor: pointer;">
                             <h4><i class="fas fa-credit-card"></i> Nagad</h4>
                             <p>01706940942</p>
                         </div>
@@ -912,7 +912,7 @@
                 <p class="section-description">যেকোনো প্রয়োজনে আমাদের সাথে যোগাযোগ করুন</p>
             </div>
             <div class="contact-wrapper">
-                <div class="glass-card contact-info">
+                <div class="glass-card contact-info" style="cursor: pointer;">
                     <h3>যোগাযোগের তথ্য</h3>
                     <div class="info-item"><i class="fas fa-map-marker-alt"></i><span>ঝাউগড়া কল্যাণ সংগঠন, জামালপুর,
                             বাংলাদেশ</span></div>
@@ -960,9 +960,9 @@
             <div class="developer-identity-wrapper">
                 <div class="developer-image-card reveal-left">
                     <div class="developer-image-wrapper">
-                        <img src="https://scontent.fdac7-1.fna.fbcdn.net/v/t39.30808-6/561659522_3695781134051775_8011078114531792308_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=1d70fc&_nc_eui2=AeGYC4gW1qbwgKfqDICD1r1MaeCP85FCpQBp4I_zkUKlAIu0DnP9rHy2DHyttjVTuO6SDNkPbGYywrLmWdxpks4n&_nc_ohc=3eg5nxRfRQEQ7kNvwHefF49&_nc_oc=AdkjqK_fHa3NkIAcI5oNzPkYrbjccRk6mByxh6GYTa8uA9cjarqYgHvNgmdgJMLQ5Hk&_nc_zt=23&_nc_ht=scontent.fdac7-1.fna&_nc_gid=4pF3YU73CzGC4rR4cyNPfw&_nc_ss=8&oh=00_AfuicoI9EDNRauFgCNK665hkSYXYsue4OFZXwz2E4YWgDA&oe=69A83C37"
-                            alt="শেখ ফরিদ আহমেদ শান্ত" class="developer-image">
-                        <div class="developer-image-overlay">
+                        <img src="{{ asset('image/Sanvi-02.jpg') }}"
+                            alt="শেখ ফরিদ আহমেদ শান্ত" class="developer-image" style="cursor: pointer;">
+                        <div class="developer-image-overlay" style="cursor: pointer;">
                             <div class="developer-social-links">
                                 <a href="https://github.com/SanviRahman" class="social-link"><i
                                         class="fab fa-github"></i></a>
@@ -973,7 +973,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="developer-quote">
+                    <div class="developer-quote" style="text-align: justify; cursor: pointer;">
                         <i class="fas fa-quote-left"></i>
                         <p>প্রযুক্তির মাধ্যমে সমাজের সেবা করা আমার লক্ষ্য। প্রতিটি লাইন কোড যেন বদলে দিতে পারে একটি
                             জীবন।</p>
@@ -990,7 +990,7 @@
                         <p>তার বিশেষ দক্ষতার মধ্যে রয়েছে ওয়েব অ্যাপ্লিকেশন ডেভেলপমেন্ট, UI/UX ডিজাইন, এবং ফুল-স্ট্যাক
                             ডেভেলপমেন্ট। তিনি বিশ্বাস করেন, প্রযুক্তির মাধ্যমে সমাজের বিভিন্ন সমস্যার সমাধান সম্ভব।</p>
                     </div>
-                    <div class="developer-info-grid">
+                    <div class="developer-info-grid" style="text-align: justify; cursor: pointer;">
                         <div class="info-item">
                             <div class="info-icon"><i class="fas fa-graduation-cap"></i></div>
                             <div class="info-content">
@@ -1039,11 +1039,11 @@
                     <div class="developer-skills">
                         <h3>প্রযুক্তিগত দক্ষতা</h3>
                         <div class="skills-tags">
-                            <span class="skill-tag">HTML5/CSS3</span><span class="skill-tag">C & C++</span><span
-                                class="skill-tag">JavaScript</span><span class="skill-tag">Python</span><span
-                                class="skill-tag">Django</span><span class="skill-tag">PHP</span><span
-                                class="skill-tag">Laravel</span><span class="skill-tag">MySQL</span><span
-                                class="skill-tag">Git & GitHub</span>
+                            <span class="skill-tag" style="cursor: pointer;">HTML5/CSS3</span><span class="skill-tag">C & C++</span><span
+                                class="skill-tag" style="cursor: pointer;">JavaScript</span><span class="skill-tag">Python</span><span
+                                class="skill-tag" style="cursor: pointer;">Django</span><span class="skill-tag">PHP</span><span
+                                class="skill-tag" style="cursor: pointer;">Laravel</span><span class="skill-tag">MySQL</span><span
+                                class="skill-tag" style="cursor: pointer;">Git & GitHub</span>
                         </div>
                     </div>
                     <div class="developer-cta">
@@ -3036,6 +3036,7 @@ body {
 }
 
 /* ============== SCROLL TO TOP ============== */
+/* ============== SCROLL TO TOP ============== */
 .scroll-to-top-btn {
     position: fixed;
     bottom: 30px;
@@ -3057,6 +3058,8 @@ body {
     align-items: center;
     justify-content: center;
     box-shadow: var(--shadow-md);
+    /* স্থির অবস্থায় মৃদু পালস অ্যানিমেশন */
+    animation: gentlePulse 2s infinite;
 }
 
 .scroll-to-top-btn.show {
@@ -3066,8 +3069,22 @@ body {
 }
 
 .scroll-to-top-btn:hover {
+    /* হোভারে অ্যানিমেশন বন্ধ (চাইলে রাখতে পারেন) */
+    animation: none;
     transform: translateY(-5px) scale(1.1);
     box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+}
+
+@keyframes gentlePulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
 }
 
 /* ============== ANIMATIONS ============== */

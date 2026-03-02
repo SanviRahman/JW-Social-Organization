@@ -997,7 +997,7 @@
                 <div class="events-grid">
                     @foreach($events as $event)
                     <div class="event-card reveal-up">
-                        <div class="event-image">
+                        <div class="event-image" style="cursor: pointer;" onclick="window.location.href='{{ route('event.details', $event->id) }}'">
                             <img src="{{ asset($event->image) }}" alt="{{ $event->title }}">
                             <div class="overlay">
                                 <h4 class="overlay-title">{{ $event->title }}</h4>
