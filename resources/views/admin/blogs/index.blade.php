@@ -34,6 +34,6 @@
     </tbody>
 </table>
 <div class="pagination">
-    {{ $blogs->links() }}
+    {{ $blogs->links('pagination::bootstrap-4') }}
 </div>
 @endsection

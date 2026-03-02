@@ -1,9 +1,11 @@
 <?php
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use Carbon\Carbon; // make sure to import Carbon
 
 class BlogController extends Controller
 {
@@ -21,12 +23,19 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'image' => ['nullable', 'string', 'max:255'],
-            'title' => ['required', 'string', 'max:255'],
+            'image'       => ['nullable', 'string', 'max:255'],
+            'title'       => ['required', 'string', 'max:255'],
             'description' => ['required', 'string'],
-            'date' => ['nullable', 'date'],
+            'date'        => ['nullable', 'date'],
         ]);
+
+        // Format the date if it is present
+        if (!empty($data['date'])) {
+            $data['date'] = Carbon::parse($data['date'])->format('Y-m-d');
+        }
+
         Blog::create($data);
+
         return redirect()->route('admin.blogs.index')->with('success', 'Blog created');
     }
 
@@ -38,12 +47,19 @@ class BlogController extends Controller
     public function update(Request $request, Blog $blog)
     {
         $data = $request->validate([
-            'image' => ['nullable', 'string', 'max:255'],
-            'title' => ['required', 'string', 'max:255'],
+            'image'       => ['nullable', 'string', 'max:255'],
+            'title'       => ['required', 'string', 'max:255'],
             'description' => ['required', 'string'],
-            'date' => ['nullable', 'date'],
+            'date'        => ['nullable', 'date'],
         ]);
+
+        // Format the date if it is present
+        if (!empty($data['date'])) {
+            $data['date'] = Carbon::parse($data['date'])->format('Y-m-d');
+        }
+
         $blog->update($data);
+
         return redirect()->route('admin.blogs.index')->with('success', 'Blog updated');
     }
 

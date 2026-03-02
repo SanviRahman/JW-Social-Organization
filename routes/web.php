@@ -5,6 +5,10 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EventController as AdminEventController;
 use App\Http\Controllers\Admin\AmaderKarjokromController as AdminKarjokromController;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\NewsLetterController;
+use App\Http\Controllers\Admin\NibondonController;
+use App\Http\Controllers\Admin\CommunicationController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/admin/login', [AuthController::class, 'showLoginForm'])->name('admin.login');
@@ -34,8 +38,8 @@ Route::prefix('admin')->middleware('admin')->name('admin.')->group(function () {
     Route::resource('karjokroms', AdminKarjokromController::class)->parameters([
         'karjokroms' => 'karjokrom'
     ])->except(['show']);
-    Route::resource('blogs', \App\Http\Controllers\Admin\BlogController::class);
-    Route::resource('newsletters', \App\Http\Controllers\Admin\NewsLetterController::class)->only(['index', 'destroy']);
-    Route::resource('nibondon', \App\Http\Controllers\Admin\NibondonController::class)->only(['index', 'show', 'destroy']);
-    Route::resource('communications', \App\Http\Controllers\Admin\CommunicationController::class)->only(['index', 'show', 'destroy']);
+    Route::resource('blogs',BlogController::class);
+    Route::resource('newsletters',NewsLetterController::class)->only(['index', 'destroy']);
+    Route::resource('nibondon',NibondonController::class)->only(['index', 'show', 'destroy']);
+    Route::resource('communications',CommunicationController::class)->only(['index', 'show', 'destroy']);
 });

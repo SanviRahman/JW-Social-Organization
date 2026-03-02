@@ -108,23 +108,32 @@
     .btn {
         display: inline-block;
         padding: 10px 14px;
-        border: 2px solid #10b981;
-        color: #fff;
+        background:  #0e835c;
+        color:white;
+        border: 2px solid #fff;
         border-radius: 40px;
         text-decoration: none;
-        font-weight: 600
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s
     }
 
     .btn:hover {
-        background: #10b981
-    }
-
-    .btn-danger {
+        background: #ef4444;
+        color: #fff;
         border-color: #ef4444
     }
 
+    .btn-danger {
+        background: #fff;
+        color: #000;
+        border-color: #fff
+    }
+
     .btn-danger:hover {
-        background: #ef4444
+        background: #ef4444;
+        color: #fff;
+        border-color: #ef4444
     }
 
     .form-row {

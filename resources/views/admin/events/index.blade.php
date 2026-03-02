@@ -38,6 +38,6 @@
     </tbody>
     </table>
     <div class="pagination">
-        {{ $events->links() }}
+        {{ $events->links('pagination::bootstrap-4') }}
     </div>
 @endsection
