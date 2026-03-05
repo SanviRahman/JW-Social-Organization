@@ -231,8 +231,6 @@
             <div class="brand">অ্যাডমিন</div>
             <nav>
                 <a href="{{ route('admin.dashboard') }}">ড্যাশবোর্ড</a>
-                <a href="{{ route('admin.events.index') }}">ইভেন্ট</a>
-                <a href="{{ route('admin.karjokroms.index') }}">কার্যক্রম</a>
                 @if(session('is_admin')===true)
                 <form action="{{ route('admin.logout') }}" method="POST" style="display:inline">
                     @csrf
