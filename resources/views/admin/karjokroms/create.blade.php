@@ -5,7 +5,7 @@
     <h1>নতুন কার্যক্রম</h1>
     <a class="btn" href="{{ route('admin.karjokroms.index') }}">সব আইটেম</a>
 </div>
-<form action="{{ route('admin.karjokroms.store') }}" method="POST">
+<form action="{{ route('admin.karjokroms.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="form-row">
         <div>
@@ -13,8 +13,8 @@
             <input type="text" name="title" value="{{ old('title') }}">
         </div>
         <div>
-            <label>ইমেজ পাথ</label>
-            <input type="text" name="image" value="{{ old('image') }}">
+            <label>ইমেজ আপলোড</label>
+            <input type="file" name="image" accept="image/*">
         </div>
     </div>
     <div style="margin-top:12px">

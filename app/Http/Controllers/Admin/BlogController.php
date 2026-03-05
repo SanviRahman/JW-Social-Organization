@@ -7,13 +7,15 @@ use App\Models\Blog;
 use Illuminate\Http\Request;
 use Carbon\Carbon; // make sure to import Carbon
 
+use Illuminate\Support\Facades\Storage;
+
 class BlogController extends Controller
 {
     public function index()
     {
         $blogs = Blog::orderBy('created_at', 'desc')->paginate(10);
         return view('admin.blogs.index', compact('blogs'));
-    }
+    }            
 
     public function create()
     {
@@ -23,11 +25,16 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'image'       => ['nullable', 'string', 'max:255'],
+            'image'       => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
             'title'       => ['required', 'string', 'max:255'],
             'description' => ['required', 'string'],
             'date'        => ['nullable', 'date'],
         ]);
+
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('uploads/blogs', 'public');
+            $data['image'] = 'storage/' . $path;
+        }
 
         // Format the date if it is present
         if (!empty($data['date'])) {
@@ -47,11 +54,20 @@ class BlogController extends Controller
     public function update(Request $request, Blog $blog)
     {
         $data = $request->validate([
-            'image'       => ['nullable', 'string', 'max:255'],
+            'image'       => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
             'title'       => ['required', 'string', 'max:255'],
             'description' => ['required', 'string'],
             'date'        => ['nullable', 'date'],
         ]);
+
+        if ($request->hasFile('image')) {
+            // Delete old image if it exists and is not a default asset
+            if ($blog->image && str_contains($blog->image, 'storage/uploads/')) {
+                Storage::disk('public')->delete(str_replace('storage/', '', $blog->image));
+            }
+            $path = $request->file('image')->store('uploads/blogs', 'public');
+            $data['image'] = 'storage/' . $path;
+        }
 
         // Format the date if it is present
         if (!empty($data['date'])) {

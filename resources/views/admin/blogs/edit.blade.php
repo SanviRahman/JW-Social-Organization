@@ -6,7 +6,7 @@
     <a class="btn" href="{{ route('admin.blogs.index') }}">ফিরে যান</a>
 </div>
 
-<form action="{{ route('admin.blogs.update', $blog) }}" method="POST">
+<form action="{{ route('admin.blogs.update', $blog) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
     <div class="form-row">
@@ -15,13 +15,18 @@
             <input type="text" name="title" required value="{{ old('title', $blog->title) }}">
         </div>
         <div class="form-group">
-            <label>তারিখ (যেমন: ১২/১১/২০২৪)</label>
-            <input type="text" name="date" value="{{ old('date', $blog->date) }}">
+            <label>তারিখ</label>
+            <input type="date" name="date" value="{{ old('date', $blog->date) }}">
         </div>
     </div>
     <div class="form-group">
-        <label>ইমেজ পাথ (image/...) </label>
-        <input type="text" name="image" value="{{ old('image', $blog->image) }}">
+        <label>ইমেজ আপলোড</label>
+        <input type="file" name="image" accept="image/*">
+        @if($blog->image)
+            <div style="margin-top: 5px;">
+                <img src="{{ asset($blog->image) }}" width="80" style="border-radius: 5px;">
+            </div>
+        @endif
     </div>
     <div class="form-group">
         <label>বর্ণনা</label>

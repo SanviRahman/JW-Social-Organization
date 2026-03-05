@@ -381,7 +381,7 @@
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon"><i class="fas fa-users"></i></div>
-                    <h2 class="stat-number" data-target="500">০</h2>
+                    <h2 class="stat-number" data-target="116">০</h2>
                     <p class="stat-label">সদস্য</p>
                 </div>
                 <div class="stat-card">
@@ -418,11 +418,11 @@
                     <div class="founder-card">
                         <div class="founder-img">
                             <img
-                                src="{{ asset('image/sanvi-03.jpeg') }}" alt="শেখ ফরিদ আহমেদ শান্ত">
+                                src="https://scontent.fdac174-1.fna.fbcdn.net/v/t39.30808-6/428690096_2177592155744589_9071854973311133277_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=53a332&_nc_eui2=AeHAM2IC8dELWY_hU_36VSCn5BIXLbUSXW7kEhcttRJdbnp1pmC2zcWA2D7ffRYBqX3C3cK4DGQseYMQzSWIpgdL&_nc_ohc=RZg7cfOeVi8Q7kNvwEs9zde&_nc_oc=Adkr5cXsWKEGh6jRBs6hA-iroQpkA9W-h2VOP8b66PT_8VAHo5p1WsPe-_CxCI6KSSE&_nc_zt=23&_nc_ht=scontent.fdac174-1.fna&_nc_gid=iuPT-gL0HGsm4qV_k_MLhQ&_nc_ss=8&oh=00_AfyA-qYeg_JaMSNhkz0MW12-zHhQZedt-I9BQfyGJdnm1A&oe=69AF11DB" alt="ডাঃ তোফায়েল হোসেন">
                         </div>
                         <div class="founder-info">
-                            <h4>শেখ ফরিদ আহমেদ শান্ত</h4>
-                            <p>প্রতিষ্ঠাতা ও সভাপতি</p>
+                            <h4>ডাঃ তোফায়েল হোসেন</h4>
+                            <p>সংগঠন সভাপতি</p>
                         </div>
                     </div>
                     <a href="{{ route('about') }}" class="learn-more-btn">আরও জানুন <i

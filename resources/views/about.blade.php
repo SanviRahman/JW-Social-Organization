@@ -617,6 +617,95 @@
         padding: 30px 20px;
     }
 
+    /* Members Section */
+    .member-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+        cursor: pointer;
+    }
+
+    .member-card {
+        text-align: center;
+        background: #1f2937;
+        padding: 30px 20px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.4s ease;
+        height: 100%;
+    }
+
+    .member-card:hover {
+        transform: translateY(-10px);
+        border-color: #10b981;
+        box-shadow: 0 20px 40px -12px rgba(16, 185, 129, 0.2);
+    }
+
+    .member-img-wrapper {
+        width: 130px;
+        height: 130px;
+        margin: 0 auto 20px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid #10b981;
+        padding: 5px;
+        background: rgba(16, 185, 129, 0.1);
+        transition: transform 0.4s ease;
+    }
+
+    .member-card:hover .member-img-wrapper {
+        transform: scale(1.05);
+        background: rgba(16, 185, 129, 0.2);
+    }
+
+    .member-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .member-info h4 {
+        font-size: 1.25rem;
+        margin-bottom: 8px;
+        color: #ffffff;
+    }
+
+    .member-info p {
+        font-size: 0.95rem;
+        color: #10b981;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .download-btn-container {
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    .btn-download {
+        background: #fff;
+        color: #000;
+        padding: 14px 35px;
+        border-radius: 50px;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: 2px solid #fff;
+    }
+
+    .btn-download:hover {
+        background: #10b981;
+        color: #fff;
+        border-color: #10b981;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(239, 68, 68, 0.3);
+    }
+
     .volunteer-icon {
         border-radius: 50%;
         width: 80px;
@@ -1031,40 +1120,37 @@
         <section class="section-dark">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-subtitle-tag">প্রতিষ্ঠাতা ও সভাপতি</span>
+                    <span class="section-subtitle-tag">সভাপতি</span>
                     <pre></pre>
-                    <h2 class="section-main-title">শেখ ফরিদ আহমেদ শান্ত</h2>
-                    <p class="section-description">সংগঠনের প্রতিষ্ঠাতা ও অনুপ্রেরণার উৎস</p>
+                    <h2 class="section-main-title">ডাঃ তোফায়েল হোসেন</h2>
+                    <p class="section-description">সংগঠনের সভাপতি ও অনুপ্রেরণার উৎস</p>
                 </div>
 
                 <div class="grid-2">
                     <!-- Left Column - Image -->
                     <div class="image-box reveal-left">
-                        <img src="{{ asset('image/sanvi-01.jpg') }}"
-                            alt="শেখ ফরিদ আহমেদ শান্ত" class="founder-img" style="cursor: pointer;">
+                        <img src="https://scontent.fdac174-1.fna.fbcdn.net/v/t39.30808-6/428690096_2177592155744589_9071854973311133277_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=53a332&_nc_eui2=AeHAM2IC8dELWY_hU_36VSCn5BIXLbUSXW7kEhcttRJdbnp1pmC2zcWA2D7ffRYBqX3C3cK4DGQseYMQzSWIpgdL&_nc_ohc=RZg7cfOeVi8Q7kNvwEs9zde&_nc_oc=Adkr5cXsWKEGh6jRBs6hA-iroQpkA9W-h2VOP8b66PT_8VAHo5p1WsPe-_CxCI6KSSE&_nc_zt=23&_nc_ht=scontent.fdac174-1.fna&_nc_gid=iuPT-gL0HGsm4qV_k_MLhQ&_nc_ss=8&oh=00_AfyA-qYeg_JaMSNhkz0MW12-zHhQZedt-I9BQfyGJdnm1A&oe=69AF11DB"
+                            alt="ডাঃ তোফায়েল হোসেন" class="founder-img" style="cursor: pointer;">
                     </div>
 
                     <!-- Right Column - Details -->
                     <div class="content-box reveal-right">
-                        <h2 class="founder-name">শেখ ফরিদ আহমেদ শান্ত</h2>
-                        <h4 class="founder-title">প্রতিষ্ঠাতা ও সভাপতি, ঝাউগড়া কল্যাণ সংগঠন</h4>
+                        <h2 class="founder-name">ডাঃ তোফায়েল হোসেন</h2>
+                        <h4 class="founder-title">সংগঠন সভাপতি, ঝাউগড়া কল্যাণ সংগঠন</h4>
 
                         <div class="founder-bio" style="text-align: justify;">
                             <p>
-                                শেখ ফরিদ আহমেদ শান্ত একজন সমাজসেবক, উদ্যোক্তা এবং মানবাধিকার কর্মী। ২০১৭ সালে তিনি
+                                ডাঃ তোফায়েল হোসেন একজন সমাজসেবক, উদ্যোক্তা এবং মানবাধিকার কর্মী। ২০১৭ সালে তিনি
                                 ঝাউগড়া কল্যাণ সংগঠন প্রতিষ্ঠা করেন যার মূল লক্ষ্য ছিল সমাজের সুবিধাবঞ্চিত মানুষের
                                 জীবনমান উন্নয়ন। তার নেতৃত্বে সংগঠনটি শিক্ষা, স্বাস্থ্য, নারী উন্নয়ন ও পরিবেশ সুরক্ষায়
-                                গুরুত্বপূর্ণ ভূমিকা রাখছে।
+                                দিকনির্দেশনা ও সহযোগিতা।" তার এই দর্শনই সংগঠনের কার্যক্রমের মূল চালিকাশক্তি।
+                                গুরুত্বপূর্ণ ভূমিকা রাখছে।তিনি বর্তমানে ময়মেনসিংহ মেডিকেল কলেজ & হসপিটালে কর্মরত।
                             </p>
                             <p>
                                 তিনি বিশ্বাস করেন, "প্রত্যেক মানুষের মাঝেই পরিবর্তন আনার ক্ষমতা আছে, শুধু প্রয়োজন সঠিক
                                 দিকনির্দেশনা ও সহযোগিতা।" তার এই দর্শনই সংগঠনের কার্যক্রমের মূল চালিকাশক্তি।
                             </p>
                             <p>
-                                তিনি ড্যাফোডিল ইন্টারন্যাশনাল ইউনিভার্সিটি থেকে কম্পিউটার সায়েন্স অ্যান্ড
-                                ইঞ্জিনিয়ারিং-এ
-                                স্নাতক ডিগ্রি অর্জন করেছেন এবং পেশাগত জীবনে একজন সফটওয়্যার ইঞ্জিনিয়ার হিসেবে কাজ
-                                করছেন।
                                 তার সমাজসেবামূলক কর্মকাণ্ডের স্বীকৃতিস্বরূপ তিনি বেশ কয়েকটি পুরস্কার ও সম্মাননায় ভূষিত
                                 হয়েছেন।
                             </p>
@@ -1082,6 +1168,158 @@
                             </ul>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Members (Sodossho) Section -->
+        <section class="section-dark">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle-tag">আমাদের শক্তি</span>
+                    <pre></pre>
+                    <h2 class="section-main-title">সংগঠনের সদস্যবৃন্দ</h2>
+                    <p class="section-description">মানবতার সেবায় যারা নিরলসভাবে কাজ করে যাচ্ছেন</p>
+                </div>
+
+                <div class="member-grid">
+                    <!-- Member 1 -->
+                    <div class="member-card reveal-up">
+                        <div class="member-img-wrapper">
+                            <img src="https://image.shutterstock.com/image-vector/user-icon-vector-illustration-glyph-260nw-1275914701.jpg"
+                                alt="সদস্য ১">
+                        </div>
+                        <div class="member-info">
+                            <h4>ইঞ্জি. এমডি শাহিনুল ইসলাম</h4>
+                            <p>সিনি. সহ-সভাপতি</p>
+                            <P>প্রোডাকশন প্রধান(GM).</P>
+                            <p>Alaens knitwear Limited</p>
+                        </div>
+                    </div>
+                    <!-- Member 2 -->
+                    <div class="member-card reveal-up">
+                        <div class="member-img-wrapper">
+                            <img src="https://image.shutterstock.com/image-vector/user-icon-vector-illustration-glyph-260nw-1275914701.jpg"
+                                alt="সদস্য ১">
+                        </div>
+                        <div class="member-info">
+                            <h4>ডা.আল মামুন</h4>
+                            <p>সহ-সভাপতি</p>
+                            <P>সিনিয়র মেডিকেল অফিসার.</P>
+                            <p>ABC Eye Hospital</p>
+                        </div>
+                    </div>
+                    <!-- Member 3 -->
+                    <div class="member-card reveal-up delay-1">
+                        <div class="member-img-wrapper">
+                            <img src="https://image.shutterstock.com/image-vector/user-icon-vector-illustration-glyph-260nw-1275914701.jpg"
+                                alt="সদস্য ২">
+                        </div>
+                        <div class="member-info">
+                            <h4>এমডি. ইউসুফ আলী</h4>
+                            <p>সাধারণ সম্পাদক</p>
+                            <P>মার্কেটিং(সেলাই).</P>
+                            <p>Hams Garments Ltd.</p>
+                        </div>
+                    </div>
+                    <!-- Member 4 -->
+                    <div class="member-card reveal-up delay-2">
+                        <div class="member-img-wrapper">
+                            <img src="https://image.shutterstock.com/image-vector/user-icon-vector-illustration-glyph-260nw-1275914701.jpg"
+                                alt="সদস্য ৩">
+                        </div>
+                        <div class="member-info">
+                            <h4>মোঃ আলফাজ মিয়া</h4>
+                            <p>সহকারী সাধারণ সম্পাদক</p>
+                            <P>প্রবাসী</P>
+                            <p>Malaishiya</p>
+                        </div>
+                    </div>
+                    <!-- Member 5 -->
+                    <div class="member-card reveal-up">
+                        <div class="member-img-wrapper">
+                            <img src="https://image.shutterstock.com/image-vector/user-icon-vector-illustration-glyph-260nw-1275914701.jpg"
+                                alt="সদস্য ৪">
+                        </div>
+                        <div class="member-info">
+                            <h4>মোঃ আলমগীর হোসেন</h4>
+                            <p>সহকারী সাধারণ সম্পাদক</p>
+                            <P>মালিক.</P>
+                            <p>AN Accessories</p>
+                        </div>
+                    </div>
+                    <!-- Member 6 -->
+                    <div class="member-card reveal-up delay-1">
+                        <div class="member-img-wrapper">
+                            <img src="https://image.shutterstock.com/image-vector/user-icon-vector-illustration-glyph-260nw-1275914701.jpg"
+                                alt="সদস্য ৫">
+                        </div>
+                        <div class="member-info">
+                            <h4>ইঞ্জি.এমডি মোমিনুল ইসলাম</h4>
+                            <p>সাংগঠনিক সচিব</p>
+                            <P>সহকারী ব্যবস্থাপক.</P>
+                            <p>Steeltech Industries Ltd.</p>
+                        </div>
+                    </div>
+                    <!-- Member 7  -->
+                    <div class="member-card reveal-up delay-2">
+                        <div class="member-img-wrapper">
+                            <img src="https://image.shutterstock.com/image-vector/user-icon-vector-illustration-glyph-260nw-1275914701.jpg"
+                                alt="সদস্য ৬">
+                        </div>
+                        <div class="member-info">
+                            <h4>ইঞ্জি. মোঃ মনোয়ার হোসেন</h4>
+                            <p>সহকারী সাংগঠনিক সম্পাদক</p>
+                            <p>সহকারী ব্যবস্থাপক(বিপণন ও বিক্রয়)</p>
+                            <p>PHP ISPAT LTD.</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 8 -->
+                    <div class="member-card reveal-up delay-2">
+                        <div class="member-img-wrapper">
+                            <img src="https://image.shutterstock.com/image-vector/user-icon-vector-illustration-glyph-260nw-1275914701.jpg"
+                                alt="সদস্য ৬">
+                        </div>
+                        <div class="member-info">
+                            <h4>মোঃ সুখুর মাহমুদ</h4>
+                            <p>সহকারী সাংগঠনিক সম্পাদক</p>
+                            <p>সিনিয়র স্টোর অফিসার.</p>
+                            <p>Fawn Group</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 9 -->
+                     <div class="member-card reveal-up delay-2">
+                        <div class="member-img-wrapper">
+                            <img src="https://image.shutterstock.com/image-vector/user-icon-vector-illustration-glyph-260nw-1275914701.jpg" alt="সদস্য ৬">
+                        </div>
+                        <div class="member-info">
+                            <h4>মোঃ জাহিদুল ইসলাম</h4>
+                            <p>কোষাধ্যক্ষ</p>
+                            <p>সহকারী শিক্ষক.</p>
+                            <p>Ahmadia Tojbidul Quran Mahila Dakhil</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 10 -->
+                     <div class="member-card reveal-up delay-2">
+                        <div class="member-img-wrapper">
+                            <img src="https://image.shutterstock.com/image-vector/user-icon-vector-illustration-glyph-260nw-1275914701.jpg" alt="সদস্য ৬">
+                        </div>
+                        <div class="member-info">
+                            <h4>মোঃ আনোয়ার হোসেন</h4>
+                            <p>সহকারী কোষাধ্যক্ষ</p>
+                            <p>ম্যানেজার.</p>
+                            <p>civil aviation authority of banglades</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="download-btn-container reveal-up delay-3">
+                    <a href="https://drive.google.com/file/d/1-lQgiDRqYxi-y4yanw9nE1NBzA_ir0rZ/view?usp=sharing" class="btn-download">
+                        <i class="fas fa-file-pdf"></i> সকল সদস্যের তালিকা ডাউনলোড করুন
+                    </a>
                 </div>
             </div>
         </section>
@@ -1283,18 +1521,18 @@
                 </div>
 
                 <!-- Column 4 -->
-                 <div class="footer-col reveal">
-            <h4>নিউজলেটার</h4>
-            <p>আমাদের সর্বশেষ আপডেট পান</p>
+                <div class="footer-col reveal">
+                    <h4>নিউজলেটার</h4>
+                    <p>আমাদের সর্বশেষ আপডেট পান</p>
 
-            <div class="newsletter">
-                <form action="{{ route('newsletter.subscribe') }}" method="POST">
-                    @csrf
-                    <input type="email" name="email" placeholder="আপনার ইমেইল" required>
-                    <button type="submit">সাবস্ক্রাইব</button>
-                </form>
-            </div>
-        </div>
+                    <div class="newsletter">
+                        <form action="{{ route('newsletter.subscribe') }}" method="POST">
+                            @csrf
+                            <input type="email" name="email" placeholder="আপনার ইমেইল" required>
+                            <button type="submit">সাবস্ক্রাইব</button>
+                        </form>
+                    </div>
+                </div>
 
             </div>
 

@@ -11,6 +11,7 @@
 <table>
     <thead>
         <tr>
+            <th>ইমেজ</th>
             <th>শিরোনাম</th>
             <th>তারিখ</th>
             <th>অ্যাকশন</th>
@@ -19,6 +20,13 @@
     <tbody>
         @foreach($blogs as $b)
         <tr>
+            <td>
+                @if($b->image)
+                    <img src="{{ asset($b->image) }}" width="60" style="border-radius: 5px;">
+                @else
+                    <span class="muted">নো ইমেজ</span>
+                @endif
+            </td>
             <td>{{ $b->title }}</td>
             <td>{{ $b->date }}</td>
             <td class="actions">

@@ -5,7 +5,7 @@
     <h1>নতুন ইভেন্ট</h1>
     <a class="btn" href="{{ route('admin.events.index') }}">সব ইভেন্ট</a>
 </div>
-<form action="{{ route('admin.events.store') }}" method="POST">
+<form action="{{ route('admin.events.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="form-row">
         <div>
@@ -13,8 +13,8 @@
             <input type="text" name="title" value="{{ old('title') }}" required>
         </div>
         <div>
-            <label>ইমেজ পাথ</label>
-            <input type="text" name="image" value="{{ old('image') }}">
+            <label>ইমেজ আপলোড</label>
+            <input type="file" name="image" accept="image/*">
         </div>
         <div>
             <label>তারিখ</label>

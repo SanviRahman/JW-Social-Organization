@@ -22,7 +22,13 @@
         @foreach($items as $it)
         <tr>
             <td>{{ $it->title }}</td>
-            <td>{{ $it->image }}</td>
+            <td>
+                @if($it->image)
+                    <img src="{{ asset($it->image) }}" width="60" style="border-radius: 5px;">
+                @else
+                    <span class="muted">নো ইমেজ</span>
+                @endif
+            </td>
             <td>{{ optional($it->created_at)->format('Y-m-d') }}</td>
             <td class="actions">
                 <a class="btn" href="{{ route('admin.karjokroms.edit',$it) }}">এডিট</a>

@@ -5,7 +5,7 @@
     <h1>কার্যক্রম এডিট</h1>
     <a class="btn" href="{{ route('admin.karjokroms.index') }}">সব আইটেম</a>
 </div>
-<form action="{{ route('admin.karjokroms.update',$item) }}" method="POST">
+<form action="{{ route('admin.karjokroms.update',$item) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
     <div class="form-row">
@@ -14,8 +14,13 @@
             <input type="text" name="title" value="{{ old('title',$item->title) }}">
         </div>
         <div>
-            <label>ইমেজ পাথ</label>
-            <input type="text" name="image" value="{{ old('image',$item->image) }}">
+            <label>ইমেজ আপলোড</label>
+            <input type="file" name="image" accept="image/*">
+            @if($item->image)
+                <div style="margin-top: 5px;">
+                    <img src="{{ asset($item->image) }}" width="80" style="border-radius: 5px;">
+                </div>
+            @endif
         </div>
     </div>
     <div style="margin-top:12px">

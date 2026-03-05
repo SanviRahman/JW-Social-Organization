@@ -17,7 +17,7 @@
     </div>
 @endif
 
-<form action="{{ route('admin.events.update', $event) }}" method="POST">
+<form action="{{ route('admin.events.update', $event) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
     <div class="form-row">
@@ -26,8 +26,13 @@
             <input type="text" name="title" value="{{ old('title', $event->title) }}" required>
         </div>
         <div>
-            <label>ইমেজ পাথ</label>
-            <input type="text" name="image" value="{{ old('image', $event->image) }}">
+            <label>ইমেজ আপলোড (নতুন দিলে আগেরটি মুছে যাবে)</label>
+            <input type="file" name="image" accept="image/*">
+            @if($event->image)
+                <div style="margin-top: 5px;">
+                    <img src="{{ asset($event->image) }}" width="80" style="border-radius: 5px;">
+                </div>
+            @endif
         </div>
         <div>
             <label>তারিখ</label>

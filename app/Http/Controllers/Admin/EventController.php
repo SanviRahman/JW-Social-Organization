@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Event;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Storage;
+
 class EventController extends Controller
 {
     public function index()
@@ -21,13 +23,19 @@ class EventController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'image' => ['nullable', 'string', 'max:255'],
+            'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
             'title' => ['required', 'string', 'max:255'],
             'description' => ['nullable', 'string'],
             'event_date' => ['nullable', 'date'],
             'event_time' => ['nullable', 'date_format:H:i'],
             'location' => ['nullable', 'string', 'max:255'],
         ]);
+
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('uploads/events', 'public');
+            $data['image'] = 'storage/' . $path;
+        }
+
         Event::create($data);
         return redirect()->route('admin.events.index')->with('success', 'Event created');
     }
@@ -40,13 +48,23 @@ class EventController extends Controller
     public function update(Request $request, Event $event)
     {
         $data = $request->validate([
-            'image' => ['nullable', 'string', 'max:255'],
+            'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
             'title' => ['required', 'string', 'max:255'],
             'description' => ['nullable', 'string'],
             'event_date' => ['nullable', 'date'],
             'event_time' => ['nullable', 'date_format:H:i'],
             'location' => ['nullable', 'string', 'max:255'],
         ]);
+
+        if ($request->hasFile('image')) {
+            // Delete old image if it exists and is not a default asset
+            if ($event->image && str_contains($event->image, 'storage/uploads/')) {
+                Storage::disk('public')->delete(str_replace('storage/', '', $event->image));
+            }
+            $path = $request->file('image')->store('uploads/events', 'public');
+            $data['image'] = 'storage/' . $path;
+        }
+
         $event->update($data);
         return redirect()->route('admin.events.index')->with('success', 'Event updated');
     }

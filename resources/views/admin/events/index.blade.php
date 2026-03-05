@@ -11,9 +11,9 @@
 <table>
     <thead>
         <tr>
+            <th>ইমেজ</th>
             <th>শিরোনাম</th>
             <th>তারিখ</th>
-            <th>সময়</th>
             <th>স্থান</th>
             <th>অ্যাকশন</th>
         </tr>
@@ -21,6 +21,13 @@
     <tbody>
         @foreach($events as $e)
         <tr>
+            <td>
+                @if($e->image)
+                    <img src="{{ asset($e->image) }}" width="60" style="border-radius: 5px;">
+                @else
+                    <span class="muted">নো ইমেজ</span>
+                @endif
+            </td>
             <td>{{ $e->title }}</td>
             <td>{{ optional($e->event_date)->format('Y-m-d') }}</td>
             <td>{{ $e->event_time }}</td>
