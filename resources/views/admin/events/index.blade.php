@@ -44,6 +44,7 @@
         @endforeach
     </tbody>
     </table>
+    <!-- Pagination -->
     <div class="pagination">
         {{ $events->links('pagination::bootstrap-4') }}
     </div>

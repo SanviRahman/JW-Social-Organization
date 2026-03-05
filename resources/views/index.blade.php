@@ -510,7 +510,7 @@
                         <div class="story-images">
                             <div class="image-box before"><img src="{{ asset('image/Karim-1.jpg') }}" alt="Before"><span
                                     class="img-tag">আগে</span></div>
-                            <div class="image-box after"><img src="{{ asset('image/Karim-2.jpg') }}" alt="After"><span
+                            <div class="image-box after"><img src="{{ asset('image/karim-2.jpg') }}" alt="After"><span
                                     class="img-tag">পরে</span></div>
                         </div>
                         <div class="story-content">
@@ -785,9 +785,9 @@
                 <div class="testimonial-card">
                     <div class="quote-icon">“</div>
                     <div class="profile">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+                        <img src="{{ asset('image/Karim-1.jpg') }}" alt="">
                         <div>
-                            <h4>আব্দুল মালেক</h4><span>বাউড়িয়া</span>
+                            <h4>আব্দুল মালেক</h4><span>ঝাউগড়া</span>
                         </div>
                     </div>
                     <div class="rating">★★★★★</div>
@@ -796,9 +796,9 @@
                 <div class="testimonial-card">
                     <div class="quote-icon">“</div>
                     <div class="profile">
-                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="">
+                        <img src="{{ asset('image/Rohima-1.jpg') }}" alt="">
                         <div>
-                            <h4>সালমা খাতুন</h4><span>নালডাঙা</span>
+                            <h4>সালমা খাতুন</h4><span>ঝাউগড়া</span>
                         </div>
                     </div>
                     <div class="rating">★★★★★</div>
@@ -807,9 +807,9 @@
                 <div class="testimonial-card">
                     <div class="quote-icon">“</div>
                     <div class="profile">
-                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="">
+                        <img src="{{ asset('image/Jamal-1.jpg') }}" alt="">
                         <div>
-                            <h4>রফিক উদ্দিন</h4><span>মধুপুর</span>
+                            <h4>রফিক উদ্দিন</h4><span>ঝাউগড়া</span>
                         </div>
                     </div>
                     <div class="rating">★★★★☆</div>
