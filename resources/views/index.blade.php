@@ -356,6 +356,7 @@
         <div class="hero-content">
             <span class="established-badge">প্রতিষ্ঠিত ২০১৭</span>
             <h1 class="hero-title">ঝাউগড়া কল্যাণ সংগঠন</h1>
+            <p class="hero-subtitle">একটি অরাজনৈতিক তথ্য ও সেবামূলক সংগঠন</p>
             <p class="hero-tagline">"ঐক্যই আমাদের শক্তি, উন্নয়নই আমাদের লক্ষ্য"</p>
             <div class="hero-btns">
                 <a href="#ইভেন্ট" class="btn btn-primary">আমাদের কাজ জানুন</a>
@@ -1617,11 +1618,33 @@ body {
 .hero-title {
     font-size: clamp(2.5rem, 8vw, 6rem);
     font-weight: 800;
-    margin-bottom: 20px;
     background: linear-gradient(135deg, #fff, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: shine 4s linear infinite;
+}
+
+.hero-subtitle{
+    display: block;             
+    margin: 0 0 16px;      
+    font-size:16px;      
+    font-weight: 50;
+    color: rgba(255, 255, 255, 0.85); 
+    letter-spacing: 0.3px;
+    line-height: 1.5;
+}
+
+
+@media (max-width:1024px){
+    .hero-subtitle{
+        font-size:14px;
+    }
+}
+
+@media (max-width:768px){
+    .hero-subtitle{
+        font-size:12px;
+    }
 }
 
 .hero-tagline {
