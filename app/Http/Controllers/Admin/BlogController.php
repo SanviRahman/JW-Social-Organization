@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use Illuminate\Http\Request;
 use Carbon\Carbon; // make sure to import Carbon
-
 use Illuminate\Support\Facades\Storage;
 
 class BlogController extends Controller

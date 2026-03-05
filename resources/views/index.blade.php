@@ -426,8 +426,6 @@
                             <p>সংগঠন সভাপতি</p>
                         </div>
                     </div>
-                    <a href="{{ route('about') }}" class="learn-more-btn">আরও জানুন <i
-                            class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="mission-vision reveal-right" style="text-align: justify; cursor: pointer;">
                     <div class="info-card mission-card">
@@ -443,6 +441,8 @@
                             সম্মানের সাথে বাঁচবে।</p>
                     </div>
                 </div>
+                <a href="{{ route('about') }}" class="learn-more-btn">আরও জানুন <i
+                            class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
@@ -1548,6 +1548,8 @@ body {
 .learn-more-btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    width: fit-content;
     gap: 10px;
     color: var(--primary-color);
     text-decoration: none;
@@ -4569,6 +4571,194 @@ select:focus-visible {
         font-size: 1rem;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+/* ===================== PROFESSIONAL POLISH PACK ===================== */
+
+/* Better global typography + smooth */
+body{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container a bit more premium */
+.container{
+  max-width: 1200px;
+}
+
+/* Consistent section spacing */
+section{
+  padding: 90px 0;
+}
+@media (max-width: 767px){
+  section{
+    padding: 70px 0;
+  }
+}
+
+/* Section header: cleaner + spacing */
+.section-header{
+  margin-bottom: 55px;
+}
+.section-subtitle-tag{
+  letter-spacing: .8px;
+  text-transform: uppercase;
+}
+.section-description{
+  opacity: .95;
+}
+
+/* ===================== HERO PREMIUM ===================== */
+.hero{
+  background-attachment: fixed;
+}
+@media (max-width: 991px){
+  .hero{ background-attachment: scroll; }
+}
+
+/* Premium overlay */
+.hero-overlay{
+  background: radial-gradient(circle at top, rgba(16,185,129,0.25), transparent 50%),
+              linear-gradient(135deg, rgba(15,23,42,0.82), rgba(15,23,42,0.97));
+}
+
+/* Better hero spacing */
+.hero-content{
+  padding: 10px 10px;
+}
+
+/* Title margin fix */
+.hero-title{
+  margin-bottom: 10px;
+  letter-spacing: .5px;
+}
+
+/* Subtitle: desktop 16px, mobile 12px */
+.hero-subtitle{
+  display:block;
+  margin: 0 0 16px;
+  font-size: 16px;
+  font-weight: 500; /* FIX: 50 invalid */
+  color: rgba(255,255,255,0.85);
+  letter-spacing: .3px;
+  line-height: 1.6;
+}
+@media (max-width: 768px){
+  .hero-subtitle{ font-size: 12px; }
+}
+
+/* Tagline smaller & premium */
+.hero-tagline{
+  opacity: .92;
+}
+
+/* Buttons more premium */
+.btn{
+  gap: 10px;
+  border-radius: 999px;
+  padding: 12px 26px;
+  transform: translateZ(0);
+}
+.btn-primary{
+  background: linear-gradient(90deg, #10b981, #059669, #10b981);
+  background-size: 200% 100%;
+}
+.btn-primary:hover{
+  background-position: 100% 0;
+}
+.btn-secondary{
+  border-color: rgba(245,158,11,.85);
+}
+.btn-secondary:hover{
+  border-color: transparent;
+}
+
+/* ===================== CARD SYSTEM (Stats/About/Blog etc) ===================== */
+.stat-card,
+.activity-card,
+.testimonial-card,
+.news-card,
+.info-card,
+.glass-card{
+  border-radius: 18px !important;
+}
+
+/* Subtle border + hover polish */
+.stat-card,
+.activity-card,
+.testimonial-card,
+.news-card,
+.glass-card{
+  border: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+.stat-card:hover,
+.activity-card:hover,
+.testimonial-card:hover,
+.news-card:hover,
+.glass-card:hover{
+  transform: translateY(-10px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+}
+
+/* Stats number more bold */
+.stat-number{
+  letter-spacing: .5px;
+}
+
+/* Activity card title spacing */
+.card-body h3{
+  line-height: 1.35;
+}
+
+/* Blog cards better readability */
+.blog-carousel .card-content p{
+  opacity: .95;
+}
+
+/* ===================== NAV BUTTONS (carousel buttons) ===================== */
+.nav-btn,
+.blog-nav-btn{
+  background: rgba(17,24,39,0.85);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+}
+.nav-btn:hover,
+.blog-nav-btn:hover{
+  border-color: rgba(16,185,129,0.5);
+}
+
+/* ===================== GALLERY polish ===================== */
+.gallery-item{
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.gallery-overlay{
+  backdrop-filter: blur(6px);
+}
+
+/* ===================== FORMS polish ===================== */
+input, select, textarea{
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+input:focus, select:focus, textarea:focus{
+  background: rgba(255,255,255,0.08);
+}
+
+/* ===================== SCROLLBAR subtle ===================== */
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+}
+
+/* ===================== END ===================== */
 </style>
 @endpush
 @endsection

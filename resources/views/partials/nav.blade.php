@@ -835,4 +835,227 @@ section {
     width: 100%;
     overflow-x: hidden;
 }
+
+
+
+
+
+
+/* ================== PRO NAVBAR OVERRIDES ================== */
+
+/* Fix: remove per-child centering (this breaks layout) */
+.navbar > *{
+  max-width: unset !important;
+  margin: 0 !important;
+}
+
+/* Navbar base */
+.navbar{
+  height: 86px;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  background: rgba(15, 23, 42, 0.72);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition: transform .35s ease, background .35s ease, height .35s ease, box-shadow .35s ease;
+}
+
+/* Better max width alignment like your container */
+@media (min-width: 1200px){
+  .navbar{
+    padding-left: calc((100% - 1200px) / 2);
+    padding-right: calc((100% - 1200px) / 2);
+  }
+}
+
+/* Scroll-up state: slightly darker + compact */
+.navbar.scroll-up{
+  background: rgba(15, 23, 42, 0.92);
+  height: 78px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.45);
+}
+
+/* Logo */
+.logo{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.logo-icon img{
+  width: 58px;
+  height: 58px;
+  border-radius: 18%;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+.logo-text h1{
+  font-size: 1.25rem;
+  letter-spacing: .2px;
+}
+.logo-text p{
+  opacity: .9;
+}
+
+/* Desktop nav links: premium pill underline */
+.nav-center{
+  flex: 1;
+  display:flex;
+  justify-content:center;
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  padding: 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.nav-links li a{
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: rgba(255,255,255,0.92);
+  transition: background .25s ease, color .25s ease, transform .25s ease;
+}
+
+/* disable old underline */
+.nav-links li a::after{ display:none !important; }
+
+.nav-links li a:hover{
+  background: rgba(16,185,129,0.14);
+  color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+/* Active link = filled pill */
+.nav-links li a.active-link{
+  background: rgba(16,185,129,0.20);
+  border: 1px solid rgba(16,185,129,0.35);
+  color: #d1fae5;
+}
+
+/* Right donate button more premium */
+.donate-btn{
+  border-radius: 999px;
+  padding: 12px 18px;
+  background: linear-gradient(90deg, #10b981, #059669, #f59e0b);
+  background-size: 200% 100%;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.donate-btn:hover{
+  background-position: 100% 0;
+  transform: translateY(-2px);
+}
+
+/* ================== MOBILE / TABLET DRAWER ================== */
+
+/* Make burger look cleaner */
+.menu-toggle{
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(10px);
+}
+.menu-toggle span{
+  height: 2px;
+}
+
+/* Drawer container */
+@media (max-width: 991px){
+  .nav-center{
+    position: fixed;
+    top: 86px; /* same as navbar height */
+    left: 0;
+    right: 0;
+
+    max-width: 100%;
+    width: 100%;
+
+    background: rgba(15, 23, 42, 0.92);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    backdrop-filter: blur(16px);
+
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+
+    max-height: calc(100vh - 86px);
+    overflow-y: auto;
+
+    transition: opacity .25s ease, transform .25s ease;
+  }
+
+  .nav-center.active{
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .nav-links{
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 10px 0;
+    border-radius: 0;
+    background: transparent;
+    border: none;
+  }
+
+  .nav-links li a{
+    border-radius: 0;
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transform: none;
+  }
+
+  .nav-links li a:hover{
+    background: rgba(16,185,129,0.10);
+  }
+
+  .nav-links li a.active-link{
+    background: rgba(16,185,129,0.14);
+    border-left: 4px solid var(--primary-color);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .mobile-donate{
+    display:block;
+    padding: 14px 18px 22px;
+  }
+
+  .mobile-donate .donate-btn{
+    width: 100%;
+    max-width: 360px;
+    display: inline-flex;
+    justify-content: center;
+  }
+}
+
+/* Mobile sizing polish */
+@media (max-width: 767px){
+  body{ padding-top: 82px; }
+  .navbar{ height: 82px; }
+  .nav-center{ top: 82px; max-height: calc(100vh - 82px); }
+
+  .logo-icon img{ width: 50px; height: 50px; }
+  .logo-text h1{ font-size: 1rem; }
+  .logo-text p{ font-size: .72rem; }
+}
+
+/* Ultra small */
+@media (max-width: 480px){
+  .navbar{ padding: 0 14px; }
+}
+
+/* ================== END ================== */
 </style>
