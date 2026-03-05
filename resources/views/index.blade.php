@@ -1580,7 +1580,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('https://scontent.fdac7-1.fna.fbcdn.net/v/t39.30808-6/540337865_3507613556041612_9101768104763696279_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=c7cdda&_nc_eui2=AeFM_EavUZrXbGtsj-onM9T4AkFxXIX1np8CQXFchfWenxozymaKhW6QyZwksdDVG9IeoKrh7xR87o0cg8W11u2Z&_nc_ohc=cjFeeg1-6sYQ7kNvwEqtNCl&_nc_oc=AdkDoFMlres1jTD5_TXfanoKio26ResaxpxxpyH1-FL-QzUDUyY1wegOcZoB6q-e2NQ&_nc_zt=23&_nc_ht=scontent.fdac7-1.fna&_nc_gid=zLM6HlWelpSRrRsohKUEQg&oh=00_AfsbgLkrqDtPDxzTKrPrVef6nAoua5fiVEzD58X42lENBw&oe=69A785DA');
+    background-image: url({{ asset('image/Barshik-sova.jpg') }});
     background-size: cover;
     background-position: center;
     position: relative;
