@@ -785,7 +785,7 @@
                 <div class="testimonial-card">
                     <div class="quote-icon">“</div>
                     <div class="profile">
-                        <img src="{{ asset('image/Karim-1.jpg') }}" alt="">
+                        <img src="{{ asset('image/karim-2.jpg') }}" alt="">
                         <div>
                             <h4>আব্দুল মালেক</h4><span>ঝাউগড়া</span>
                         </div>
@@ -796,7 +796,7 @@
                 <div class="testimonial-card">
                     <div class="quote-icon">“</div>
                     <div class="profile">
-                        <img src="{{ asset('image/Rohima-1.jpg') }}" alt="">
+                        <img src="{{ asset('image/Rohima-2.jpg') }}" alt="">
                         <div>
                             <h4>সালমা খাতুন</h4><span>ঝাউগড়া</span>
                         </div>
@@ -807,7 +807,7 @@
                 <div class="testimonial-card">
                     <div class="quote-icon">“</div>
                     <div class="profile">
-                        <img src="{{ asset('image/Jamal-1.jpg') }}" alt="">
+                        <img src="{{ asset('image/Jamal-2.jpg') }}" alt="">
                         <div>
                             <h4>রফিক উদ্দিন</h4><span>ঝাউগড়া</span>
                         </div>
